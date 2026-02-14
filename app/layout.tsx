@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'MMKK AI | Revenue Infrastructure for the AI Era',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-background text-white">{children}</body>
+      <body className="bg-background text-white">
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

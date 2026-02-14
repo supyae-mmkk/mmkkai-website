@@ -4,7 +4,6 @@ import TrustedInfrastructureLayer from '@/components/TrustedInfrastructureLayer'
 import InfrastructureFlow from '@/components/InfrastructureFlow'
 import WhyBuyAdvanced from '@/components/WhyBuyAdvanced'
 import CTASection from '@/components/CTASection'
-import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <InfrastructureFlow />
       <WhyBuyAdvanced />
       <CTASection />
-      <Footer />
     </main>
   )
 }
