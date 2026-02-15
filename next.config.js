@@ -8,6 +8,8 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
+  // No 'output: export' - this allows dynamic [locale] routes to work on Vercel
+  // Dynamic routes require server-side rendering, not static export
 }
 
 module.exports = withNextIntl(nextConfig)
