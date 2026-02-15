@@ -324,9 +324,9 @@ export default function AdvancedCube() {
           />
         </bufferGeometry>
         <lineBasicMaterial
-          color="#00C896"
+          color="#2EE6C2"
           transparent
-          opacity={0.5}
+          opacity={0.6}
           linewidth={2}
           blending={THREE.AdditiveBlending}
         />
@@ -363,7 +363,7 @@ export default function AdvancedCube() {
             />
           </bufferGeometry>
           <lineBasicMaterial
-            color="#00C896"
+            color="#2EE6C2"
             transparent
             opacity={0.08}
             linewidth={1}
@@ -380,7 +380,7 @@ export default function AdvancedCube() {
             />
           </bufferGeometry>
           <lineBasicMaterial
-            color="#007BFF"
+            color="#2EE6C2"
             transparent
             opacity={0.08}
             linewidth={1}

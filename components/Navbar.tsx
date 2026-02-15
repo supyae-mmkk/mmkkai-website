@@ -5,11 +5,14 @@ import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+  const t = useTranslations('nav')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,21 +23,19 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { label: 'Products', href: '/products' },
-    { label: 'Services', href: '/services' },
-    { label: 'Contact', href: '/contact' },
+    { label: t('products'), href: '/products' },
+    { label: t('services'), href: '/services' },
+    { label: t('contact'), href: '/contact' },
   ]
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass backdrop-blur-lg' : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md transition-all duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="h-20 flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
             <motion.div
@@ -55,7 +56,7 @@ export default function Navbar() {
                 <motion.div
                   whileHover={{ y: -2 }}
                   className={`relative text-sm font-medium transition-colors ${
-                    pathname === item.href
+                    pathname.includes(item.href)
                       ? 'text-primary'
                       : 'text-gray-300 hover:text-primary'
                   }`}
@@ -63,20 +64,21 @@ export default function Navbar() {
                   {item.label}
                   <motion.span
                     className="absolute bottom-0 left-0 h-0.5 bg-primary"
-                    initial={{ width: pathname === item.href ? '100%' : '0%' }}
+                    initial={{ width: pathname.includes(item.href) ? '100%' : '0%' }}
                     whileHover={{ width: '100%' }}
                     transition={{ duration: 0.3 }}
                   />
                 </motion.div>
               </Link>
             ))}
+            <LanguageSwitcher />
             <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-2 bg-primary text-black font-semibold rounded-lg hover-glow transition-all"
               >
-                Book Strategy Call
+                {t('bookCall')}
               </motion.button>
             </Link>
           </div>
@@ -107,7 +109,7 @@ export default function Navbar() {
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={`block transition-colors ${
-                    pathname === item.href
+                    pathname.includes(item.href)
                       ? 'text-primary'
                       : 'text-gray-300 hover:text-primary'
                   }`}
@@ -115,11 +117,14 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/contact" onClick={() => setIsOpen(false)}>
-                <button className="w-full px-6 py-2 bg-primary text-black font-semibold rounded-lg">
-                  Book Strategy Call
-                </button>
-              </Link>
+              <div className="flex items-center justify-between">
+                <LanguageSwitcher />
+                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                  <button className="px-6 py-2 bg-primary text-black font-semibold rounded-lg">
+                    {t('bookCall')}
+                  </button>
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
@@ -127,4 +132,3 @@ export default function Navbar() {
     </motion.nav>
   )
 }
-
