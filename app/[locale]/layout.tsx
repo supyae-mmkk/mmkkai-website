@@ -12,8 +12,15 @@ type Props = {
   params: Promise<{ locale: string }>
 }
 
+export const dynamic = 'force-static'
+export const revalidate = 3600
+
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
+  return [
+    { locale: 'en' },
+    { locale: 'mm' },
+    { locale: 'th' }
+  ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

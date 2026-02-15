@@ -2,7 +2,7 @@ import Navbar from '@/components/Navbar'
 import WhyBuyAdvanced from '@/components/WhyBuyAdvanced'
 import InfrastructureFlow from '@/components/InfrastructureFlow'
 
-export const dynamic = 'force-dynamic'
+export const dynamic = 'force-static'
 
 export default function ServicesPage() {
   return (

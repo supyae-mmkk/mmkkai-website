@@ -4,10 +4,14 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
+import dynamic from 'next/dynamic'
 import ParticleBackground from './ParticleBackground'
-import CubeScene from './CubeScene'
 import ProductModules from './ProductModules'
 import ConsultationPanel from './ConsultationPanel'
+
+const CubeScene = dynamic(() => import('./CubeScene'), {
+  ssr: false,
+})
 
 export default function PremiumHero() {
   const [isPanelOpen, setIsPanelOpen] = useState(false)

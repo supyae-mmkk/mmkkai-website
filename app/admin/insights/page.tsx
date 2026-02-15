@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { format } from 'date-fns'
 
 interface Visitor {
@@ -71,15 +71,7 @@ export default function AdminInsightsPage() {
     heat_levels: [],
   })
 
-  useEffect(() => {
-    fetchFilterOptions()
-  }, [])
-
-  useEffect(() => {
-    fetchVisitors()
-  }, [sortBy, filters])
-
-  const fetchFilterOptions = async () => {
+  const fetchFilterOptions = useCallback(async () => {
     try {
       const response = await fetch(`${API_URL}/api/admin/filters`, {
         headers: {
@@ -95,9 +87,9 @@ export default function AdminInsightsPage() {
     } catch (err) {
       console.error('Error fetching filter options:', err)
     }
-  }
+  }, [])
 
-  const fetchVisitors = async () => {
+  const fetchVisitors = useCallback(async () => {
     try {
       setLoading(true)
       setError(null)
@@ -135,7 +127,15 @@ export default function AdminInsightsPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [sortBy, filters])
+
+  useEffect(() => {
+    fetchFilterOptions()
+  }, [fetchFilterOptions])
+
+  useEffect(() => {
+    fetchVisitors()
+  }, [fetchVisitors])
 
   const handleFilterChange = (key: string, value: string) => {
     setFilters((prev) => ({ ...prev, [key]: value }))
