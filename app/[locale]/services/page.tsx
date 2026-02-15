@@ -3,6 +3,8 @@ import WhyBuyAdvanced from '@/components/WhyBuyAdvanced'
 import InfrastructureFlow from '@/components/InfrastructureFlow'
 import { getTranslations } from 'next-intl/server'
 
+export const dynamic = 'force-dynamic'
+
 export default async function ServicesPage() {
   const t = await getTranslations('services')
 

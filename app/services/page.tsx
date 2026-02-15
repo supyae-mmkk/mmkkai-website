@@ -2,6 +2,8 @@ import Navbar from '@/components/Navbar'
 import WhyBuyAdvanced from '@/components/WhyBuyAdvanced'
 import InfrastructureFlow from '@/components/InfrastructureFlow'
 
+export const dynamic = 'force-dynamic'
+
 export default function ServicesPage() {
   return (
     <main className="min-h-screen">
