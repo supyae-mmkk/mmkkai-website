@@ -1,0 +1,69 @@
+{
+  "common": {
+    "companyName": "MMKK AI",
+    "tagline": "เชื่อมต่อ… อนาคต"
+  },
+  "nav": {
+    "products": "ผลิตภัณฑ์",
+    "services": "บริการ",
+    "contact": "ติดต่อ",
+    "bookCall": "จองการปรึกษา"
+  },
+  "hero": {
+    "title1": "พันธมิตรการใช้งาน",
+    "title2": "Cloud & AI อย่างเป็นทางการ",
+    "badge1": "พันธมิตร Co-Sell ของ Google Cloud อย่างเป็นทางการ",
+    "badge2": "พันธมิตรการใช้งาน Microsoft Azure",
+    "product1": "Google Cloud & Gemini AI",
+    "product2": "โครงสร้างพื้นฐาน Microsoft Azure",
+    "product3": "ระบบ AI Revenue",
+    "button1": "ใช้งาน Google Cloud & Gemini",
+    "button2": "ใช้งานระบบ AI",
+    "button3": "เปิดตัว Sales Engine"
+  },
+  "footer": {
+    "description": "พันธมิตรโครงสร้างพื้นฐาน Cloud และ AI Revenue",
+    "navigation": "นำทาง",
+    "company": "บริษัท",
+    "home": "หน้าแรก",
+    "whoWeServe": "ผู้ที่เราบริการ",
+    "products": "ผลิตภัณฑ์",
+    "contact": "ติดต่อ",
+    "services": "บริการ",
+    "solutions": "โซลูชัน",
+    "copyright": "© {year} MMKK AI. สงวนลิขสิทธิ์",
+    "us": "สหรัฐอเมริกา",
+    "thailand": "ประเทศไทย",
+    "myanmar": "เมียนมาร์"
+  },
+  "contact": {
+    "title": "ติดต่อ MMKK AI",
+    "subtitle": "พูดคุยโดยตรงกับทีมโครงสร้างพื้นฐาน Cloud & AI ของเรา",
+    "getInTouch": "ติดต่อเรา",
+    "email": "อีเมล",
+    "phoneNumbers": "เบอร์โทรศัพท์",
+    "requestConsultation": "ขอคำปรึกษา",
+    "name": "ชื่อ",
+    "namePlaceholder": "ชื่อของคุณ",
+    "emailPlaceholder": "your.email@company.com",
+    "company": "บริษัท",
+    "companyPlaceholder": "ชื่อบริษัทของคุณ",
+    "message": "ข้อความ",
+    "messagePlaceholder": "บอกเราเกี่ยวกับความต้องการโครงสร้างพื้นฐานของคุณ...",
+    "required": "*",
+    "submit": "ขอคำปรึกษา"
+  },
+  "products": {
+    "title": "ผลิตภัณฑ์ของเรา",
+    "subtitle": "โครงสร้างพื้นฐาน Cloud และโซลูชัน AI สำหรับองค์กร"
+  },
+  "services": {
+    "title": "บริการของเรา",
+    "subtitle": "บริการการใช้งานและปรับปรุงโครงสร้างพื้นฐานที่สมบูรณ์"
+  },
+  "metadata": {
+    "title": "MMKK AI | โครงสร้างพื้นฐาน Revenue สำหรับยุค AI",
+    "description": "Cloud. AI. Automation. สร้างสำหรับองค์กรที่มุ่งเน้นการเติบโต"
+  }
+}
+

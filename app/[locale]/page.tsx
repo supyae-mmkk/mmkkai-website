@@ -5,6 +5,8 @@ import InfrastructureFlow from '@/components/InfrastructureFlow'
 import WhyBuyAdvanced from '@/components/WhyBuyAdvanced'
 import CTASection from '@/components/CTASection'
 
+export const dynamic = 'force-static'
+
 export default function Home() {
   return (
     <main className="min-h-screen">

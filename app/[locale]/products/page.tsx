@@ -2,6 +2,8 @@ import Navbar from '@/components/Navbar'
 import ProductModules from '@/components/ProductModules'
 import { getTranslations } from 'next-intl/server'
 
+export const dynamic = 'force-static'
+
 export default async function ProductsPage() {
   const t = await getTranslations('products')
 

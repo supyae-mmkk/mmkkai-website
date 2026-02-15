@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar'
 import { Mail, Phone } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
+export const dynamic = 'force-static'
+
 export default function ContactPage() {
   const t = useTranslations('contact')
   const [formData, setFormData] = useState({
