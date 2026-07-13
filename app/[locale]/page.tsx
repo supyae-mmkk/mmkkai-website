@@ -1,33 +1,45 @@
-import { getTranslations } from 'next-intl/server'
 import Navbar from '@/components/Navbar'
-import PremiumHero from '@/components/PremiumHero'
+import HomeHero from '@/components/sections/HomeHero'
 import TrustedInfrastructureLayer from '@/components/TrustedInfrastructureLayer'
-import InfrastructureFlow from '@/components/InfrastructureFlow'
-import WhyBuyAdvanced from '@/components/WhyBuyAdvanced'
-import WhoWeServeSection from '@/components/WhoWeServeSection'
+import BusinessProblemsSection from '@/components/sections/BusinessProblemsSection'
+import SolutionPlatformSection from '@/components/sections/SolutionPlatformSection'
+import SystemsConnectSection from '@/components/sections/SystemsConnectSection'
+import BeforeAfterSection from '@/components/sections/BeforeAfterSection'
+import ProcessSection from '@/components/sections/ProcessSection'
+import IndustriesHomeSection from '@/components/sections/IndustriesHomeSection'
+import RegionalSupportSection from '@/components/sections/RegionalSupportSection'
+import ProofSection from '@/components/sections/ProofSection'
+import ResourcesHomeSection from '@/components/sections/ResourcesHomeSection'
 import FaqSection from '@/components/FaqSection'
-import CTASection from '@/components/CTASection'
+import FinalCtaSection from '@/components/sections/FinalCtaSection'
 import { homeFaq } from '@/lib/faq'
 
 export const dynamic = 'force-static'
 
-export default async function Home() {
-  const t = await getTranslations('pillars')
-
+// Homepage - visual redesign (feature/aeo-rebrand-deployable). Section
+// order follows the approved plan: Hero -> Tech ecosystem -> Business
+// Problems -> Solution Platform -> How systems connect -> Before/After ->
+// Process -> Industries -> Regional support -> Proof -> Resources -> FAQ ->
+// Final CTA. All deep SEO/AEO content (FAQPage schema, breadcrumbs on inner
+// pages, metadata, etc.) from the prior remediation pass is preserved -
+// this file only changes presentation and section composition.
+export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <PremiumHero />
+      <HomeHero />
       <TrustedInfrastructureLayer />
-      <section className="pt-20 px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">{t('title')}</h2>
-        <p className="text-gray-400">{t('subtitle')}</p>
-      </section>
-      <InfrastructureFlow />
-      <WhyBuyAdvanced />
-      <WhoWeServeSection />
+      <BusinessProblemsSection />
+      <SolutionPlatformSection />
+      <SystemsConnectSection />
+      <BeforeAfterSection />
+      <ProcessSection />
+      <IndustriesHomeSection />
+      <RegionalSupportSection />
+      <ProofSection />
+      <ResourcesHomeSection />
       <FaqSection items={homeFaq} />
-      <CTASection />
+      <FinalCtaSection />
     </main>
   )
 }

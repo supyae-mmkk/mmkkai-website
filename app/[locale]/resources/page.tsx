@@ -7,6 +7,14 @@ import CTASection from '@/components/CTASection'
 import JsonLd from '@/components/JsonLd'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { guides } from '@/lib/guides'
+import ResourceThumbnail, { type ThumbnailVariant } from '@/components/visuals/ResourceThumbnail'
+
+const THUMBNAILS: Record<string, ThumbnailVariant> = {
+  'google-workspace-vs-microsoft-365': 'adoption',
+  'what-is-apollo': 'automation',
+  'hubspot-crm-guide': 'crm',
+  'google-workspace-migration-guide': 'migration',
+}
 import { breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata, pickLocaleMeta } from '@/lib/seo'
 
@@ -59,14 +67,19 @@ export default async function ResourcesPage({ params }: Props) {
       </section>
 
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto grid gap-4">
+        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-5">
           {guides.map((g) => (
-            <Link key={g.slug} href={`/resources/${g.slug}`} className="glass neon-border rounded-xl p-6 hover:border-primary/60 transition-all flex items-center justify-between gap-4 group">
-              <div>
-                <h2 className="font-bold text-lg text-white mb-2">{g.title}</h2>
-                <p className="text-sm text-gray-400">{pickLocaleMeta(g.meta, locale).description}</p>
+            <Link key={g.slug} href={`/resources/${g.slug}`} className="group block rounded-xl overflow-hidden border border-border bg-surface hover:border-primary/40 transition-all card-lift">
+              <div className="aspect-[2.4/1] overflow-hidden">
+                <ResourceThumbnail variant={THUMBNAILS[g.slug] || 'adoption'} />
               </div>
-              <ArrowRight className="text-primary flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+              <div className="p-5 flex items-start justify-between gap-3">
+                <div>
+                  <h2 className="font-bold text-white mb-1.5 group-hover:text-primary transition-colors">{g.title}</h2>
+                  <p className="text-sm text-gray-400 line-clamp-2">{pickLocaleMeta(g.meta, locale).description}</p>
+                </div>
+                <ArrowRight size={16} className="text-primary flex-shrink-0 mt-1 group-hover:translate-x-1 transition-transform" />
+              </div>
             </Link>
           ))}
         </div>
