@@ -17,7 +17,7 @@ export default function CTASection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-2xl md:text-[26px] font-bold font-display mb-8 tracking-tight">
-            Build Your Intelligent Infrastructure Today.
+            Ready to Set Up Your Business Technology?
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
@@ -27,7 +27,7 @@ export default function CTASection() {
               className="px-8 py-4 bg-primary text-black font-bold rounded-lg flex items-center gap-3 transition-all"
             >
               <Calendar size={20} />
-              Talk to Cloud Specialist
+              Book a Free Consultation
             </motion.button>
             <motion.button
               onClick={() => setIsPanelOpen(true)}
@@ -35,7 +35,7 @@ export default function CTASection() {
               whileTap={{ scale: 0.98 }}
               className="px-8 py-4 border border-primary/30 text-primary font-bold rounded-lg hover:bg-primary/5 transition-all"
             >
-              Request Proposal
+              Request a Quote
             </motion.button>
           </div>
         </motion.div>

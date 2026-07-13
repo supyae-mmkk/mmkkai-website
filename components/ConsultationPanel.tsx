@@ -1,8 +1,11 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Mail, Phone } from 'lucide-react'
+import { X, Mail, Phone, CheckCircle, AlertCircle } from 'lucide-react'
 import { useState } from 'react'
+import { useParams } from 'next/navigation'
+import { submitLead } from '@/lib/submitLead'
+import { solutions } from '@/lib/solutions'
 
 interface ConsultationPanelProps {
   isOpen: boolean
@@ -10,6 +13,9 @@ interface ConsultationPanelProps {
 }
 
 export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
+  const params = useParams()
+  const locale = (params?.locale as string) || 'en'
+
   const [selectedInterests, setSelectedInterests] = useState<string[]>([])
   const [formData, setFormData] = useState({
     name: '',
@@ -17,21 +23,39 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
     company: '',
     message: '',
   })
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
-  const interests = [
-    'Google Workspace',
-    'Google Cloud',
-    'Azure',
-    'AI Automation',
-    'Chat-Commerce',
-  ]
+  const interests = solutions.map((s) => s.name)
 
   const toggleInterest = (interest: string) => {
     setSelectedInterests((prev) =>
-      prev.includes(interest)
-        ? prev.filter((i) => i !== interest)
-        : [...prev, interest]
+      prev.includes(interest) ? prev.filter((i) => i !== interest) : [...prev, interest]
     )
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('submitting')
+    const result = await submitLead({
+      ...formData,
+      interests: selectedInterests,
+      locale,
+      source: 'consultation_panel',
+    })
+    if (result.ok) {
+      setStatus('success')
+      setFormData({ name: '', email: '', company: '', message: '' })
+      setSelectedInterests([])
+    } else {
+      setStatus('error')
+      setErrorMessage(result.error || '')
+    }
+  }
+
+  const handleClose = () => {
+    setStatus('idle')
+    onClose()
   }
 
   return (
@@ -43,7 +67,7 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
+            onClick={handleClose}
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
           />
 
@@ -58,81 +82,101 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
             <div className="p-6">
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold">Let&apos;s Design Your Infrastructure</h2>
-                <button
-                  onClick={onClose}
-                  className="p-2 hover:bg-primary/10 rounded-lg transition-colors"
-                >
+                <h2 className="text-2xl font-bold">Book a Free Setup Consultation</h2>
+                <button onClick={handleClose} className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
                   <X size={24} />
                 </button>
               </div>
 
-              {/* Interest Selection */}
-              <div className="mb-6">
-                <label className="block text-sm font-semibold mb-3">Choose interest:</label>
-                <div className="space-y-2">
-                  {interests.map((interest) => (
-                    <label
-                      key={interest}
-                      className="flex items-center gap-3 p-3 rounded-lg border border-primary/20 hover:border-primary/40 cursor-pointer transition-colors"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={selectedInterests.includes(interest)}
-                        onChange={() => toggleInterest(interest)}
-                        className="w-4 h-4 text-primary rounded border-primary/30 focus:ring-primary"
-                      />
-                      <span className="text-sm">{interest}</span>
-                    </label>
-                  ))}
+              {status === 'success' ? (
+                <div className="flex items-start gap-4 p-6 rounded-lg bg-primary/10 border border-primary/30">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold text-white mb-1">Thanks — we&apos;ve got it.</p>
+                    <p className="text-gray-400 text-sm">A member of our team will reach out within one business day.</p>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <>
+                  {/* Interest Selection */}
+                  <div className="mb-6">
+                    <label className="block text-sm font-semibold mb-3">Which solutions are you interested in?</label>
+                    <div className="space-y-2">
+                      {interests.map((interest) => (
+                        <label
+                          key={interest}
+                          className="flex items-center gap-3 p-3 rounded-lg border border-primary/20 hover:border-primary/40 cursor-pointer transition-colors"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={selectedInterests.includes(interest)}
+                            onChange={() => toggleInterest(interest)}
+                            className="w-4 h-4 text-primary rounded border-primary/30 focus:ring-primary"
+                          />
+                          <span className="text-sm">{interest}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
 
-              {/* Form */}
-              <form className="space-y-4 mb-6">
-                <div>
-                  <label className="block text-sm font-semibold mb-2">Name</label>
-                  <input
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold mb-2">Email</label>
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold mb-2">Company</label>
-                  <input
-                    type="text"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold mb-2">Message</label>
-                  <textarea
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={4}
-                    className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 transition-colors"
-                >
-                  Submit
-                </button>
-              </form>
+                  {/* Form */}
+                  <form onSubmit={handleSubmit} className="space-y-4 mb-6">
+                    {status === 'error' && (
+                      <div className="flex items-start gap-3 p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+                        <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-red-300">
+                          {errorMessage || 'Something went wrong sending your message.'}
+                        </p>
+                      </div>
+                    )}
+                    <div>
+                      <label className="block text-sm font-semibold mb-2">Name</label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold mb-2">Email</label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold mb-2">Company</label>
+                      <input
+                        type="text"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold mb-2">Message</label>
+                      <textarea
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        rows={4}
+                        className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm resize-none"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={status === 'submitting'}
+                      className="w-full px-6 py-3 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {status === 'submitting' ? 'Sending...' : 'Submit'}
+                    </button>
+                  </form>
+                </>
+              )}
 
               {/* Contact Info */}
               <div className="border-t border-primary/20 pt-6 space-y-3">
@@ -145,9 +189,9 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
                 <div className="flex items-center gap-3">
                   <Phone size={18} className="text-primary" />
                   <div className="text-sm text-gray-300 space-y-1">
-                    <div>🇺🇸 +1 332 333 9868</div>
-                    <div>🇹🇭 +66 98 113 5613</div>
-                    <div>🇲🇲 +95 95186635</div>
+                    <div>US: +1 332 333 9868</div>
+                    <div>Thailand: +66 98 113 5613</div>
+                    <div>Myanmar: +95 95186635</div>
                   </div>
                 </div>
               </div>
@@ -158,4 +202,3 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
     </AnimatePresence>
   )
 }
-
