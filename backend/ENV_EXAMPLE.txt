@@ -1,0 +1,26 @@
+# Supabase Configuration
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_anon_key
+
+# API Security
+ADMIN_API_TOKEN=your_secure_admin_token_here
+
+# Rate Limiting
+RATE_LIMIT_PER_MINUTE=60
+
+# IP Info API (optional, for enhanced geo data)
+IPINFO_TOKEN=your_ipinfo_token_optional
+
+# Security Configuration
+# CORS: Comma-separated list of allowed origins
+ALLOWED_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
+
+# Abuse Detection: Max requests per minute per IP
+ABUSE_THRESHOLD_PER_MINUTE=50
+
+# GDPR Compliance: Enable IP anonymization
+ENABLE_GDPR_ANONYMIZATION=false
+
+# IP Hashing: Secure random salt for IP hashing (generate with: python -c "import secrets; print(secrets.token_urlsafe(32))")
+IP_HASH_SALT=your-secure-random-salt-here-change-in-production
+

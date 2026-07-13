@@ -1,0 +1,69 @@
+{
+  "common": {
+    "companyName": "MMKK AI",
+    "tagline": "Connecting… Future"
+  },
+  "nav": {
+    "products": "Products",
+    "services": "Services",
+    "contact": "Contact",
+    "bookCall": "Book Strategy Call"
+  },
+  "hero": {
+    "title1": "Official Cloud & AI",
+    "title2": "Deployment Partner",
+    "badge1": "Official Google Cloud Co-Sell Partner",
+    "badge2": "Microsoft Azure Deployment Partner",
+    "product1": "Google Cloud & Gemini AI",
+    "product2": "Microsoft Azure Infrastructure",
+    "product3": "AI Revenue Systems",
+    "button1": "Deploy Google Cloud & Gemini",
+    "button2": "Deploy AI System",
+    "button3": "Launch Sales Engine"
+  },
+  "footer": {
+    "description": "AI Revenue & Cloud Infrastructure Partner",
+    "navigation": "Navigation",
+    "company": "Company",
+    "home": "Home",
+    "whoWeServe": "Who We Serve",
+    "products": "Products",
+    "contact": "Contact",
+    "services": "Services",
+    "solutions": "Solutions",
+    "copyright": "© {year} MMKK AI. All rights reserved.",
+    "us": "US",
+    "thailand": "Thailand",
+    "myanmar": "Myanmar"
+  },
+  "contact": {
+    "title": "Contact MMKK AI",
+    "subtitle": "Speak directly with our cloud & AI infrastructure team.",
+    "getInTouch": "Get in Touch",
+    "email": "Email",
+    "phoneNumbers": "Phone Numbers",
+    "requestConsultation": "Request Consultation",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your.email@company.com",
+    "company": "Company",
+    "companyPlaceholder": "Your company name",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your infrastructure needs...",
+    "required": "*",
+    "submit": "Request Consultation"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Enterprise cloud infrastructure and AI solutions."
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete infrastructure deployment and optimization services."
+  },
+  "metadata": {
+    "title": "MMKK AI | Revenue Infrastructure for the AI Era",
+    "description": "Cloud. AI. Automation. Built for Growth-Focused Enterprises."
+  }
+}
+

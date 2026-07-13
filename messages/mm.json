@@ -1,0 +1,69 @@
+{
+  "common": {
+    "companyName": "MMKK AI",
+    "tagline": "ဆက်သွယ်နေသည်… အနာဂတ်"
+  },
+  "nav": {
+    "products": "ထုတ်ကုန်များ",
+    "services": "ဝန်ဆောင်မှုများ",
+    "contact": "ဆက်သွယ်ရန်",
+    "bookCall": "မဟာဗျူဟာဆွေးနွေးပွဲ စာရင်းသွင်းရန်"
+  },
+  "hero": {
+    "title1": "တရားဝင် Cloud & AI",
+    "title2": "အသုံးပြုမှု လုပ်ဖော်ကိုင်ဖက်",
+    "badge1": "တရားဝင် Google Cloud Co-Sell လုပ်ဖော်ကိုင်ဖက်",
+    "badge2": "Microsoft Azure အသုံးပြုမှု လုပ်ဖော်ကိုင်ဖက်",
+    "product1": "Google Cloud & Gemini AI",
+    "product2": "Microsoft Azure အခြေခံအဆောက်အအုံ",
+    "product3": "AI Revenue စနစ်များ",
+    "button1": "Google Cloud & Gemini ကို အသုံးပြုရန်",
+    "button2": "AI စနစ်ကို အသုံးပြုရန်",
+    "button3": "Sales Engine ကို စတင်ရန်"
+  },
+  "footer": {
+    "description": "AI Revenue & Cloud အခြေခံအဆောက်အအုံ လုပ်ဖော်ကိုင်ဖက်",
+    "navigation": "လမ်းညွှန်",
+    "company": "ကုမ္ပဏီ",
+    "home": "ပင်မစာမျက်နှာ",
+    "whoWeServe": "ကျွန်ုပ်တို့ ဝန်ဆောင်မှုပေးသော လူများ",
+    "products": "ထုတ်ကုန်များ",
+    "contact": "ဆက်သွယ်ရန်",
+    "services": "ဝန်ဆောင်မှုများ",
+    "solutions": "ဖြေရှင်းချက်များ",
+    "copyright": "© {year} MMKK AI. မူပိုင်ခွင့်အားလုံး လက်ဝယ်ရှိသည်။",
+    "us": "အမေရိကန်",
+    "thailand": "ထိုင်းနိုင်ငံ",
+    "myanmar": "မြန်မာ"
+  },
+  "contact": {
+    "title": "MMKK AI ကို ဆက်သွယ်ရန်",
+    "subtitle": "ကျွန်ုပ်တို့၏ cloud & AI အခြေခံအဆောက်အအုံ အဖွဲ့နှင့် တိုက်ရိုက်စကားပြောဆိုရန်။",
+    "getInTouch": "ဆက်သွယ်ရန်",
+    "email": "အီးမေးလ်",
+    "phoneNumbers": "ဖုန်းနံပါတ်များ",
+    "requestConsultation": "အကြံဉာဏ်တောင်းရန်",
+    "name": "အမည်",
+    "namePlaceholder": "သင့်အမည်",
+    "emailPlaceholder": "your.email@company.com",
+    "company": "ကုမ္ပဏီ",
+    "companyPlaceholder": "သင့်ကုမ္ပဏီအမည်",
+    "message": "မက်ဆေ့ချ်",
+    "messagePlaceholder": "သင့်အခြေခံအဆောက်အအုံလိုအပ်ချက်များအကြောင်း ပြောပြပါ...",
+    "required": "*",
+    "submit": "အကြံဉာဏ်တောင်းရန်"
+  },
+  "products": {
+    "title": "ကျွန်ုပ်တို့၏ ထုတ်ကုန်များ",
+    "subtitle": "လုပ်ငန်းကြီးများအတွက် Cloud အခြေခံအဆောက်အအုံနှင့် AI ဖြေရှင်းချက်များ"
+  },
+  "services": {
+    "title": "ကျွန်ုပ်တို့၏ ဝန်ဆောင်မှုများ",
+    "subtitle": "အခြေခံအဆောက်အအုံ အသုံးပြုမှုနှင့် အကောင်းဆုံးဖြစ်အောင် ပြုလုပ်ခြင်း ဝန်ဆောင်မှုများ"
+  },
+  "metadata": {
+    "title": "MMKK AI | AI ခေတ်အတွက် Revenue အခြေခံအဆောက်အအုံ",
+    "description": "Cloud. AI. Automation. ကြီးထွားမှုကို အာရုံစိုက်သော လုပ်ငန်းများအတွက် တည်ဆောက်ထားသည်"
+  }
+}
+
