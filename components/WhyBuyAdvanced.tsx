@@ -49,12 +49,12 @@ export default function WhyBuyAdvanced() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl md:text-[26px] font-bold font-display mb-6 tracking-tight">
-              Infrastructure Advantage
+              Why Businesses Choose MMKK AI
             </h2>
             <p className="text-base text-gray-300 leading-relaxed mb-8">
-              You&apos;re not buying licenses.
+              You&apos;re not just buying licenses.
               <br />
-              You&apos;re building infrastructure.
+              You&apos;re getting a local partner who sets it up right and supports it after.
             </p>
           </motion.div>
 

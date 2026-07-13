@@ -4,33 +4,77 @@
     "tagline": "Connecting… Future"
   },
   "nav": {
-    "products": "Products",
-    "services": "Services",
+    "home": "Home",
+    "solutions": "Solutions",
+    "industries": "Industries",
+    "resources": "Resources",
+    "about": "About",
     "contact": "Contact",
-    "bookCall": "Book Strategy Call"
+    "bookCall": "Book a Consultation",
+    "viewAllSolutions": "View all solutions",
+    "viewAllIndustries": "View all industries"
   },
   "hero": {
-    "title1": "Official Cloud & AI",
-    "title2": "Deployment Partner",
-    "badge1": "Official Google Cloud Co-Sell Partner",
-    "badge2": "Microsoft Azure Deployment Partner",
-    "product1": "Google Cloud & Gemini AI",
-    "product2": "Microsoft Azure Infrastructure",
-    "product3": "AI Revenue Systems",
-    "button1": "Deploy Google Cloud & Gemini",
-    "button2": "Deploy AI System",
-    "button3": "Launch Sales Engine"
+    "eyebrow": "Google Cloud implementation and support  ·  Microsoft cloud deployment services",
+    "title1": "Cloud, CRM & AI Solutions",
+    "title2": "for Growing Businesses",
+    "subtitle": "Google Workspace, Microsoft 365, HubSpot, Apollo, Google Cloud and AI Automation — deployed, migrated and supported across Myanmar and Thailand.",
+    "primaryCta": "Book a Free Setup Consultation",
+    "secondaryCta": "Explore Solutions"
+  },
+  "pillars": {
+    "title": "Everything your business runs on, set up right",
+    "subtitle": "Five areas of work. Eight products. One local partner across Myanmar and Thailand."
+  },
+  "whoWeServe": {
+    "title": "Who We Serve",
+    "subtitle": "Built for organizations that need business technology to just work, not another IT headache.",
+    "items": [
+      {
+        "name": "SMEs",
+        "description": "Small and medium enterprises setting up their first real IT stack"
+      },
+      {
+        "name": "Mid-Market Companies",
+        "description": "Growing teams outgrowing spreadsheets and ad-hoc tools"
+      },
+      {
+        "name": "Enterprises",
+        "description": "Larger organizations migrating or consolidating platforms"
+      },
+      {
+        "name": "International Schools",
+        "description": "Google Workspace for Education and admin systems for staff and students"
+      },
+      {
+        "name": "Real Estate Companies",
+        "description": "CRM and lead generation for listings and client pipelines"
+      },
+      {
+        "name": "Technology Companies",
+        "description": "Google Cloud architecture and AI automation for product teams"
+      },
+      {
+        "name": "Professional Services Firms",
+        "description": "CRM, productivity, and support for client-facing teams"
+      }
+    ]
+  },
+  "faqSection": {
+    "title": "Common Questions",
+    "subtitle": "Direct answers about deploying cloud, CRM, and AI systems in Myanmar and Thailand."
   },
   "footer": {
-    "description": "AI Revenue & Cloud Infrastructure Partner",
+    "description": "Cloud, CRM & AI Solutions Partner for Myanmar and Thailand",
     "navigation": "Navigation",
+    "solutionsCol": "Solutions",
     "company": "Company",
     "home": "Home",
-    "whoWeServe": "Who We Serve",
-    "products": "Products",
-    "contact": "Contact",
-    "services": "Services",
     "solutions": "Solutions",
+    "industries": "Industries",
+    "resources": "Resources",
+    "about": "About",
+    "contact": "Contact",
     "copyright": "© {year} MMKK AI. All rights reserved.",
     "us": "US",
     "thailand": "Thailand",
@@ -38,7 +82,7 @@
   },
   "contact": {
     "title": "Contact MMKK AI",
-    "subtitle": "Speak directly with our cloud & AI infrastructure team.",
+    "subtitle": "Speak directly with our Myanmar and Thailand deployment team.",
     "getInTouch": "Get in Touch",
     "email": "Email",
     "phoneNumbers": "Phone Numbers",
@@ -49,21 +93,58 @@
     "company": "Company",
     "companyPlaceholder": "Your company name",
     "message": "Message",
-    "messagePlaceholder": "Tell us about your infrastructure needs...",
+    "messagePlaceholder": "Tell us which solution you're interested in and your timeline...",
     "required": "*",
-    "submit": "Request Consultation"
+    "submit": "Request Consultation",
+    "submitting": "Sending...",
+    "successTitle": "Thanks — we've got it.",
+    "successMessage": "A member of our team will reach out within one business day.",
+    "errorMessage": "Something went wrong sending your message. Please email sales@mmkkai.com directly.",
+    "consentText": "I agree to MMKK AI contacting me about this enquiry and to the collection of the information above in line with the",
+    "consentPrivacyLink": "Privacy Policy",
+    "consentRequired": "Please confirm you agree to the privacy policy before submitting."
   },
   "products": {
-    "title": "Our Products",
-    "subtitle": "Enterprise cloud infrastructure and AI solutions."
+    "title": "Our Solutions",
+    "subtitle": "Cloud, CRM, and AI Automation — deployed, migrated, and supported."
   },
   "services": {
-    "title": "Our Services",
-    "subtitle": "Complete infrastructure deployment and optimization services."
+    "title": "Our Solutions",
+    "subtitle": "Cloud, CRM, and AI Automation — deployed, migrated, and supported."
+  },
+  "solutionsPage": {
+    "title": "Solutions",
+    "subtitle": "Eight products across five pillars — everything a growing business needs to run on modern cloud, CRM, and AI infrastructure.",
+    "availableIn": "Available in",
+    "relatedTitle": "Related Solutions",
+    "countryCtaMyanmar": "See this solution in Myanmar",
+    "countryCtaThailand": "See this solution in Thailand"
+  },
+  "industriesPage": {
+    "title": "Industries We Serve",
+    "subtitle": "The same five-pillar technology stack, tailored to how each industry actually works."
+  },
+  "resourcesPage": {
+    "title": "Resources",
+    "subtitle": "Guides for choosing and deploying the cloud, CRM, and AI tools your business runs on."
+  },
+  "aboutPage": {
+    "title": "About MMKK AI",
+    "subtitle": "The business technology partner behind growing companies in Myanmar and Thailand.",
+    "body1": "MMKK AI was built to close a specific gap: businesses in Myanmar and Thailand need Google Workspace, Microsoft 365, HubSpot, Apollo, Google Cloud, and AI automation set up correctly and supported locally — not a generic offshore support ticket queue.",
+    "body2": "We provide Google Cloud implementation and support and Microsoft cloud deployment services, combining hands-on platform experience with on-the-ground support across our offices in the US, Thailand, and Myanmar.",
+    "officesTitle": "Offices"
+  },
+  "landingPage": {
+    "faqTitle": "Frequently Asked Questions",
+    "featuresTitle": "What's Included",
+    "ctaTitle": "Ready to get started?",
+    "ctaSubtitle": "Book a free consultation and we'll scope your setup within one business day.",
+    "relatedGuide": "Related Guide",
+    "backToSolution": "Back to solution overview"
   },
   "metadata": {
-    "title": "MMKK AI | Revenue Infrastructure for the AI Era",
-    "description": "Cloud. AI. Automation. Built for Growth-Focused Enterprises."
+    "title": "MMKK AI | Cloud, CRM & AI Solutions for Myanmar and Thailand",
+    "description": "Google Workspace, Microsoft 365, HubSpot, Apollo, Google Cloud and AI Automation — deployed, migrated and supported across Myanmar and Thailand."
   }
 }
-

@@ -21,7 +21,7 @@ export default function InfrastructureFlow() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Infrastructure Flow
+          How We Work
         </motion.h2>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">

@@ -4,41 +4,85 @@
     "tagline": "เชื่อมต่อ… อนาคต"
   },
   "nav": {
-    "products": "ผลิตภัณฑ์",
-    "services": "บริการ",
+    "home": "หน้าแรก",
+    "solutions": "โซลูชัน",
+    "industries": "อุตสาหกรรม",
+    "resources": "แหล่งข้อมูล",
+    "about": "เกี่ยวกับเรา",
     "contact": "ติดต่อ",
-    "bookCall": "จองการปรึกษา"
+    "bookCall": "จองคำปรึกษา",
+    "viewAllSolutions": "ดูโซลูชันทั้งหมด",
+    "viewAllIndustries": "ดูอุตสาหกรรมทั้งหมด"
   },
   "hero": {
-    "title1": "พันธมิตรการใช้งาน",
-    "title2": "Cloud & AI อย่างเป็นทางการ",
-    "badge1": "พันธมิตร Co-Sell ของ Google Cloud อย่างเป็นทางการ",
-    "badge2": "พันธมิตรการใช้งาน Microsoft Azure",
-    "product1": "Google Cloud & Gemini AI",
-    "product2": "โครงสร้างพื้นฐาน Microsoft Azure",
-    "product3": "ระบบ AI Revenue",
-    "button1": "ใช้งาน Google Cloud & Gemini",
-    "button2": "ใช้งานระบบ AI",
-    "button3": "เปิดตัว Sales Engine"
+    "eyebrow": "บริการติดตั้งและดูแล Google Cloud · บริการติดตั้งใช้งาน Microsoft Cloud",
+    "title1": "โซลูชัน Cloud, CRM และ AI",
+    "title2": "สำหรับธุรกิจที่กำลังเติบโต",
+    "subtitle": "Google Workspace, Microsoft 365, HubSpot, Apollo, Google Cloud และ AI Automation — ติดตั้ง ย้ายระบบ และดูแลทั่วเมียนมาร์และไทย",
+    "primaryCta": "จองคำปรึกษาฟรี",
+    "secondaryCta": "ดูโซลูชันทั้งหมด"
+  },
+  "pillars": {
+    "title": "ทุกระบบที่ธุรกิจคุณใช้งาน ติดตั้งอย่างถูกต้อง",
+    "subtitle": "5 ด้านการทำงาน 8 ผลิตภัณฑ์ พันธมิตรท้องถิ่นเดียวทั่วเมียนมาร์และไทย"
+  },
+  "whoWeServe": {
+    "title": "ลูกค้าที่เราให้บริการ",
+    "subtitle": "ออกแบบมาสำหรับองค์กรที่ต้องการให้เทคโนโลยีธุรกิจทำงานได้จริง ไม่ใช่ปัญหาไอทีเพิ่มเติม",
+    "items": [
+      {
+        "name": "SMEs",
+        "description": "ธุรกิจขนาดเล็กและกลางที่กำลังวางระบบไอทีชุดแรก"
+      },
+      {
+        "name": "บริษัทระดับกลาง",
+        "description": "ทีมที่กำลังเติบโตเกินกว่าสเปรดชีตและเครื่องมือชั่วคราว"
+      },
+      {
+        "name": "องค์กรขนาดใหญ่",
+        "description": "องค์กรขนาดใหญ่ที่กำลังย้ายหรือรวมระบบแพลตฟอร์ม"
+      },
+      {
+        "name": "โรงเรียนนานาชาติ",
+        "description": "Google Workspace for Education และระบบบริหารสำหรับครูและนักเรียน"
+      },
+      {
+        "name": "บริษัทอสังหาริมทรัพย์",
+        "description": "CRM และการหาลูกค้าใหม่สำหรับรายการทรัพย์สินและไปป์ไลน์ลูกค้า"
+      },
+      {
+        "name": "บริษัทเทคโนโลยี",
+        "description": "สถาปัตยกรรม Google Cloud และ AI Automation สำหรับทีมผลิตภัณฑ์"
+      },
+      {
+        "name": "บริษัทที่ปรึกษาวิชาชีพ",
+        "description": "CRM การทำงาน และการสนับสนุนสำหรับทีมที่ดูแลลูกค้า"
+      }
+    ]
+  },
+  "faqSection": {
+    "title": "คำถามที่พบบ่อย",
+    "subtitle": "คำตอบตรงประเด็นเกี่ยวกับการติดตั้งระบบ Cloud, CRM และ AI ในเมียนมาร์และไทย"
   },
   "footer": {
-    "description": "พันธมิตรโครงสร้างพื้นฐาน Cloud และ AI Revenue",
+    "description": "พันธมิตรโซลูชัน Cloud, CRM และ AI สำหรับเมียนมาร์และไทย",
     "navigation": "นำทาง",
+    "solutionsCol": "โซลูชัน",
     "company": "บริษัท",
     "home": "หน้าแรก",
-    "whoWeServe": "ผู้ที่เราบริการ",
-    "products": "ผลิตภัณฑ์",
-    "contact": "ติดต่อ",
-    "services": "บริการ",
     "solutions": "โซลูชัน",
-    "copyright": "© {year} MMKK AI. สงวนลิขสิทธิ์",
+    "industries": "อุตสาหกรรม",
+    "resources": "แหล่งข้อมูล",
+    "about": "เกี่ยวกับเรา",
+    "contact": "ติดต่อ",
+    "copyright": "© {year} MMKK AI สงวนลิขสิทธิ์",
     "us": "สหรัฐอเมริกา",
     "thailand": "ประเทศไทย",
     "myanmar": "เมียนมาร์"
   },
   "contact": {
     "title": "ติดต่อ MMKK AI",
-    "subtitle": "พูดคุยโดยตรงกับทีมโครงสร้างพื้นฐาน Cloud & AI ของเรา",
+    "subtitle": "พูดคุยโดยตรงกับทีมงานของเราในเมียนมาร์และไทย",
     "getInTouch": "ติดต่อเรา",
     "email": "อีเมล",
     "phoneNumbers": "เบอร์โทรศัพท์",
@@ -49,21 +93,58 @@
     "company": "บริษัท",
     "companyPlaceholder": "ชื่อบริษัทของคุณ",
     "message": "ข้อความ",
-    "messagePlaceholder": "บอกเราเกี่ยวกับความต้องการโครงสร้างพื้นฐานของคุณ...",
+    "messagePlaceholder": "บอกเราว่าคุณสนใจโซลูชันใดและกรอบเวลาของคุณ...",
     "required": "*",
-    "submit": "ขอคำปรึกษา"
+    "submit": "ขอคำปรึกษา",
+    "submitting": "กำลังส่ง...",
+    "successTitle": "ขอบคุณ เราได้รับข้อความแล้ว",
+    "successMessage": "ทีมงานของเราจะติดต่อกลับภายในหนึ่งวันทำการ",
+    "errorMessage": "เกิดข้อผิดพลาดในการส่งข้อความ กรุณาอีเมลมาที่ sales@mmkkai.com โดยตรง",
+    "consentText": "ฉันยินยอมให้ MMKK AI ติดต่อฉันเกี่ยวกับคำขอนี้ และยินยอมให้จัดเก็บข้อมูลข้างต้นตาม",
+    "consentPrivacyLink": "นโยบายความเป็นส่วนตัว",
+    "consentRequired": "กรุณายืนยันว่าคุณยอมรับนโยบายความเป็นส่วนตัวก่อนส่งข้อมูล"
   },
   "products": {
-    "title": "ผลิตภัณฑ์ของเรา",
-    "subtitle": "โครงสร้างพื้นฐาน Cloud และโซลูชัน AI สำหรับองค์กร"
+    "title": "โซลูชันของเรา",
+    "subtitle": "Cloud, CRM และ AI Automation — ติดตั้ง ย้ายระบบ และดูแล"
   },
   "services": {
-    "title": "บริการของเรา",
-    "subtitle": "บริการการใช้งานและปรับปรุงโครงสร้างพื้นฐานที่สมบูรณ์"
+    "title": "โซลูชันของเรา",
+    "subtitle": "Cloud, CRM และ AI Automation — ติดตั้ง ย้ายระบบ และดูแล"
+  },
+  "solutionsPage": {
+    "title": "โซลูชัน",
+    "subtitle": "8 ผลิตภัณฑ์ใน 5 ด้านหลัก — ทุกสิ่งที่ธุรกิจที่กำลังเติบโตต้องการเพื่อใช้งานระบบ Cloud, CRM และ AI สมัยใหม่",
+    "availableIn": "ให้บริการใน",
+    "relatedTitle": "โซลูชันที่เกี่ยวข้อง",
+    "countryCtaMyanmar": "ดูโซลูชันนี้ในเมียนมาร์",
+    "countryCtaThailand": "ดูโซลูชันนี้ในไทย"
+  },
+  "industriesPage": {
+    "title": "อุตสาหกรรมที่เราให้บริการ",
+    "subtitle": "ระบบเทคโนโลยี 5 ด้านเดียวกัน ปรับให้เหมาะกับการทำงานจริงของแต่ละอุตสาหกรรม"
+  },
+  "resourcesPage": {
+    "title": "แหล่งข้อมูล",
+    "subtitle": "คู่มือสำหรับการเลือกและติดตั้งเครื่องมือ Cloud, CRM และ AI ที่ธุรกิจของคุณใช้งาน"
+  },
+  "aboutPage": {
+    "title": "เกี่ยวกับ MMKK AI",
+    "subtitle": "พันธมิตรเทคโนโลยีธุรกิจเบื้องหลังบริษัทที่กำลังเติบโตในเมียนมาร์และไทย",
+    "body1": "MMKK AI ก่อตั้งขึ้นเพื่อปิดช่องว่างที่ชัดเจน: ธุรกิจในเมียนมาร์และไทยต้องการ Google Workspace, Microsoft 365, HubSpot, Apollo, Google Cloud และ AI Automation ที่ติดตั้งอย่างถูกต้องและดูแลในพื้นที่ ไม่ใช่คิวซัพพอร์ตจากต่างประเทศทั่วไป",
+    "body2": "เราให้บริการติดตั้งและดูแล Google Cloud และบริการติดตั้งใช้งาน Microsoft Cloud โดยผสมผสานประสบการณ์แพลตฟอร์มจริงเข้ากับการสนับสนุนในพื้นที่ผ่านสำนักงานในสหรัฐอเมริกา ไทย และเมียนมาร์",
+    "officesTitle": "สำนักงาน"
+  },
+  "landingPage": {
+    "faqTitle": "คำถามที่พบบ่อย",
+    "featuresTitle": "สิ่งที่รวมอยู่ในบริการ",
+    "ctaTitle": "พร้อมเริ่มต้นแล้วหรือยัง?",
+    "ctaSubtitle": "จองคำปรึกษาฟรี และเราจะประเมินขอบเขตงานให้ภายในหนึ่งวันทำการ",
+    "relatedGuide": "คู่มือที่เกี่ยวข้อง",
+    "backToSolution": "กลับไปที่ภาพรวมโซลูชัน"
   },
   "metadata": {
-    "title": "MMKK AI | โครงสร้างพื้นฐาน Revenue สำหรับยุค AI",
-    "description": "Cloud. AI. Automation. สร้างสำหรับองค์กรที่มุ่งเน้นการเติบโต"
+    "title": "MMKK AI | โซลูชัน Cloud, CRM และ AI สำหรับเมียนมาร์และไทย",
+    "description": "Google Workspace, Microsoft 365, HubSpot, Apollo, Google Cloud และ AI Automation — ติดตั้ง ย้ายระบบ และดูแลทั่วเมียนมาร์และไทย"
   }
 }
-
