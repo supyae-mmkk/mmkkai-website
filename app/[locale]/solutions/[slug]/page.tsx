@@ -1,17 +1,18 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Check, ArrowRight } from 'lucide-react'
+import { Check, ArrowRight, ExternalLink } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import CTASection from '@/components/CTASection'
 import FaqSection from '@/components/FaqSection'
 import JsonLd from '@/components/JsonLd'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { solutions, getSolution, pillars } from '@/lib/solutions'
-import { countries } from '@/lib/countries'
-import { landingPages } from '@/lib/landingPages'
+import { guides } from '@/lib/guides'
+import { industries } from '@/lib/industries'
 import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
-import { buildMetadata } from '@/lib/seo'
+import { buildMetadata, pickLocaleMeta } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 
@@ -25,11 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params
   const solution = getSolution(slug)
   if (!solution) return {}
+  const meta = pickLocaleMeta(solution.meta, locale)
   return buildMetadata({
     locale,
     path: `solutions/${slug}`,
-    title: `${solution.name} | MMKK AI`,
-    description: solution.description.slice(0, 155),
+    title: meta.title,
+    description: meta.description,
   })
 }
 
@@ -43,9 +45,10 @@ export default async function SolutionPage({ params }: Props) {
   const url = `${BASE_URL}/${locale}/solutions/${slug}`
 
   const related = solutions.filter((s) => s.pillar === solution.pillar && s.slug !== solution.slug)
-  // FAQ entries pulled from any country landing page tied to this solution,
-  // so the solution overview page also carries FAQPage schema (Phase 3.6/3.7).
-  const relatedFaq = landingPages.filter((p) => p.solutionSlug === solution.slug).flatMap((p) => p.faq).slice(0, 4)
+  // Guides that reference this solution directly (Priority 7: solution -> guide links).
+  const relatedGuides = guides.filter((g) => g.solutionSlug === solution.slug)
+  // Industries whose relevantSolutions list includes this solution.
+  const relatedIndustries = industries.filter((i) => i.relevantSolutions.includes(solution.slug))
 
   return (
     <main className="min-h-screen">
@@ -53,9 +56,9 @@ export default async function SolutionPage({ params }: Props) {
         data={[
           serviceSchema({
             name: solution.name,
-            description: solution.description,
+            description: solution.whatItDoes,
             url,
-            areaServed: 'Myanmar, Thailand',
+            areaServed: solution.countries,
             serviceType: solution.name,
           }),
           breadcrumbSchema([
@@ -69,9 +72,16 @@ export default async function SolutionPage({ params }: Props) {
 
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs
+            items={[
+              { name: 'Home', href: `/${locale}` },
+              { name: 'Solutions', href: `/${locale}/solutions` },
+              { name: solution.name, href: '' },
+            ]}
+          />
           <p className="text-sm uppercase tracking-wide text-primary mb-3">{pillars[solution.pillar].name}</p>
           <h1 className="text-4xl md:text-5xl font-bold font-display mb-6">{solution.name}</h1>
-          <p className="text-xl text-gray-400 leading-relaxed">{solution.description}</p>
+          <p className="text-xl text-gray-400 leading-relaxed">{solution.whatItDoes}</p>
 
           {solution.countries.length > 0 && (
             <div className="flex flex-wrap gap-3 mt-8">
@@ -97,8 +107,55 @@ export default async function SolutionPage({ params }: Props) {
       </section>
 
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background/50">
+        <div className="max-w-4xl mx-auto space-y-10">
+          <div>
+            <h2 className="text-xl font-bold text-primary mb-3">Who this is for</h2>
+            <p className="text-gray-300 leading-relaxed">{solution.suitableFor}</p>
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-primary mb-3">Business outcomes</h2>
+            <ul className="space-y-2">
+              {solution.outcomes.map((o) => (
+                <li key={o} className="flex items-start gap-3 text-gray-300">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  {o}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-primary mb-3">Implementation scope</h2>
+            <p className="text-gray-300 leading-relaxed">{solution.implementationScope}</p>
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-primary mb-3">Migration considerations</h2>
+            <p className="text-gray-300 leading-relaxed">{solution.migrationConsiderations}</p>
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-primary mb-3">Security and administration</h2>
+            <p className="text-gray-300 leading-relaxed">{solution.security}</p>
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-primary mb-3">Integrations</h2>
+            <ul className="space-y-2">
+              {solution.integrations.map((i) => (
+                <li key={i} className="flex items-start gap-3 text-gray-300">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  {i}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-primary mb-3">Limitations</h2>
+            <p className="text-gray-300 leading-relaxed">{solution.limitations}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold font-display mb-6">{t('title') === 'Solutions' ? "What's Included" : "What's Included"}</h2>
+          <h2 className="text-2xl font-bold font-display mb-6">What&apos;s Included</h2>
           <ul className="space-y-3">
             {solution.features.map((f) => (
               <li key={f} className="flex items-start gap-3 text-gray-300">
@@ -109,6 +166,25 @@ export default async function SolutionPage({ params }: Props) {
           </ul>
         </div>
       </section>
+
+      {relatedIndustries.length > 0 && (
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background/50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-xl font-bold font-display mb-6">Relevant Industries</h2>
+            <div className="flex flex-wrap gap-3">
+              {relatedIndustries.map((i) => (
+                <Link
+                  key={i.slug}
+                  href={`/industries#${i.slug}`}
+                  className="px-4 py-2 rounded-full border border-primary/30 text-sm text-gray-300 hover:border-primary/60 hover:text-primary transition-colors"
+                >
+                  {i.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="py-12 px-4 sm:px-6 lg:px-8">
@@ -126,7 +202,23 @@ export default async function SolutionPage({ params }: Props) {
         </section>
       )}
 
-      {relatedFaq.length > 0 && <FaqSection items={relatedFaq} title="Frequently Asked Questions" subtitle={`Common questions about ${solution.name}.`} />}
+      {relatedGuides.length > 0 && (
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background/50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-xl font-bold font-display mb-6">Related Guides</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {relatedGuides.map((g) => (
+                <Link key={g.slug} href={`/resources/${g.slug}`} className="glass neon-border rounded-lg p-4 hover:border-primary/60 transition-all flex items-center justify-between gap-3">
+                  <span className="font-semibold text-primary text-sm">{g.title}</span>
+                  <ExternalLink size={14} className="text-gray-500 flex-shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {solution.faq.length > 0 && <FaqSection items={solution.faq} title="Frequently Asked Questions" subtitle={`Common questions about ${solution.name}.`} />}
 
       <CTASection />
     </main>

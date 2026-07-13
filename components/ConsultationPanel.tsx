@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X, Mail, Phone, CheckCircle, AlertCircle } from 'lucide-react'
 import { useState } from 'react'
 import { useParams } from 'next/navigation'
+import Link from 'next/link'
 import { submitLead } from '@/lib/submitLead'
 import { solutions } from '@/lib/solutions'
 
@@ -22,7 +23,9 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
     email: '',
     company: '',
     message: '',
+    website: '', // honeypot
   })
+  const [consent, setConsent] = useState(false)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -34,19 +37,31 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
     )
   }
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!consent) {
+      setStatus('error')
+      setErrorMessage('Please confirm you agree to the privacy policy before submitting.')
+      return
+    }
     setStatus('submitting')
     const result = await submitLead({
       ...formData,
       interests: selectedInterests,
       locale,
       source: 'consultation_panel',
+      consent: true,
+      consentTimestamp: new Date().toISOString(),
     })
     if (result.ok) {
       setStatus('success')
-      setFormData({ name: '', email: '', company: '', message: '' })
+      setFormData({ name: '', email: '', company: '', message: '', website: '' })
       setSelectedInterests([])
+      setConsent(false)
     } else {
       setStatus('error')
       setErrorMessage(result.error || '')
@@ -92,7 +107,7 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
                 <div className="flex items-start gap-4 p-6 rounded-lg bg-primary/10 border border-primary/30">
                   <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-semibold text-white mb-1">Thanks — we&apos;ve got it.</p>
+                    <p className="font-semibold text-white mb-1">Thanks &mdash; we&apos;ve got it.</p>
                     <p className="text-gray-400 text-sm">A member of our team will reach out within one business day.</p>
                   </div>
                 </div>
@@ -120,7 +135,7 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
                   </div>
 
                   {/* Form */}
-                  <form onSubmit={handleSubmit} className="space-y-4 mb-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 mb-6" noValidate>
                     {status === 'error' && (
                       <div className="flex items-start gap-3 p-4 rounded-lg bg-red-500/10 border border-red-500/30">
                         <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
@@ -129,13 +144,29 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
                         </p>
                       </div>
                     )}
+
+                    {/* Honeypot */}
+                    <div className="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+                      <label htmlFor="cp-website">Website</label>
+                      <input
+                        type="text"
+                        id="cp-website"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.website}
+                        onChange={handleChange}
+                      />
+                    </div>
+
                     <div>
                       <label className="block text-sm font-semibold mb-2">Name</label>
                       <input
                         type="text"
+                        name="name"
                         required
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={handleChange}
                         className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm"
                       />
                     </div>
@@ -143,9 +174,10 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
                       <label className="block text-sm font-semibold mb-2">Email</label>
                       <input
                         type="email"
+                        name="email"
                         required
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={handleChange}
                         className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm"
                       />
                     </div>
@@ -153,23 +185,43 @@ export default function ConsultationPanel({ isOpen, onClose }: ConsultationPanel
                       <label className="block text-sm font-semibold mb-2">Company</label>
                       <input
                         type="text"
+                        name="company"
                         value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        onChange={handleChange}
                         className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold mb-2">Message</label>
                       <textarea
+                        name="message"
                         value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        onChange={handleChange}
                         rows={4}
                         className="w-full px-4 py-2 bg-background/50 border border-primary/20 rounded-lg focus:border-primary focus:outline-none text-sm resize-none"
                       />
                     </div>
+
+                    <label className="flex items-start gap-3 text-xs text-gray-400 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={consent}
+                        onChange={(e) => setConsent(e.target.checked)}
+                        className="mt-0.5 w-4 h-4 text-primary rounded border-primary/30 focus:ring-primary"
+                        required
+                      />
+                      <span>
+                        I agree to MMKK AI contacting me about this enquiry, per the{' '}
+                        <Link href="/privacy-policy" className="text-primary hover:underline" onClick={handleClose}>
+                          Privacy Policy
+                        </Link>
+                        .
+                      </span>
+                    </label>
+
                     <button
                       type="submit"
-                      disabled={status === 'submitting'}
+                      disabled={status === 'submitting' || !consent}
                       className="w-full px-6 py-3 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {status === 'submitting' ? 'Sending...' : 'Submit'}

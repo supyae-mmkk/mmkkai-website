@@ -7,6 +7,9 @@ export interface LeadPayload {
   locale?: string
   country?: string
   source?: string
+  consent?: boolean
+  consentTimestamp?: string
+  website?: string // honeypot - must stay empty; forms render it visually hidden
 }
 
 export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; error?: string }> {

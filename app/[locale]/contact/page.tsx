@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useParams } from 'next/navigation'
+import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { Mail, Phone, CheckCircle, AlertCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -19,17 +20,31 @@ export default function ContactPage() {
     email: '',
     company: '',
     message: '',
+    website: '', // honeypot - left blank by real users
   })
+  const [consent, setConsent] = useState(false)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!consent) {
+      setStatus('error')
+      setErrorMessage(t('consentRequired'))
+      return
+    }
     setStatus('submitting')
-    const result = await submitLead({ ...formData, locale, source: 'contact_page' })
+    const result = await submitLead({
+      ...formData,
+      locale,
+      source: 'contact_page',
+      consent: true,
+      consentTimestamp: new Date().toISOString(),
+    })
     if (result.ok) {
       setStatus('success')
-      setFormData({ name: '', email: '', company: '', message: '' })
+      setFormData({ name: '', email: '', company: '', message: '', website: '' })
+      setConsent(false)
     } else {
       setStatus('error')
       setErrorMessage(result.error || '')
@@ -112,13 +127,29 @@ export default function ContactPage() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                 {status === 'error' && (
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-red-500/10 border border-red-500/30">
                     <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
                     <p className="text-sm text-red-300">{errorMessage || t('errorMessage')}</p>
                   </div>
                 )}
+
+                {/* Honeypot - visually hidden from real users, left in the tab
+                    order off-screen rather than display:none so simple bots
+                    that only check computed visibility still fill it in. */}
+                <div className="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.website}
+                    onChange={handleChange}
+                  />
+                </div>
 
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold mb-2">
@@ -183,9 +214,26 @@ export default function ContactPage() {
                   />
                 </div>
 
+                <label className="flex items-start gap-3 text-sm text-gray-400 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    className="mt-1 w-4 h-4 text-primary rounded border-primary/30 focus:ring-primary"
+                    required
+                  />
+                  <span>
+                    {t('consentText')}{' '}
+                    <Link href="/privacy-policy" className="text-primary hover:underline">
+                      {t('consentPrivacyLink')}
+                    </Link>
+                    .
+                  </span>
+                </label>
+
                 <button
                   type="submit"
-                  disabled={status === 'submitting'}
+                  disabled={status === 'submitting' || !consent}
                   className="w-full px-8 py-4 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 transition-all hover-glow disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {status === 'submitting' ? t('submitting') : t('submit')}

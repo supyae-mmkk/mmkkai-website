@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import LandingPageTemplate from '@/components/LandingPageTemplate'
 import { getLandingPage, getLandingPagesForCountry } from '@/lib/landingPages'
-import { buildMetadata } from '@/lib/seo'
+import { buildMetadata, pickLocaleMeta } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 
@@ -16,11 +16,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params
   const page = getLandingPage('thailand', slug)
   if (!page) return {}
+  const localeMeta = pickLocaleMeta(page.meta, locale)
   return buildMetadata({
     locale,
     path: `thailand/${slug}`,
-    title: page.metaTitle,
-    description: page.metaDescription,
+    title: localeMeta.title,
+    description: localeMeta.description,
   })
 }
 

@@ -15,7 +15,7 @@
     "viewAllIndustries": "View all industries"
   },
   "hero": {
-    "eyebrow": "Official Google Cloud Co-Sell Partner  ·  Microsoft Azure Deployment Partner",
+    "eyebrow": "Google Cloud implementation and support  ·  Microsoft cloud deployment services",
     "title1": "Cloud, CRM & AI Solutions",
     "title2": "for Growing Businesses",
     "subtitle": "Google Workspace, Microsoft 365, HubSpot, Apollo, Google Cloud and AI Automation — deployed, migrated and supported across Myanmar and Thailand.",
@@ -30,13 +30,34 @@
     "title": "Who We Serve",
     "subtitle": "Built for organizations that need business technology to just work, not another IT headache.",
     "items": [
-      { "name": "SMEs", "description": "Small and medium enterprises setting up their first real IT stack" },
-      { "name": "Mid-Market Companies", "description": "Growing teams outgrowing spreadsheets and ad-hoc tools" },
-      { "name": "Enterprises", "description": "Larger organizations migrating or consolidating platforms" },
-      { "name": "International Schools", "description": "Google Workspace for Education and admin systems for staff and students" },
-      { "name": "Real Estate Companies", "description": "CRM and lead generation for listings and client pipelines" },
-      { "name": "Technology Companies", "description": "Google Cloud architecture and AI automation for product teams" },
-      { "name": "Professional Services Firms", "description": "CRM, productivity, and support for client-facing teams" }
+      {
+        "name": "SMEs",
+        "description": "Small and medium enterprises setting up their first real IT stack"
+      },
+      {
+        "name": "Mid-Market Companies",
+        "description": "Growing teams outgrowing spreadsheets and ad-hoc tools"
+      },
+      {
+        "name": "Enterprises",
+        "description": "Larger organizations migrating or consolidating platforms"
+      },
+      {
+        "name": "International Schools",
+        "description": "Google Workspace for Education and admin systems for staff and students"
+      },
+      {
+        "name": "Real Estate Companies",
+        "description": "CRM and lead generation for listings and client pipelines"
+      },
+      {
+        "name": "Technology Companies",
+        "description": "Google Cloud architecture and AI automation for product teams"
+      },
+      {
+        "name": "Professional Services Firms",
+        "description": "CRM, productivity, and support for client-facing teams"
+      }
     ]
   },
   "faqSection": {
@@ -78,7 +99,10 @@
     "submitting": "Sending...",
     "successTitle": "Thanks — we've got it.",
     "successMessage": "A member of our team will reach out within one business day.",
-    "errorMessage": "Something went wrong sending your message. Please email sales@mmkkai.com directly."
+    "errorMessage": "Something went wrong sending your message. Please email sales@mmkkai.com directly.",
+    "consentText": "I agree to MMKK AI contacting me about this enquiry and to the collection of the information above in line with the",
+    "consentPrivacyLink": "Privacy Policy",
+    "consentRequired": "Please confirm you agree to the privacy policy before submitting."
   },
   "products": {
     "title": "Our Solutions",
@@ -108,7 +132,7 @@
     "title": "About MMKK AI",
     "subtitle": "The business technology partner behind growing companies in Myanmar and Thailand.",
     "body1": "MMKK AI was built to close a specific gap: businesses in Myanmar and Thailand need Google Workspace, Microsoft 365, HubSpot, Apollo, Google Cloud, and AI automation set up correctly and supported locally — not a generic offshore support ticket queue.",
-    "body2": "As an official Google Cloud Co-Sell Partner and Microsoft Azure Deployment Partner, we combine verified platform expertise with on-the-ground support across our offices in the US, Thailand, and Myanmar.",
+    "body2": "We provide Google Cloud implementation and support and Microsoft cloud deployment services, combining hands-on platform experience with on-the-ground support across our offices in the US, Thailand, and Myanmar.",
     "officesTitle": "Offices"
   },
   "landingPage": {

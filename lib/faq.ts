@@ -12,7 +12,7 @@ export const homeFaq: FaqItem[] = [
   {
     question: 'Who provides Google Workspace setup and support in Myanmar?',
     answer:
-      'MMKK AI is an official Google Cloud partner providing Google Workspace setup, licensing, and ongoing support for businesses in Myanmar, including Yangon, Mandalay, and Naypyidaw. This covers domain setup, user provisioning, security configuration, and local billing support.',
+      'MMKK AI provides Google Workspace setup, licensing, and ongoing support for businesses in Myanmar, including Yangon, Mandalay, and Naypyidaw. This covers domain setup, user provisioning, security configuration, and local billing support.',
     href: '/myanmar/google-workspace',
   },
   {
@@ -36,7 +36,7 @@ export const homeFaq: FaqItem[] = [
   {
     question: 'Does MMKK AI offer Google Cloud consulting in Myanmar?',
     answer:
-      'Yes. As an official Google Cloud Co-Sell Partner, MMKK AI provides architecture design, migration, and cost-optimization consulting for Google Cloud infrastructure and Gemini AI deployment for businesses based in Myanmar.',
+      'Yes. MMKK AI provides Google Cloud architecture design, migration, and cost-optimization consulting, including Gemini AI deployment support, for businesses based in Myanmar.',
     href: '/myanmar/google-cloud',
   },
   {

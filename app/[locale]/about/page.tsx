@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import CTASection from '@/components/CTASection'
 import JsonLd from '@/components/JsonLd'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { countries } from '@/lib/countries'
 import { breadcrumbSchema, organizationSchema } from '@/lib/schema'
 import { buildMetadata } from '@/lib/seo'
@@ -13,13 +14,22 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  return buildMetadata({
-    locale,
-    path: 'about',
-    title: 'About MMKK AI | Business Technology Partner for Myanmar & Thailand',
-    description:
-      'MMKK AI is an official Google Cloud Co-Sell Partner and Microsoft Azure Deployment Partner serving businesses across Myanmar and Thailand.',
-  })
+  const localized: Record<string, { title: string; description: string }> = {
+    en: {
+      title: 'About MMKK AI | Cloud, CRM & AI Solutions Partner for Myanmar & Thailand',
+      description: 'MMKK AI provides Google Workspace, Microsoft 365, HubSpot CRM, and Google Cloud implementation and support services for businesses across Myanmar and Thailand.',
+    },
+    th: {
+      title: 'เกี่ยวกับ MMKK AI | พันธมิตรโซลูชัน Cloud, CRM และ AI สำหรับไทย',
+      description: 'MMKK AI ให้บริการติดตั้งและดูแล Google Workspace, Microsoft 365, HubSpot CRM และ Google Cloud สำหรับธุรกิจในประเทศไทย',
+    },
+    mm: {
+      title: 'MMKK AI အကြောင်း | မြန်မာနှင့်ထိုင်းအတွက် Cloud, CRM & AI ဖြေရှင်းချက် မိတ်ဖက် | MMKK AI',
+      description: 'MMKK AI သည် မြန်မာနှင့်ထိုင်းနိုင်ငံတစ်ဝှမ်းရှိ လုပ်ငန်းများအတွက် Google Workspace, Microsoft 365, HubSpot CRM နှင့် Google Cloud တပ်ဆင်ခြင်းနှင့် ပံ့ပိုးမှု ဝန်ဆောင်မှုများ ပေးအပ်သည်။',
+    },
+  }
+  const meta = localized[locale] || localized.en
+  return buildMetadata({ locale, path: 'about', title: meta.title, description: meta.description })
 }
 
 export default async function AboutPage({ params }: Props) {
@@ -41,6 +51,7 @@ export default async function AboutPage({ params }: Props) {
       <Navbar />
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
+          <Breadcrumbs items={[{ name: 'Home', href: `/${locale}` }, { name: 'About', href: '' }]} />
           <h1 className="text-4xl md:text-5xl font-bold font-display mb-6">{t('title')}</h1>
           <p className="text-xl text-gray-400 mb-10">{t('subtitle')}</p>
           <p className="text-gray-300 leading-relaxed mb-6">{t('body1')}</p>
