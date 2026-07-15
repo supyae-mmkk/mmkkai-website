@@ -6,6 +6,8 @@ import type { Metadata } from 'next'
 import '../globals.css'
 import Footer from '@/components/Footer'
 import { VisitorTracking } from '@/components/VisitorTracking'
+import JsonLd from '@/components/JsonLd'
+import { organizationSchema, websiteSchema } from '@/lib/schema'
 
 type Props = {
   children: React.ReactNode
@@ -29,8 +31,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metadata = messages.metadata as { title: string; description: string }
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://mmkkai.com'
-  
+
   return {
+    metadataBase: new URL(baseUrl),
     title: metadata.title,
     description: metadata.description,
     alternates: {
@@ -39,6 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'en': `${baseUrl}/en`,
         'th': `${baseUrl}/th`,
         'my-MM': `${baseUrl}/mm`,
+        'x-default': `${baseUrl}/en`,
       }
     },
     openGraph: {
@@ -46,7 +50,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: metadata.description,
       locale: locale === 'mm' ? 'my_MM' : locale,
       alternateLocale: ['en', 'th', 'my_MM'],
-    }
+      url: `${baseUrl}/${locale}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: metadata.title,
+      description: metadata.description,
+    },
   }
 }
 
@@ -75,6 +85,7 @@ export default async function LocaleLayout({
         ))}
       </head>
       <body className="bg-background text-white">
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <NextIntlClientProvider messages={messages}>
           <VisitorTracking />
           {children}

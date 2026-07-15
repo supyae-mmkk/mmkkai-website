@@ -1,0 +1,46 @@
+# MMKK AI
+
+> MMKK AI is a business technology partner deploying Google Workspace, Microsoft 365,
+> HubSpot CRM, Apollo, Google Cloud, and AI Automation for growing businesses across
+> Myanmar and Thailand. MMKK AI is an official Google Cloud Co-Sell Partner and a
+> Microsoft Azure Deployment Partner.
+
+MMKK AI serves SMEs, mid-market companies, enterprises, international schools, real
+estate companies, technology companies, and professional services firms. Support and
+billing are handled locally in Myanmar and Thailand, alongside a US office.
+
+## Solutions
+- [Google Workspace](https://mmkkai.com/en/solutions/google-workspace): setup, licensing, and migration
+- [Microsoft 365](https://mmkkai.com/en/solutions/microsoft-365): setup, licensing, and migration
+- [HubSpot CRM](https://mmkkai.com/en/solutions/hubspot-crm): implementation and onboarding
+- [Apollo Lead Generation](https://mmkkai.com/en/solutions/apollo-lead-generation): outbound prospecting setup
+- [Google Cloud](https://mmkkai.com/en/solutions/google-cloud): architecture, migration, and cost optimization
+- [AI Automation](https://mmkkai.com/en/solutions/ai-automation): applied AI workflows
+- [TeamViewer](https://mmkkai.com/en/solutions/teamviewer): remote support and device management
+- [Adobe Business](https://mmkkai.com/en/solutions/adobe-business): Creative Cloud and Acrobat licensing
+
+## Myanmar
+- [Google Workspace Myanmar](https://mmkkai.com/en/myanmar/google-workspace)
+- [Google Workspace Migration Myanmar](https://mmkkai.com/en/myanmar/google-workspace-migration)
+- [Microsoft 365 Myanmar](https://mmkkai.com/en/myanmar/microsoft-365)
+- [HubSpot CRM Myanmar](https://mmkkai.com/en/myanmar/hubspot-crm)
+- [Apollo Lead Generation Myanmar](https://mmkkai.com/en/myanmar/apollo-lead-generation)
+- [Google Cloud Myanmar](https://mmkkai.com/en/myanmar/google-cloud)
+
+## Thailand
+- [Google Workspace Thailand](https://mmkkai.com/en/thailand/google-workspace)
+- [Microsoft 365 Thailand](https://mmkkai.com/en/thailand/microsoft-365)
+- [HubSpot CRM Thailand](https://mmkkai.com/en/thailand/hubspot-crm)
+- [Google Cloud Thailand](https://mmkkai.com/en/thailand/google-cloud)
+
+## Resources
+- [Google Workspace vs Microsoft 365](https://mmkkai.com/en/resources/google-workspace-vs-microsoft-365)
+- [What Is Apollo?](https://mmkkai.com/en/resources/what-is-apollo)
+- [HubSpot CRM Guide](https://mmkkai.com/en/resources/hubspot-crm-guide)
+- [Google Workspace Migration Guide](https://mmkkai.com/en/resources/google-workspace-migration-guide)
+
+## Contact
+- Email: sales@mmkkai.com
+- Myanmar: +95 95186635
+- Thailand: +66 98 113 5613
+- US: +1 332 333 9868
