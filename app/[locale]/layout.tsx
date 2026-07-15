@@ -57,6 +57,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: metadata.title,
       description: metadata.description,
     },
+    verification: {
+      other: {
+        'msvalidate.01': '36244300F64B240C8B4A3980270EAFFC',
+      },
+    },
   }
 }
 
