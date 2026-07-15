@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import CTASection from '@/components/CTASection'
 import JsonLd from '@/components/JsonLd'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import { Check } from 'lucide-react'
+import { solutions } from '@/lib/solutions'
 import { countries } from '@/lib/countries'
 import { breadcrumbSchema, organizationSchema } from '@/lib/schema'
 import { buildMetadata } from '@/lib/seo'
@@ -56,6 +58,24 @@ export default async function AboutPage({ params }: Props) {
           <p className="text-xl text-gray-400 mb-10">{t('subtitle')}</p>
           <p className="text-gray-300 leading-relaxed mb-6">{t('body1')}</p>
           <p className="text-gray-300 leading-relaxed mb-12">{t('body2')}</p>
+
+          <h2 className="text-xl font-bold text-primary mb-5">{t('implementsTitle')}</h2>
+          <div className="flex flex-wrap gap-2 mb-12">
+            {solutions.map((s) => (
+              <span key={s.slug} className="text-xs font-medium text-gray-300 bg-surface border border-border rounded-full px-3 py-1.5">
+                {s.name}
+              </span>
+            ))}
+          </div>
+
+          <h2 className="text-xl font-bold text-primary mb-5">{t('principlesTitle')}</h2>
+          <ul className="space-y-2.5 mb-12">
+            {(t.raw('principles') as string[]).map((p) => (
+              <li key={p} className="flex items-start gap-3 text-sm text-gray-300">
+                <Check size={16} className="text-primary flex-shrink-0 mt-0.5" /> {p}
+              </li>
+            ))}
+          </ul>
 
           <h2 className="text-xl font-bold text-primary mb-6">{t('officesTitle')}</h2>
           <div className="grid sm:grid-cols-2 gap-4">

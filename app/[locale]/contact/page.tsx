@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-import { Mail, Phone, CheckCircle, AlertCircle } from 'lucide-react'
+import { Mail, Phone, CheckCircle, AlertCircle, MapPin } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { submitLead } from '@/lib/submitLead'
 
@@ -62,8 +62,8 @@ export default function ContactPage() {
     <main className="min-h-screen">
       <Navbar />
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-16 text-center">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-14 max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold font-display mb-4">
               {t('title')}
             </h1>
@@ -72,9 +72,35 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="mb-16">
-            <div className="glass rounded-2xl p-8 neon-border">
-              <h2 className="text-2xl font-bold mb-8">{t('getInTouch')}</h2>
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <div className="space-y-6">
+            <div className="rounded-xl2 border border-border bg-surface p-6 md:p-8">
+              <h2 className="text-lg font-bold text-primary mb-5">{t('afterContactTitle')}</h2>
+              <ol className="space-y-4">
+                {(t.raw('afterContactSteps') as string[]).map((step, i) => (
+                  <li key={step} className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                      {i + 1}
+                    </span>
+                    <span className="text-sm text-gray-300 leading-relaxed">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="rounded-xl2 border border-border bg-surface p-6 md:p-8">
+              <h2 className="text-lg font-bold text-primary mb-4">{t('supportedAreasTitle')}</h2>
+              <div className="flex flex-wrap gap-2">
+                {(t.raw('supportedAreas') as string[]).map((area) => (
+                  <span key={area} className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-300 bg-surface-2 border border-border rounded-full px-3 py-1.5">
+                    <MapPin size={11} className="text-primary" /> {area}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-xl2 border border-border bg-surface p-6 md:p-8">
+              <h2 className="text-lg font-bold mb-6">{t('getInTouch')}</h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -115,7 +141,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="glass rounded-2xl p-8 neon-border">
+          <div className="glass rounded-2xl p-8 neon-border lg:sticky lg:top-28">
             <h2 className="text-2xl font-bold mb-8">{t('requestConsultation')}</h2>
 
             {status === 'success' ? (
@@ -240,6 +266,7 @@ export default function ContactPage() {
                 </button>
               </form>
             )}
+          </div>
           </div>
         </div>
       </div>

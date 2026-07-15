@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { ArrowRight } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import CTASection from '@/components/CTASection'
 import JsonLd from '@/components/JsonLd'
@@ -21,15 +22,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const localized: Record<string, { title: string; description: string }> = {
     en: {
       title: 'Industries We Serve | MMKK AI',
-      description: 'MMKK AI serves SMEs, mid-market companies, enterprises, international schools, real estate firms, technology companies, and professional services firms across Myanmar and Thailand.',
+      description: 'MMKK AI serves professional services, real estate, retail, education, healthcare administration, manufacturing, hospitality, and regional businesses across Myanmar and Thailand.',
     },
     th: {
       title: 'อุตสาหกรรมที่เราให้บริการ | MMKK AI',
-      description: 'MMKK AI ให้บริการ SME บริษัทระดับกลาง องค์กรขนาดใหญ่ และบริษัทอสังหาริมทรัพย์ในประเทศไทย',
+      description: 'MMKK AI ให้บริการธุรกิจบริการวิชาชีพ อสังหาริมทรัพย์ ค้าปลีก การศึกษา และธุรกิจภูมิภาคในประเทศไทย',
     },
     mm: {
       title: 'ကျွန်ုပ်တို့ ဝန်ဆောင်မှုပေးသော လုပ်ငန်းများ | MMKK AI',
-      description: 'MMKK AI သည် မြန်မာနိုင်ငံရှိ SME၊ အလတ်စားကုမ္ပဏီများ၊ လုပ်ငန်းကြီးများနှင့် အပြည်ပြည်ဆိုင်ရာကျောင်းများကို ဝန်ဆောင်မှုပေးသည်။',
+      description: 'MMKK AI သည် ပညာရှင်ဝန်ဆောင်မှု၊ အိမ်ခြံမြေ၊ လက်လီရောင်းချရေးနှင့် ဒေသဆိုင်ရာလုပ်ငန်းများကို မြန်မာနိုင်ငံတွင် ဝန်ဆောင်မှုပေးသည်။',
     },
   }
   const meta = localized[locale] || localized.en
@@ -39,6 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function IndustriesPage({ params }: Props) {
   const { locale } = await params
   const t = await getTranslations('industriesPage')
+  const tc = await getTranslations('common')
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://mmkkai.com'
 
   return (
@@ -61,40 +63,47 @@ export default async function IndustriesPage({ params }: Props) {
       </section>
 
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto space-y-6">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {industries.map((industry) => {
-            // Country-specific landing pages relevant to this industry, so
-            // the industries page links to /myanmar or /thailand pages
-            // directly rather than only the generic /solutions overview.
             const countryPages = landingPages.filter((p) => industry.relevantSolutions.includes(p.solutionSlug))
+            const solutionNames = industry.relevantSolutions.map((slug) => getSolution(slug)?.name).filter(Boolean)
             return (
-              <div key={industry.slug} id={industry.slug} className="glass neon-border rounded-xl p-6 scroll-mt-28">
-                <h2 className="text-2xl font-bold font-display text-primary mb-2">{industry.name}</h2>
-                <p className="text-gray-400 mb-4">{industry.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+              <div key={industry.slug} id={industry.slug} className="rounded-xl border border-border bg-surface p-5 scroll-mt-28 flex flex-col card-lift">
+                <h2 className="font-bold font-display text-primary mb-3">{industry.name}</h2>
+                <div className="space-y-3 flex-1">
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-gray-500 mb-1">{tc('problemLabel')}</p>
+                    <p className="text-xs text-gray-400 leading-relaxed">{industry.problem}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-gray-500 mb-1">{tc('systemsLabel')}</p>
+                    <p className="text-xs text-gray-300">{solutionNames.join(' + ')}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-gray-500 mb-1">{tc('outcomeLabel')}</p>
+                    <p className="text-xs text-gray-400 leading-relaxed">{industry.outcome}</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-1.5 mt-4 pt-3 border-t border-white/5">
                   {industry.relevantSolutions.map((slug) => {
                     const s = getSolution(slug)
                     if (!s) return null
                     return (
-                      <Link
-                        key={slug}
-                        href={`/solutions/${slug}`}
-                        className="text-xs px-3 py-1.5 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
-                      >
+                      <Link key={slug} href={`/solutions/${slug}`} className="text-[10px] px-2 py-1 rounded-full border border-primary/25 text-primary hover:bg-primary/10 transition-colors">
                         {s.name}
                       </Link>
                     )
                   })}
                 </div>
                 {countryPages.length > 0 && (
-                  <div className="flex flex-wrap gap-2 pt-3 border-t border-white/10">
-                    {countryPages.map((p) => (
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {countryPages.slice(0, 2).map((p) => (
                       <Link
                         key={`${p.country}-${p.slug}`}
                         href={`/${p.country}/${p.slug}`}
-                        className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                        className="inline-flex items-center gap-1 text-[10px] px-2 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
                       >
-                        {p.h1} - {countries[p.country].name}
+                        {countries[p.country].name} <ArrowRight size={9} />
                       </Link>
                     ))}
                   </div>

@@ -8,11 +8,31 @@ import CTASection from '@/components/CTASection'
 import FaqSection from '@/components/FaqSection'
 import JsonLd from '@/components/JsonLd'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import Tabs from '@/components/sections/Tabs'
+import GoogleWorkspaceDemo from '@/components/product-demos/GoogleWorkspaceDemo'
+import Microsoft365Demo from '@/components/product-demos/Microsoft365Demo'
+import HubSpotDemo from '@/components/product-demos/HubSpotDemo'
+import ApolloDemo from '@/components/product-demos/ApolloDemo'
+import AiAutomationDemo from '@/components/product-demos/AiAutomationDemo'
+import GoogleCloudDemo from '@/components/product-demos/GoogleCloudDemo'
+import TeamViewerDemo from '@/components/product-demos/TeamViewerDemo'
+import AdobeDemo from '@/components/product-demos/AdobeDemo'
 import { solutions, getSolution, pillars } from '@/lib/solutions'
 import { guides } from '@/lib/guides'
 import { industries } from '@/lib/industries'
 import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata, pickLocaleMeta } from '@/lib/seo'
+
+const DEMO_COMPONENTS: Record<string, React.ComponentType> = {
+  'google-workspace': GoogleWorkspaceDemo,
+  'microsoft-365': Microsoft365Demo,
+  'hubspot-crm': HubSpotDemo,
+  'apollo-lead-generation': ApolloDemo,
+  'ai-automation': AiAutomationDemo,
+  'google-cloud': GoogleCloudDemo,
+  'teamviewer': TeamViewerDemo,
+  'adobe-business': AdobeDemo,
+}
 
 export const dynamic = 'force-static'
 
@@ -41,6 +61,7 @@ export default async function SolutionPage({ params }: Props) {
   if (!solution) notFound()
 
   const t = await getTranslations('solutionsPage')
+  const tc = await getTranslations('common')
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://mmkkai.com'
   const url = `${BASE_URL}/${locale}/solutions/${slug}`
 
@@ -49,6 +70,7 @@ export default async function SolutionPage({ params }: Props) {
   const relatedGuides = guides.filter((g) => g.solutionSlug === solution.slug)
   // Industries whose relevantSolutions list includes this solution.
   const relatedIndustries = industries.filter((i) => i.relevantSolutions.includes(solution.slug))
+  const DemoComponent = DEMO_COMPONENTS[solution.slug]
 
   return (
     <main className="min-h-screen">
@@ -71,7 +93,7 @@ export default async function SolutionPage({ params }: Props) {
       <Navbar />
 
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <Breadcrumbs
             items={[
               { name: 'Home', href: `/${locale}` },
@@ -79,6 +101,8 @@ export default async function SolutionPage({ params }: Props) {
               { name: solution.name, href: '' },
             ]}
           />
+          <div className={`grid ${DemoComponent ? 'lg:grid-cols-2 gap-10' : ''} items-center`}>
+          <div>
           <p className="text-sm uppercase tracking-wide text-primary mb-3">{pillars[solution.pillar].name}</p>
           <h1 className="text-4xl md:text-5xl font-bold font-display mb-6">{solution.name}</h1>
           <p className="text-xl text-gray-400 leading-relaxed">{solution.whatItDoes}</p>
@@ -103,53 +127,83 @@ export default async function SolutionPage({ params }: Props) {
               )}
             </div>
           )}
+          </div>
+          {DemoComponent && (
+            <div>
+              <DemoComponent />
+            </div>
+          )}
+          </div>
         </div>
       </section>
 
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background/50">
-        <div className="max-w-4xl mx-auto space-y-10">
-          <div>
-            <h2 className="text-xl font-bold text-primary mb-3">Who this is for</h2>
-            <p className="text-gray-300 leading-relaxed">{solution.suitableFor}</p>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold text-primary mb-3">Business outcomes</h2>
-            <ul className="space-y-2">
-              {solution.outcomes.map((o) => (
-                <li key={o} className="flex items-start gap-3 text-gray-300">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  {o}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold text-primary mb-3">Implementation scope</h2>
-            <p className="text-gray-300 leading-relaxed">{solution.implementationScope}</p>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold text-primary mb-3">Migration considerations</h2>
-            <p className="text-gray-300 leading-relaxed">{solution.migrationConsiderations}</p>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold text-primary mb-3">Security and administration</h2>
-            <p className="text-gray-300 leading-relaxed">{solution.security}</p>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold text-primary mb-3">Integrations</h2>
-            <ul className="space-y-2">
-              {solution.integrations.map((i) => (
-                <li key={i} className="flex items-start gap-3 text-gray-300">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  {i}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold text-primary mb-3">Limitations</h2>
-            <p className="text-gray-300 leading-relaxed">{solution.limitations}</p>
-          </div>
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-surface/40">
+        <div className="max-w-4xl mx-auto">
+          <Tabs
+            items={[
+              {
+                id: 'overview',
+                label: tc('tabWhoFor'),
+                content: (
+                  <div className="space-y-6">
+                    <p className="text-gray-300 leading-relaxed">{solution.suitableFor}</p>
+                    <ul className="space-y-2">
+                      {solution.outcomes.map((o) => (
+                        <li key={o} className="flex items-start gap-3 text-gray-300 text-sm">
+                          <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                          {o}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ),
+              },
+              {
+                id: 'implementation',
+                label: tc('tabImplementation'),
+                content: (
+                  <div className="space-y-6">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Scope</p>
+                      <p className="text-gray-300 leading-relaxed text-sm">{solution.implementationScope}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Migration considerations</p>
+                      <p className="text-gray-300 leading-relaxed text-sm">{solution.migrationConsiderations}</p>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                id: 'security',
+                label: tc('tabSecurity'),
+                content: (
+                  <div className="space-y-6">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Security and administration</p>
+                      <p className="text-gray-300 leading-relaxed text-sm">{solution.security}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Integrations</p>
+                      <ul className="space-y-2">
+                        {solution.integrations.map((i) => (
+                          <li key={i} className="flex items-start gap-3 text-gray-300 text-sm">
+                            <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                            {i}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                id: 'limitations',
+                label: tc('tabLimitations'),
+                content: <p className="text-gray-300 leading-relaxed text-sm">{solution.limitations}</p>,
+              },
+            ]}
+          />
         </div>
       </section>
 

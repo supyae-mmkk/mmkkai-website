@@ -12,6 +12,7 @@ import { getLandingPage } from '@/lib/landingPages'
 import { countries } from '@/lib/countries'
 import { articleSchema, breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata, pickLocaleMeta } from '@/lib/seo'
+import { getTranslations } from 'next-intl/server'
 
 export const dynamic = 'force-static'
 
@@ -33,6 +34,8 @@ export default async function GuidePage({ params }: Props) {
   const { locale, slug } = await params
   const guide = getGuide(slug)
   if (!guide) notFound()
+  const tc = await getTranslations('common')
+  const intlLocale = locale === 'mm' ? 'my-MM' : locale === 'th' ? 'th-TH' : 'en-US'
 
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://mmkkai.com'
   const url = `${BASE_URL}/${locale}/resources/${slug}`
@@ -73,15 +76,35 @@ export default async function GuidePage({ params }: Props) {
           />
           <h1 className="text-3xl md:text-4xl font-bold font-display mb-4">{guide.title}</h1>
           <p className="text-xs text-gray-500 mb-8">
-            Published {new Date(guide.datePublished).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            {tc('published')} {new Date(guide.datePublished).toLocaleDateString(intlLocale, { year: 'numeric', month: 'long', day: 'numeric' })}
             {guide.dateModified !== guide.datePublished &&
-              ` · Updated ${new Date(guide.dateModified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
+              ` · ${tc('updated')} ${new Date(guide.dateModified).toLocaleDateString(intlLocale, { year: 'numeric', month: 'long', day: 'numeric' })}`}
           </p>
-          <p className="text-lg text-gray-400 mb-12 leading-relaxed">{guide.intro}</p>
+          {/* Summary box - lets a visitor grasp the guide's scope in seconds
+              without reading the full article. */}
+          <div className="rounded-xl border border-primary/25 bg-primary/5 px-5 py-4 mb-8">
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-1.5">{tc('inThisGuide')}</p>
+            <p className="text-sm text-gray-300 leading-relaxed">{guide.intro}</p>
+          </div>
+
+          {/* Table of contents - crawlable anchor links, not just a visual
+              nicety, so long reference content stays navigable. */}
+          <nav aria-label="Table of contents" className="rounded-xl border border-border bg-surface px-5 py-4 mb-12">
+            <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2.5">{tc('contents')}</p>
+            <ol className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 text-sm">
+              {guide.sections.map((section, i) => (
+                <li key={section.heading}>
+                  <a href={`#section-${i}`} className="text-gray-400 hover:text-primary transition-colors">
+                    {i + 1}. {section.heading}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
 
           <div className="space-y-10">
-            {guide.sections.map((section) => (
-              <div key={section.heading}>
+            {guide.sections.map((section, i) => (
+              <div key={section.heading} id={`section-${i}`} className="scroll-mt-28">
                 <h2 className="text-xl font-bold text-primary mb-3">{section.heading}</h2>
                 <p className="text-gray-300 leading-relaxed">{section.body}</p>
               </div>
@@ -90,7 +113,7 @@ export default async function GuidePage({ params }: Props) {
 
           {guide.citations.length > 0 && (
             <div className="mt-14 pt-8 border-t border-white/10">
-              <h2 className="text-sm font-bold uppercase tracking-wide text-gray-500 mb-4">Sources</h2>
+              <h2 className="text-sm font-bold uppercase tracking-wide text-gray-500 mb-4">{tc('sourcesLabel')}</h2>
               <ul className="space-y-2">
                 {guide.citations.map((c) => (
                   <li key={c.url}>
