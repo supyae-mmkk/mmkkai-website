@@ -8,6 +8,9 @@ import { Mail, Phone, CheckCircle, AlertCircle, MapPin, Facebook, Linkedin, Mess
 import { useTranslations } from 'next-intl'
 import { submitLead } from '@/lib/submitLead'
 import { socialProfiles } from '@/lib/companyConfig'
+import RegionalCoverageMap from '@/components/visuals/RegionalCoverageMap'
+import { countries } from '@/lib/countries'
+import SiteImage from '@/components/media/SiteImage'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import JsonLd from '@/components/JsonLd'
 import { breadcrumbSchema, contactPageSchema } from '@/lib/schema'
@@ -107,7 +110,17 @@ export default function ContactPage() {
 
             <div className="rounded-xl2 border border-border bg-surface p-6 md:p-8">
               <h2 className="text-lg font-bold text-primary mb-4">{t('supportedAreasTitle')}</h2>
-              <div className="flex flex-wrap gap-2">
+              <RegionalCoverageMap
+                regions={[
+                  { title: countries.myanmar.name, cities: countries.myanmar.cities },
+                  { title: countries.thailand.name, cities: countries.thailand.cities },
+                ]}
+              />
+              {/* Real-photo slot - renders nothing until an approved
+                  office/region photo is set in lib/imageConfig.ts (id:
+                  contact-office-region). No layout shift while empty. */}
+              <SiteImage id="contact-office-region" className="w-full rounded-xl border border-border object-cover mt-4 max-h-56" />
+              <div className="flex flex-wrap gap-2 mt-4">
                 {(t.raw('supportedAreas') as string[]).map((area) => (
                   <span key={area} className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-300 bg-surface-2 border border-border rounded-full px-3 py-1.5">
                     <MapPin size={11} className="text-primary" /> {area}

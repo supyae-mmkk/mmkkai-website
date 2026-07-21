@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import ConsultationPanel from '@/components/ConsultationPanel'
 import SystemFlowDiagram from '@/components/visuals/SystemFlowDiagram'
+import SiteImage from '@/components/media/SiteImage'
 
 const PRODUCT_BADGES = ['Google Workspace', 'Microsoft 365', 'HubSpot', 'Google Cloud', 'Apollo', 'TeamViewer', 'Adobe']
 
@@ -90,6 +91,14 @@ export default function HomeHero() {
         >
           <SystemFlowDiagram />
         </motion.div>
+
+        {/* Real-photo slot - renders nothing until a licensed Bangkok/
+            Thailand business photo is approved in lib/imageConfig.ts (id:
+            home-hero-bangkok). No layout shift while empty. */}
+        <SiteImage
+          id="home-hero-bangkok"
+          className="w-full rounded-xl2 border border-border object-cover mt-6 max-h-80"
+        />
       </div>
 
       <ConsultationPanel isOpen={isPanelOpen} onClose={() => setIsPanelOpen(false)} />

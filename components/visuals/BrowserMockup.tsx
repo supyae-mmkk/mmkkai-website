@@ -32,6 +32,13 @@ export default function BrowserMockup({
         )}
       </div>
       <div className={isDark ? 'text-gray-200' : 'text-ink'}>{children}</div>
+      <div
+        className={`px-3 py-1.5 text-[10px] border-t ${
+          isDark ? 'border-border bg-surface-2 text-gray-500' : 'border-black/10 bg-black/[0.02] text-gray-500'
+        }`}
+      >
+        Conceptual illustration - not an actual product screenshot
+      </div>
     </div>
   )
 }

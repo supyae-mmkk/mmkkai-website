@@ -13,6 +13,12 @@ import { countries } from '@/lib/countries'
 import { articleSchema, breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata, pickLocaleMeta } from '@/lib/seo'
 import { getTranslations } from 'next-intl/server'
+import AIVisibilityProcessDiagram from '@/components/visuals/AIVisibilityProcessDiagram'
+
+const GUIDE_VISUALS: Record<string, React.ComponentType> = {
+  'what-is-ai-visibility': AIVisibilityProcessDiagram,
+  'improve-ai-answer-visibility': AIVisibilityProcessDiagram,
+}
 
 export const dynamic = 'force-static'
 
@@ -41,6 +47,7 @@ export default async function GuidePage({ params }: Props) {
   const url = `${BASE_URL}/${locale}/resources/${slug}`
   const meta = pickLocaleMeta(guide.meta, locale)
 
+  const GuideVisual = GUIDE_VISUALS[guide.slug]
   const relatedSolution = getSolution(guide.solutionSlug)
   const relatedLandingPages = guide.landingPageLinks
     .map((l) => getLandingPage(l.country, l.slug))
@@ -86,6 +93,12 @@ export default async function GuidePage({ params }: Props) {
             <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-1.5">{tc('inThisGuide')}</p>
             <p className="text-sm text-gray-300 leading-relaxed">{guide.intro}</p>
           </div>
+
+          {GuideVisual && (
+            <div className="rounded-xl2 border border-border bg-surface p-6 mb-8">
+              <GuideVisual />
+            </div>
+          )}
 
           {/* Table of contents - crawlable anchor links, not just a visual
               nicety, so long reference content stays navigable. */}

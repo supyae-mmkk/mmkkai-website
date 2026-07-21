@@ -3,7 +3,7 @@ import { Mail, Users2, FileStack, UserCog } from 'lucide-react'
 
 export default function Microsoft365Demo() {
   return (
-    <BrowserMockup title="admin.microsoft.com">
+    <BrowserMockup title="Admin console overview">
       <div className="grid grid-cols-4 gap-px bg-border text-xs">
         {[
           { icon: Mail, label: 'Outlook' },

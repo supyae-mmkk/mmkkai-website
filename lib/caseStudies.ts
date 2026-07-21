@@ -23,6 +23,7 @@ export interface CaseStudy {
   datePublished: string
   solutionSlugs: string[]
   logoPath?: string
+  imageId?: string // optional id referencing lib/imageConfig.ts's siteImages - only rendered if that slot is approved
   permissionToPublish: boolean // must be true before this entry is ever rendered
 }
 

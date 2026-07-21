@@ -3,7 +3,7 @@ import { AppWindow, Cpu, Database, Activity, Lock } from 'lucide-react'
 
 export default function GoogleCloudDemo() {
   return (
-    <BrowserMockup title="console.cloud.google.com">
+    <BrowserMockup title="Cloud console overview">
       <div className="p-3 grid grid-cols-5 gap-1.5 text-[9px]">
         {[
           { icon: AppWindow, label: 'Apps' },

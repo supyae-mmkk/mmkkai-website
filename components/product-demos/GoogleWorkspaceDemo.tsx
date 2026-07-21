@@ -4,7 +4,7 @@ import { Inbox, FolderOpen, Video, ShieldCheck, ArrowRightLeft } from 'lucide-re
 // Original illustrative mockup - not a screenshot of any vendor product.
 export default function GoogleWorkspaceDemo() {
   return (
-    <BrowserMockup title="mail.yourcompany.com">
+    <BrowserMockup title="Company mail overview">
       <div className="grid grid-cols-3 gap-px bg-border text-xs">
         <div className="col-span-1 bg-surface p-3 space-y-2">
           <div className="flex items-center gap-2 text-primary font-medium">

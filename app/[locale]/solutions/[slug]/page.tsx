@@ -17,6 +17,15 @@ import AiAutomationDemo from '@/components/product-demos/AiAutomationDemo'
 import GoogleCloudDemo from '@/components/product-demos/GoogleCloudDemo'
 import TeamViewerDemo from '@/components/product-demos/TeamViewerDemo'
 import AdobeDemo from '@/components/product-demos/AdobeDemo'
+import SalesWorkflowHero from '@/components/product-demos/SalesWorkflowHero'
+import RemoteMonitoringHero from '@/components/product-demos/RemoteMonitoringHero'
+import ApolloCrmFlowDiagram from '@/components/visuals/ApolloCrmFlowDiagram'
+import GoogleWorkspaceFlowDiagram from '@/components/visuals/GoogleWorkspaceFlowDiagram'
+import GoogleCloudFlowDiagram from '@/components/visuals/GoogleCloudFlowDiagram'
+import HubSpotFlowDiagram from '@/components/visuals/HubSpotFlowDiagram'
+import TeamViewerFlowDiagram from '@/components/visuals/TeamViewerFlowDiagram'
+import AdobeFlowDiagram from '@/components/visuals/AdobeFlowDiagram'
+import ImplementationProcessMini from '@/components/visuals/ImplementationProcessMini'
 import { solutions, getSolution, pillars } from '@/lib/solutions'
 import { guides } from '@/lib/guides'
 import { industries } from '@/lib/industries'
@@ -32,6 +41,22 @@ const DEMO_COMPONENTS: Record<string, React.ComponentType> = {
   'google-cloud': GoogleCloudDemo,
   'teamviewer': TeamViewerDemo,
   'adobe-business': AdobeDemo,
+  'sales-workflow-design': SalesWorkflowHero,
+  'remote-monitoring-management': RemoteMonitoringHero,
+}
+
+// Supplementary conceptual diagrams shown further down the page (Overview
+// tab) for solutions where an extra system-relationship visual adds
+// genuine clarity beyond the hero mockup. Optional - most solutions render
+// without one.
+const SUPPORTING_DIAGRAMS: Record<string, React.ComponentType> = {
+  'apollo-lead-generation': ApolloCrmFlowDiagram,
+  'sales-workflow-design': ApolloCrmFlowDiagram,
+  'google-workspace': GoogleWorkspaceFlowDiagram,
+  'google-cloud': GoogleCloudFlowDiagram,
+  'hubspot-crm': HubSpotFlowDiagram,
+  'teamviewer': TeamViewerFlowDiagram,
+  'adobe-business': AdobeFlowDiagram,
 }
 
 export const dynamic = 'force-static'
@@ -71,6 +96,7 @@ export default async function SolutionPage({ params }: Props) {
   // Industries whose relevantSolutions list includes this solution.
   const relatedIndustries = industries.filter((i) => i.relevantSolutions.includes(solution.slug))
   const DemoComponent = DEMO_COMPONENTS[solution.slug]
+  const SupportingDiagram = SUPPORTING_DIAGRAMS[solution.slug]
 
   return (
     <main className="min-h-screen">
@@ -155,6 +181,11 @@ export default async function SolutionPage({ params }: Props) {
                         </li>
                       ))}
                     </ul>
+                    {SupportingDiagram && (
+                      <div className="pt-2">
+                        <SupportingDiagram />
+                      </div>
+                    )}
                   </div>
                 ),
               },
@@ -163,6 +194,7 @@ export default async function SolutionPage({ params }: Props) {
                 label: tc('tabImplementation'),
                 content: (
                   <div className="space-y-6">
+                    <ImplementationProcessMini />
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Scope</p>
                       <p className="text-gray-300 leading-relaxed text-sm">{solution.implementationScope}</p>

@@ -9,7 +9,7 @@ const STAGES = [
 
 export default function HubSpotDemo() {
   return (
-    <BrowserMockup title="app.hubspot.com/contacts">
+    <BrowserMockup title="CRM contacts overview">
       <div className="p-3 grid grid-cols-4 gap-2 text-xs">
         {STAGES.map((stage, i) => (
           <div key={stage.name} className="bg-surface-2 rounded-lg border border-border p-2 space-y-2">

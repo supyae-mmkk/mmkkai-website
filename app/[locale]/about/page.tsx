@@ -6,6 +6,7 @@ import CTASection from '@/components/CTASection'
 import JsonLd from '@/components/JsonLd'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { Check, ShieldCheck } from 'lucide-react'
+import SiteImage from '@/components/media/SiteImage'
 import { solutions } from '@/lib/solutions'
 import { countries } from '@/lib/countries'
 import { breadcrumbSchema, organizationSchema } from '@/lib/schema'
@@ -58,7 +59,13 @@ export default async function AboutPage({ params }: Props) {
           <h1 className="text-4xl md:text-5xl font-bold font-display mb-6">{t('title')}</h1>
           <p className="text-xl text-gray-400 mb-10">{t('subtitle')}</p>
           <p className="text-gray-300 leading-relaxed mb-6">{t('body1')}</p>
-          <p className="text-gray-300 leading-relaxed mb-12">{t('body2')}</p>
+          <p className="text-gray-300 leading-relaxed mb-8">{t('body2')}</p>
+
+          {/* Real-photo slots - render nothing until team/office photos are
+              approved in lib/imageConfig.ts (ids: about-team-office,
+              about-leadership). No layout shift while empty. */}
+          <SiteImage id="about-team-office" className="w-full rounded-xl2 border border-border object-cover mb-4 max-h-96" />
+          <SiteImage id="about-leadership" className="w-40 h-40 rounded-full border border-border object-cover mb-12" />
 
           <h2 className="text-xl font-bold text-primary mb-5">{t('implementsTitle')}</h2>
           <div className="flex flex-wrap gap-2 mb-12">

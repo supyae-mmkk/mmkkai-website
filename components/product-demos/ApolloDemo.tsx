@@ -3,7 +3,7 @@ import { Search, Filter, Mail, Sparkles } from 'lucide-react'
 
 export default function ApolloDemo() {
   return (
-    <BrowserMockup title="app.apollo.io/prospects">
+    <BrowserMockup title="Prospect list overview">
       <div className="p-3 text-xs space-y-2.5">
         <div className="flex items-center gap-2 bg-surface-2 border border-border rounded-md px-2.5 py-1.5">
           <Search size={12} className="text-gray-500" />

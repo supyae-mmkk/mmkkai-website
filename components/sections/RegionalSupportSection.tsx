@@ -2,6 +2,9 @@
 
 import { Check, ArrowLeftRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import RegionalCoverageMap from '@/components/visuals/RegionalCoverageMap'
+import { countries } from '@/lib/countries'
+import SiteImage from '@/components/media/SiteImage'
 
 // Subtle regional visual - two labelled abstract map "pins" rather than
 // flags or stereotypical imagery - representing MMKK AI's two markets.
@@ -29,6 +32,23 @@ export default function RegionalSupportSection() {
           <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-3">{t('eyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-bold font-display">{t('title')}</h2>
         </div>
+
+        <div className="mb-6">
+          <RegionalCoverageMap
+            regions={[
+              { title: countries.myanmar.name, cities: countries.myanmar.cities },
+              { title: countries.thailand.name, cities: countries.thailand.cities },
+            ]}
+          />
+        </div>
+
+        {/* Real-photo slot - renders nothing until a licensed Thailand/SEA
+            business photo is approved in lib/imageConfig.ts (id:
+            home-regional-thailand). No layout shift while empty. */}
+        <SiteImage
+          id="home-regional-thailand"
+          className="w-full rounded-xl2 border border-border object-cover mb-6 max-h-72"
+        />
 
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div className="rounded-xl2 border border-border bg-surface p-6">

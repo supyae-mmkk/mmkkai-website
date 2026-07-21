@@ -9,6 +9,7 @@ import PlatformCard from '@/components/partners/PlatformCard'
 import PartnerCard from '@/components/partners/PartnerCard'
 import CertificationCard from '@/components/partners/CertificationCard'
 import { getVerifiedPartnerships, getImplementedPlatforms, getSuppliedProducts, getCertifications, getMemberships } from '@/lib/partners'
+import SiteImage from '@/components/media/SiteImage'
 import { breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata } from '@/lib/seo'
 
@@ -91,6 +92,11 @@ export default async function PartnersPage({ params }: Props) {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl font-bold font-display mb-2">{t('platformsTitle')}</h2>
           <p className="text-sm text-gray-400 mb-6 max-w-2xl">{t('platformsSubtitle')}</p>
+          {/* Real-photo slot - purely illustrative of implementation work,
+              never positioned to imply partnership status. Renders nothing
+              until approved in lib/imageConfig.ts (id:
+              partners-platform-visual). */}
+          <SiteImage id="partners-platform-visual" className="w-full rounded-xl2 border border-border object-cover mb-6 max-h-64" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {platforms.map((p) => <PlatformCard key={p.id} entry={p} />)}
           </div>
