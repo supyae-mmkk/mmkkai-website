@@ -9,22 +9,16 @@ import FaqSection from '@/components/FaqSection'
 import JsonLd from '@/components/JsonLd'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Tabs from '@/components/sections/Tabs'
-import GoogleWorkspaceDemo from '@/components/product-demos/GoogleWorkspaceDemo'
 import Microsoft365Demo from '@/components/product-demos/Microsoft365Demo'
-import HubSpotDemo from '@/components/product-demos/HubSpotDemo'
-import ApolloDemo from '@/components/product-demos/ApolloDemo'
 import AiAutomationDemo from '@/components/product-demos/AiAutomationDemo'
-import GoogleCloudDemo from '@/components/product-demos/GoogleCloudDemo'
-import TeamViewerDemo from '@/components/product-demos/TeamViewerDemo'
-import AdobeDemo from '@/components/product-demos/AdobeDemo'
-import SalesWorkflowHero from '@/components/product-demos/SalesWorkflowHero'
-import RemoteMonitoringHero from '@/components/product-demos/RemoteMonitoringHero'
-import ApolloCrmFlowDiagram from '@/components/visuals/ApolloCrmFlowDiagram'
-import GoogleWorkspaceFlowDiagram from '@/components/visuals/GoogleWorkspaceFlowDiagram'
-import GoogleCloudFlowDiagram from '@/components/visuals/GoogleCloudFlowDiagram'
-import HubSpotFlowDiagram from '@/components/visuals/HubSpotFlowDiagram'
-import TeamViewerFlowDiagram from '@/components/visuals/TeamViewerFlowDiagram'
-import AdobeFlowDiagram from '@/components/visuals/AdobeFlowDiagram'
+import GoogleWorkspaceCollabIllustration from '@/components/illustrations/GoogleWorkspaceCollabIllustration'
+import GoogleCloudInfraIllustration from '@/components/illustrations/GoogleCloudInfraIllustration'
+import ApolloFunnelIllustration from '@/components/illustrations/ApolloFunnelIllustration'
+import HubSpotPipelineIllustration from '@/components/illustrations/HubSpotPipelineIllustration'
+import TeamViewerSupportIllustration from '@/components/illustrations/TeamViewerSupportIllustration'
+import AdobeDocWorkflowIllustration from '@/components/illustrations/AdobeDocWorkflowIllustration'
+import SalesWorkflowPipelineIllustration from '@/components/illustrations/SalesWorkflowPipelineIllustration'
+import RemoteMonitoringNetworkIllustration from '@/components/illustrations/RemoteMonitoringNetworkIllustration'
 import ImplementationProcessMini from '@/components/visuals/ImplementationProcessMini'
 import { solutions, getSolution, pillars } from '@/lib/solutions'
 import { guides } from '@/lib/guides'
@@ -32,31 +26,22 @@ import { industries } from '@/lib/industries'
 import { serviceSchema, breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata, pickLocaleMeta } from '@/lib/seo'
 
+// Original SVG/CSS illustrations (components/illustrations/*) - replace the
+// earlier fake-dashboard-in-a-browser-window mockups with premium isometric/
+// diagram-style artwork, per the "no fake vendor UI" visual-identity brief.
+// microsoft-365 and ai-automation keep their existing conceptual mockups -
+// not covered by that brief's illustration list.
 const DEMO_COMPONENTS: Record<string, React.ComponentType> = {
-  'google-workspace': GoogleWorkspaceDemo,
+  'google-workspace': GoogleWorkspaceCollabIllustration,
   'microsoft-365': Microsoft365Demo,
-  'hubspot-crm': HubSpotDemo,
-  'apollo-lead-generation': ApolloDemo,
+  'hubspot-crm': HubSpotPipelineIllustration,
+  'apollo-lead-generation': ApolloFunnelIllustration,
   'ai-automation': AiAutomationDemo,
-  'google-cloud': GoogleCloudDemo,
-  'teamviewer': TeamViewerDemo,
-  'adobe-business': AdobeDemo,
-  'sales-workflow-design': SalesWorkflowHero,
-  'remote-monitoring-management': RemoteMonitoringHero,
-}
-
-// Supplementary conceptual diagrams shown further down the page (Overview
-// tab) for solutions where an extra system-relationship visual adds
-// genuine clarity beyond the hero mockup. Optional - most solutions render
-// without one.
-const SUPPORTING_DIAGRAMS: Record<string, React.ComponentType> = {
-  'apollo-lead-generation': ApolloCrmFlowDiagram,
-  'sales-workflow-design': ApolloCrmFlowDiagram,
-  'google-workspace': GoogleWorkspaceFlowDiagram,
-  'google-cloud': GoogleCloudFlowDiagram,
-  'hubspot-crm': HubSpotFlowDiagram,
-  'teamviewer': TeamViewerFlowDiagram,
-  'adobe-business': AdobeFlowDiagram,
+  'google-cloud': GoogleCloudInfraIllustration,
+  'teamviewer': TeamViewerSupportIllustration,
+  'adobe-business': AdobeDocWorkflowIllustration,
+  'sales-workflow-design': SalesWorkflowPipelineIllustration,
+  'remote-monitoring-management': RemoteMonitoringNetworkIllustration,
 }
 
 export const dynamic = 'force-static'
@@ -96,7 +81,6 @@ export default async function SolutionPage({ params }: Props) {
   // Industries whose relevantSolutions list includes this solution.
   const relatedIndustries = industries.filter((i) => i.relevantSolutions.includes(solution.slug))
   const DemoComponent = DEMO_COMPONENTS[solution.slug]
-  const SupportingDiagram = SUPPORTING_DIAGRAMS[solution.slug]
 
   return (
     <main className="min-h-screen">
@@ -181,11 +165,6 @@ export default async function SolutionPage({ params }: Props) {
                         </li>
                       ))}
                     </ul>
-                    {SupportingDiagram && (
-                      <div className="pt-2">
-                        <SupportingDiagram />
-                      </div>
-                    )}
                   </div>
                 ),
               },

@@ -11,6 +11,7 @@ import { socialProfiles } from '@/lib/companyConfig'
 import RegionalCoverageMap from '@/components/visuals/RegionalCoverageMap'
 import { countries } from '@/lib/countries'
 import SiteImage from '@/components/media/SiteImage'
+import ContactAbstractIllustration from '@/components/illustrations/ContactAbstractIllustration'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import JsonLd from '@/components/JsonLd'
 import { breadcrumbSchema, contactPageSchema } from '@/lib/schema'
@@ -83,13 +84,19 @@ export default function ContactPage() {
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <Breadcrumbs items={[{ name: 'Home', href: `/${locale}` }, { name: 'Contact', href: '' }]} />
-          <div className="mb-14 max-w-2xl">
+          <div className="mb-10 max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold font-display mb-4">
               {t('title')}
             </h1>
             <p className="text-lg text-gray-400">
               {t('subtitle')}
             </p>
+          </div>
+
+          {/* Original abstract illustration - used instead of fabricated
+              office photography. */}
+          <div className="mb-10 max-w-3xl">
+            <ContactAbstractIllustration />
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 items-start">

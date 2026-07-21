@@ -10,6 +10,7 @@ import PartnerCard from '@/components/partners/PartnerCard'
 import CertificationCard from '@/components/partners/CertificationCard'
 import { getVerifiedPartnerships, getImplementedPlatforms, getSuppliedProducts, getCertifications, getMemberships } from '@/lib/partners'
 import SiteImage from '@/components/media/SiteImage'
+import PartnersEcosystemIllustration from '@/components/illustrations/PartnersEcosystemIllustration'
 import { breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata } from '@/lib/seo'
 
@@ -63,6 +64,17 @@ export default async function PartnersPage({ params }: Props) {
           <Breadcrumbs items={[{ name: 'Home', href: `/${locale}` }, { name: 'Partners', href: '' }]} />
           <h1 className="text-4xl md:text-5xl font-bold font-display mb-6">{t('title')}</h1>
           <p className="text-lg text-gray-400 leading-relaxed">{t('subtitle')}</p>
+        </div>
+      </section>
+
+      {/* Original ecosystem illustration - a category map of the technology
+          areas MMKK AI works across, NOT a partnership claim. See the
+          Verified Partnerships section below for the actual evidence-based
+          status of every vendor relationship. */}
+      <section className="pb-4 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto">
+          <PartnersEcosystemIllustration />
+          <p className="text-center text-xs text-gray-500 mt-3">{t('ecosystemCaption')}</p>
         </div>
       </section>
 

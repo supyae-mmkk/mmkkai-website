@@ -6,7 +6,7 @@ import { Calendar, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import ConsultationPanel from '@/components/ConsultationPanel'
-import SystemFlowDiagram from '@/components/visuals/SystemFlowDiagram'
+import HomepageHeroIllustration from '@/components/illustrations/HomepageHeroIllustration'
 import SiteImage from '@/components/media/SiteImage'
 
 const PRODUCT_BADGES = ['Google Workspace', 'Microsoft 365', 'HubSpot', 'Google Cloud', 'Apollo', 'TeamViewer', 'Adobe']
@@ -89,7 +89,7 @@ export default function HomeHero() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="mt-16 md:mt-20 rounded-xl2 border border-border bg-surface/60 backdrop-blur-sm p-6 md:p-10"
         >
-          <SystemFlowDiagram />
+          <HomepageHeroIllustration />
         </motion.div>
 
         {/* Real-photo slot - renders nothing until a licensed Bangkok/

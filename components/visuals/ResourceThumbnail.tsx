@@ -6,6 +6,10 @@ const VARIANTS = {
   adoption: { from: '#3B9DFF', to: '#0B0D0F', accent: '#00C896' },
   crm: { from: '#00C896', to: '#12151A', accent: '#F7F8F7' },
   automation: { from: '#0B0D0F', to: '#181C22', accent: '#00C896' },
+  'ai-visibility': { from: '#3B9DFF', to: '#0B0D0F', accent: '#22E6AD' },
+  seo: { from: '#00C896', to: '#181C22', accent: '#3B9DFF' },
+  'sales-workflow': { from: '#0B0D0F', to: '#12151A', accent: '#00C896' },
+  'remote-monitoring': { from: '#181C22', to: '#0B0D0F', accent: '#3B9DFF' },
 } as const
 
 export type ThumbnailVariant = keyof typeof VARIANTS
@@ -50,6 +54,50 @@ export default function ResourceThumbnail({ variant }: { variant: ThumbnailVaria
           <circle cx="160" cy="82" r="22" fill="none" stroke={c.accent} strokeWidth="2" />
           <path d="M182 82 L245 82" stroke={c.accent} strokeWidth="2" strokeDasharray="5 4" />
           <rect x="245" y="70" width="34" height="24" rx="5" fill="none" stroke={c.accent} strokeWidth="2" />
+        </>
+      )}
+      {variant === 'ai-visibility' && (
+        <>
+          {[-1, 0, 1].map((offset) => (
+            <circle key={offset} cx={100 + offset * 8} cy={60 + Math.abs(offset) * 6} r="14" fill="none" stroke={c.accent} strokeWidth="2" opacity={0.5} />
+          ))}
+          <path d="M128 70 L190 80" stroke={c.accent} strokeWidth="2" strokeDasharray="5 4" />
+          <circle cx="215" cy="83" r="26" fill="none" stroke={c.accent} strokeWidth="2.5" />
+        </>
+      )}
+      {variant === 'seo' && (
+        <>
+          {[0, 1, 2, 3].map((i) => (
+            <rect key={i} x={45 + i * 40} y={104 - i * 18} width="24" height={16 + i * 18} rx="3" fill="none" stroke={c.accent} strokeWidth="2" opacity={0.4 + i * 0.15} />
+          ))}
+          <circle cx="250" cy="55" r="16" fill="none" stroke={c.accent} strokeWidth="2" />
+          <path d="M261 66 L272 77" stroke={c.accent} strokeWidth="2" strokeLinecap="round" />
+        </>
+      )}
+      {variant === 'sales-workflow' && (
+        <>
+          <path d="M50 45 L270 45 L190 115 L130 115 Z" fill="none" stroke={c.accent} strokeWidth="2" opacity="0.7" />
+          <path d="M50 45 L270 45" stroke={c.accent} strokeWidth="2" opacity="0.9" />
+        </>
+      )}
+      {variant === 'remote-monitoring' && (
+        <>
+          {[0, 1, 2].map((row) =>
+            [0, 1, 2, 3].map((col) => (
+              <rect
+                key={`${row}-${col}`}
+                x={45 + col * 55}
+                y={40 + row * 32}
+                width="18"
+                height="18"
+                rx="3"
+                fill={row === 1 && col === 2 ? c.accent : 'none'}
+                stroke={c.accent}
+                strokeWidth="2"
+                opacity={row === 1 && col === 2 ? 0.9 : 0.35}
+              />
+            ))
+          )}
         </>
       )}
     </svg>

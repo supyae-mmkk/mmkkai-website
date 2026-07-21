@@ -7,6 +7,7 @@ import JsonLd from '@/components/JsonLd'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { Check, ShieldCheck } from 'lucide-react'
 import SiteImage from '@/components/media/SiteImage'
+import AboutAbstractIllustration from '@/components/illustrations/AboutAbstractIllustration'
 import { solutions } from '@/lib/solutions'
 import { countries } from '@/lib/countries'
 import { breadcrumbSchema, organizationSchema } from '@/lib/schema'
@@ -60,6 +61,12 @@ export default async function AboutPage({ params }: Props) {
           <p className="text-xl text-gray-400 mb-10">{t('subtitle')}</p>
           <p className="text-gray-300 leading-relaxed mb-6">{t('body1')}</p>
           <p className="text-gray-300 leading-relaxed mb-8">{t('body2')}</p>
+
+          {/* Original abstract illustration - used instead of fabricated
+              staff or office photography (see docs/required-visual-assets.md). */}
+          <div className="mb-8">
+            <AboutAbstractIllustration />
+          </div>
 
           {/* Real-photo slots - render nothing until team/office photos are
               approved in lib/imageConfig.ts (ids: about-team-office,

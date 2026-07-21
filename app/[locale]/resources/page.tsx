@@ -14,11 +14,11 @@ const THUMBNAILS: Record<string, ThumbnailVariant> = {
   'what-is-apollo': 'automation',
   'hubspot-crm-guide': 'crm',
   'google-workspace-migration-guide': 'migration',
-  'what-is-ai-visibility': 'automation',
-  'ai-seo-vs-traditional-seo': 'adoption',
-  'improve-ai-answer-visibility': 'crm',
-  'sales-workflow-design-lead-management': 'automation',
-  'remote-monitoring-management-benefits': 'migration',
+  'what-is-ai-visibility': 'ai-visibility',
+  'ai-seo-vs-traditional-seo': 'seo',
+  'improve-ai-answer-visibility': 'ai-visibility',
+  'sales-workflow-design-lead-management': 'sales-workflow',
+  'remote-monitoring-management-benefits': 'remote-monitoring',
 }
 import { breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata, pickLocaleMeta } from '@/lib/seo'

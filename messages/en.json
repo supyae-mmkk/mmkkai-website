@@ -500,7 +500,8 @@
     "certificationsEmpty": "No vendor certification is currently documented with a verifiable certificate reference. This section will be updated once one is confirmed.",
     "membershipsTitle": "Memberships",
     "methodologyNote": "Every entry on this page is checked against this same standard: a claim is only shown as verified when there is a link to public evidence behind it. If you have a question about any relationship shown here, or evidence we should review,",
-    "methodologyLinkText": "contact us"
+    "methodologyLinkText": "contact us",
+    "ecosystemCaption": "Technology categories MMKK AI works across - not an indication of official partnership status."
   },
   "caseStudiesPage": {
     "title": "Case Studies & Client Results",

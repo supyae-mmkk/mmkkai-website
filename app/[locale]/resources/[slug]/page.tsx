@@ -13,11 +13,13 @@ import { countries } from '@/lib/countries'
 import { articleSchema, breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata, pickLocaleMeta } from '@/lib/seo'
 import { getTranslations } from 'next-intl/server'
-import AIVisibilityProcessDiagram from '@/components/visuals/AIVisibilityProcessDiagram'
+import AIVisibilityEngineIllustration from '@/components/illustrations/AIVisibilityEngineIllustration'
+import AISEOVisualization from '@/components/illustrations/AISEOVisualization'
 
 const GUIDE_VISUALS: Record<string, React.ComponentType> = {
-  'what-is-ai-visibility': AIVisibilityProcessDiagram,
-  'improve-ai-answer-visibility': AIVisibilityProcessDiagram,
+  'what-is-ai-visibility': AIVisibilityEngineIllustration,
+  'improve-ai-answer-visibility': AIVisibilityEngineIllustration,
+  'ai-seo-vs-traditional-seo': AISEOVisualization,
 }
 
 export const dynamic = 'force-static'

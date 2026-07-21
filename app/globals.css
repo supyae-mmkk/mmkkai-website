@@ -120,6 +120,13 @@
   100% { left: 100%; opacity: 0; }
 }
 
+@keyframes flowmovevertical {
+  0% { top: 0%; opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
 @layer utilities {
   /* Light, off-white content sections used to break up long dark stretches
      and give paper-like contrast for dense reference content (per the

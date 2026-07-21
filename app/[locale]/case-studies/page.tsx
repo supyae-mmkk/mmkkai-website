@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { caseStudies, testimonials } from '@/lib/caseStudies'
 import { getSolution } from '@/lib/solutions'
 import SiteImage from '@/components/media/SiteImage'
+import ResourceThumbnail from '@/components/visuals/ResourceThumbnail'
 import { breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata } from '@/lib/seo'
 
@@ -77,7 +78,13 @@ export default async function CaseStudiesPage({ params }: Props) {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {publishedCaseStudies.map((cs) => (
                 <div key={cs.slug} className="rounded-xl2 border border-border bg-surface overflow-hidden">
-                  {cs.imageId && <SiteImage id={cs.imageId} className="w-full h-40 object-cover" />}
+                  {cs.imageId && (
+                    <SiteImage
+                      id={cs.imageId}
+                      className="w-full h-40 object-cover"
+                      fallback={cs.illustrationVariant ? <div className="w-full h-40"><ResourceThumbnail variant={cs.illustrationVariant} /></div> : undefined}
+                    />
+                  )}
                   <div className="p-5">
                   <p className="font-semibold text-white mb-1">{cs.clientName}</p>
                   <p className="text-xs text-gray-500 mb-3">{cs.industry}</p>

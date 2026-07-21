@@ -24,6 +24,7 @@ export interface CaseStudy {
   solutionSlugs: string[]
   logoPath?: string
   imageId?: string // optional id referencing lib/imageConfig.ts's siteImages - only rendered if that slot is approved
+  illustrationVariant?: import('../components/visuals/ResourceThumbnail').ThumbnailVariant // original artwork used when no real photo is available yet
   permissionToPublish: boolean // must be true before this entry is ever rendered
 }
 
