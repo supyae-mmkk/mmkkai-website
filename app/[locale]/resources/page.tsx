@@ -1,0 +1,96 @@
+import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
+import type { Metadata } from 'next'
+import { ArrowRight } from 'lucide-react'
+import Navbar from '@/components/Navbar'
+import CTASection from '@/components/CTASection'
+import JsonLd from '@/components/JsonLd'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { guides } from '@/lib/guides'
+import ResourceThumbnail, { type ThumbnailVariant } from '@/components/visuals/ResourceThumbnail'
+
+const THUMBNAILS: Record<string, ThumbnailVariant> = {
+  'google-workspace-vs-microsoft-365': 'adoption',
+  'what-is-apollo': 'automation',
+  'hubspot-crm-guide': 'crm',
+  'google-workspace-migration-guide': 'migration',
+  'what-is-ai-visibility': 'ai-visibility',
+  'ai-seo-vs-traditional-seo': 'seo',
+  'improve-ai-answer-visibility': 'ai-visibility',
+  'sales-workflow-design-lead-management': 'sales-workflow',
+  'remote-monitoring-management-benefits': 'remote-monitoring',
+}
+import { breadcrumbSchema } from '@/lib/schema'
+import { buildMetadata, pickLocaleMeta } from '@/lib/seo'
+
+export const dynamic = 'force-static'
+
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const localizedTitles: Record<string, { title: string; description: string }> = {
+    en: {
+      title: 'Resources & Guides | MMKK AI',
+      description: 'Guides for choosing and deploying Google Workspace, Microsoft 365, HubSpot CRM, and Apollo for businesses in Myanmar and Thailand.',
+    },
+    th: {
+      title: 'แหล่งข้อมูลและคู่มือ | MMKK AI',
+      description: 'คู่มือสำหรับเลือกและติดตั้ง Google Workspace, Microsoft 365, HubSpot CRM และ Apollo สำหรับธุรกิจในประเทศไทย',
+    },
+    mm: {
+      title: 'အရင်းအမြစ်များနှင့် လမ်းညွှန်များ | MMKK AI',
+      description: 'မြန်မာနိုင်ငံရှိ လုပ်ငန်းများအတွက် Google Workspace, Microsoft 365, HubSpot CRM နှင့် Apollo ရွေးချယ်ခြင်းနှင့် တပ်ဆင်ခြင်းအတွက် လမ်းညွှန်များ။',
+    },
+  }
+  const meta = localizedTitles[locale] || localizedTitles.en
+  return buildMetadata({ locale, path: 'resources', title: meta.title, description: meta.description })
+}
+
+export default async function ResourcesPage({ params }: Props) {
+  const { locale } = await params
+  const t = await getTranslations('resourcesPage')
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://mmkkai.com'
+
+  return (
+    <main className="min-h-screen">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', url: `${BASE_URL}/${locale}` },
+          { name: 'Resources', url: `${BASE_URL}/${locale}/resources` },
+        ])}
+      />
+      <Navbar />
+      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="text-left">
+            <Breadcrumbs items={[{ name: 'Home', href: `/${locale}` }, { name: 'Resources', href: '' }]} />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold font-display mb-6">{t('title')}</h1>
+          <p className="text-lg text-gray-400">{t('subtitle')}</p>
+        </div>
+      </section>
+
+      <section className="pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-5">
+          {guides.map((g) => (
+            <Link key={g.slug} href={`/resources/${g.slug}`} className="group block rounded-xl overflow-hidden border border-border bg-surface hover:border-primary/40 transition-all card-lift">
+              <div className="aspect-[2.4/1] overflow-hidden">
+                <ResourceThumbnail variant={THUMBNAILS[g.slug] || 'adoption'} />
+              </div>
+              <div className="p-5 flex items-start justify-between gap-3">
+                <div>
+                  <h2 className="font-bold text-white mb-1.5 group-hover:text-primary transition-colors">{g.title}</h2>
+                  <p className="text-sm text-gray-400 line-clamp-2">{pickLocaleMeta(g.meta, locale).description}</p>
+                </div>
+                <ArrowRight size={16} className="text-primary flex-shrink-0 mt-1 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <CTASection />
+    </main>
+  )
+}

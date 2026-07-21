@@ -1,44 +1,108 @@
 {
   "common": {
     "companyName": "MMKK AI",
-    "tagline": "Connecting… Future"
+    "tagline": "Connecting… Future",
+    "problemLabel": "Problem",
+    "solutionLabel": "Solution",
+    "outcomeLabel": "Outcome",
+    "systemsLabel": "Systems",
+    "learnMore": "Learn more",
+    "sourcesLabel": "Sources",
+    "relatedSolution": "Related Solution",
+    "relatedGuide": "Related Guide",
+    "readGuide": "Read the full guide",
+    "tabWhoFor": "Who it's for",
+    "tabImplementation": "Implementation",
+    "tabSecurity": "Security & integrations",
+    "tabLimitations": "Limitations",
+    "inThisGuide": "In this guide",
+    "contents": "Contents",
+    "published": "Published",
+    "updated": "Updated"
   },
   "nav": {
-    "products": "Products",
-    "services": "Services",
+    "home": "Home",
+    "solutions": "Solutions",
+    "industries": "Industries",
+    "resources": "Resources",
+    "about": "About",
     "contact": "Contact",
-    "bookCall": "Book Strategy Call"
+    "bookCall": "Book a Consultation",
+    "viewAllSolutions": "View all solutions",
+    "viewAllIndustries": "View all industries",
+    "businessProblems": "Business Problems"
   },
   "hero": {
-    "title1": "Official Cloud & AI",
-    "title2": "Deployment Partner",
-    "badge1": "Official Google Cloud Co-Sell Partner",
-    "badge2": "Microsoft Azure Deployment Partner",
-    "product1": "Google Cloud & Gemini AI",
-    "product2": "Microsoft Azure Infrastructure",
-    "product3": "AI Revenue Systems",
-    "button1": "Deploy Google Cloud & Gemini",
-    "button2": "Deploy AI System",
-    "button3": "Launch Sales Engine"
+    "eyebrow": "Google Cloud implementation and support  ·  Microsoft cloud deployment services",
+    "title1": "Modernize Your Business with",
+    "title2": "Cloud, CRM & AI",
+    "subtitle": "We implement the systems that help your team collaborate, manage customers, automate work and grow more efficiently.",
+    "primaryCta": "Book a Consultation",
+    "secondaryCta": "Explore Solutions"
+  },
+  "pillars": {
+    "title": "Everything your business runs on, set up right",
+    "subtitle": "Five areas of work. Eight products. One local partner across Myanmar and Thailand."
+  },
+  "whoWeServe": {
+    "title": "Who We Serve",
+    "subtitle": "Built for organizations that need business technology to just work, not another IT headache.",
+    "items": [
+      {
+        "name": "SMEs",
+        "description": "Small and medium enterprises setting up their first real IT stack"
+      },
+      {
+        "name": "Mid-Market Companies",
+        "description": "Growing teams outgrowing spreadsheets and ad-hoc tools"
+      },
+      {
+        "name": "Enterprises",
+        "description": "Larger organizations migrating or consolidating platforms"
+      },
+      {
+        "name": "International Schools",
+        "description": "Google Workspace for Education and admin systems for staff and students"
+      },
+      {
+        "name": "Real Estate Companies",
+        "description": "CRM and lead generation for listings and client pipelines"
+      },
+      {
+        "name": "Technology Companies",
+        "description": "Google Cloud architecture and AI automation for product teams"
+      },
+      {
+        "name": "Professional Services Firms",
+        "description": "CRM, productivity, and support for client-facing teams"
+      }
+    ]
+  },
+  "faqSection": {
+    "title": "Common Questions",
+    "subtitle": "Direct answers about deploying cloud, CRM, and AI systems in Myanmar and Thailand."
   },
   "footer": {
-    "description": "AI Revenue & Cloud Infrastructure Partner",
+    "description": "Cloud, CRM & AI Solutions Partner for Myanmar and Thailand",
     "navigation": "Navigation",
+    "solutionsCol": "Solutions",
     "company": "Company",
     "home": "Home",
-    "whoWeServe": "Who We Serve",
-    "products": "Products",
-    "contact": "Contact",
-    "services": "Services",
     "solutions": "Solutions",
+    "industries": "Industries",
+    "resources": "Resources",
+    "about": "About",
+    "contact": "Contact",
     "copyright": "© {year} MMKK AI. All rights reserved.",
     "us": "US",
     "thailand": "Thailand",
-    "myanmar": "Myanmar"
+    "myanmar": "Myanmar",
+    "partners": "Partners",
+    "caseStudies": "Case Studies"
   },
   "contact": {
     "title": "Contact MMKK AI",
-    "subtitle": "Speak directly with our cloud & AI infrastructure team.",
+    "subtitle": "Speak directly with our Myanmar and Thailand deployment team.",
     "getInTouch": "Get in Touch",
     "email": "Email",
     "phoneNumbers": "Phone Numbers",
@@ -49,21 +113,408 @@
     "company": "Company",
     "companyPlaceholder": "Your company name",
     "message": "Message",
-    "messagePlaceholder": "Tell us about your infrastructure needs...",
+    "messagePlaceholder": "Tell us which solution you're interested in and your timeline...",
     "required": "*",
-    "submit": "Request Consultation"
+    "submit": "Request Consultation",
+    "submitting": "Sending...",
+    "successTitle": "Thanks — we've got it.",
+    "successMessage": "A member of our team will reach out within one business day.",
+    "errorMessage": "Something went wrong sending your message. Please email sales@mmkkai.com directly.",
+    "consentText": "I agree to MMKK AI contacting me about this enquiry and to the collection of the information above in line with the",
+    "consentPrivacyLink": "Privacy Policy",
+    "consentRequired": "Please confirm you agree to the privacy policy before submitting.",
+    "afterContactTitle": "What happens after you contact us",
+    "afterContactSteps": [
+      "We review your message and current tools within one business day.",
+      "We schedule a short call to understand your goals and constraints.",
+      "You receive a scoped recommendation and estimated timeline."
+    ],
+    "supportedAreasTitle": "Areas we support",
+    "supportedAreas": [
+      "Myanmar",
+      "Thailand",
+      "Businesses operating across both markets"
+    ],
+    "socialProfiles": "Social Profiles"
   },
   "products": {
-    "title": "Our Products",
-    "subtitle": "Enterprise cloud infrastructure and AI solutions."
+    "title": "Our Solutions",
+    "subtitle": "Cloud, CRM, and AI Automation — deployed, migrated, and supported."
   },
   "services": {
-    "title": "Our Services",
-    "subtitle": "Complete infrastructure deployment and optimization services."
+    "title": "Our Solutions",
+    "subtitle": "Cloud, CRM, and AI Automation — deployed, migrated, and supported."
+  },
+  "solutionsPage": {
+    "title": "Solutions",
+    "subtitle": "Eight products across five pillars — everything a growing business needs to run on modern cloud, CRM, and AI infrastructure.",
+    "availableIn": "Available in",
+    "relatedTitle": "Related Solutions",
+    "countryCtaMyanmar": "See this solution in Myanmar",
+    "countryCtaThailand": "See this solution in Thailand"
+  },
+  "industriesPage": {
+    "title": "Industries We Serve",
+    "subtitle": "The same five-pillar technology stack, tailored to how each industry actually works."
+  },
+  "resourcesPage": {
+    "title": "Resources",
+    "subtitle": "Guides for choosing and deploying the cloud, CRM, and AI tools your business runs on."
+  },
+  "aboutPage": {
+    "title": "About MMKK AI",
+    "subtitle": "The business technology partner behind growing companies in Myanmar and Thailand.",
+    "body1": "MMKK AI was built to close a specific gap: businesses in Myanmar and Thailand need Google Workspace, Microsoft 365, HubSpot, Apollo, Google Cloud, and AI automation set up correctly and supported locally — not a generic offshore support ticket queue.",
+    "body2": "We provide Google Cloud implementation and support and Microsoft cloud deployment services, combining hands-on platform experience with on-the-ground support across our offices in the US, Thailand, and Myanmar.",
+    "officesTitle": "Offices",
+    "implementsTitle": "What We Implement",
+    "principlesTitle": "How We Work",
+    "principles": [
+      "Recommend the platform that fits your team, not the one we prefer to sell",
+      "No unverified claims — partner and certification status shown only once independently confirmed",
+      "Plain-language scoping before any implementation begins"
+    ],
+    "trustTitle": "Why Clients Trust This Work",
+    "trustBody": "We don't publish partner badges or client logos we can't back up. Every technology relationship on this site is described exactly as it stands today - implementation service or verified partnership - and every case study or testimonial is published only with the client's permission.",
+    "trustPartnersLink": "See our verified partner and platform status →",
+    "trustCaseStudiesLink": "See case studies and client testimonials →"
+  },
+  "landingPage": {
+    "faqTitle": "Frequently Asked Questions",
+    "featuresTitle": "What's Included",
+    "ctaTitle": "Ready to get started?",
+    "ctaSubtitle": "Book a free consultation and we'll scope your setup within one business day.",
+    "relatedGuide": "Related Guide",
+    "backToSolution": "Back to solution overview"
   },
   "metadata": {
-    "title": "MMKK AI | Revenue Infrastructure for the AI Era",
-    "description": "Cloud. AI. Automation. Built for Growth-Focused Enterprises."
+    "title": "MMKK AI | Cloud, CRM & AI Solutions for Myanmar and Thailand",
+    "description": "Google Workspace, Microsoft 365, HubSpot, Apollo, Google Cloud and AI Automation — deployed, migrated and supported across Myanmar and Thailand."
+  },
+  "megaMenu": {
+    "categories": {
+      "workplace": "Workplace and Cloud",
+      "sales": "Sales and CRM",
+      "ai": "AI and Automation",
+      "support": "Support"
+    },
+    "items": {
+      "googleWorkspace": "Google Workspace — email, files, and collaboration",
+      "microsoft365": "Microsoft 365 — Outlook, Teams, and SharePoint",
+      "googleCloud": "Google Cloud — architecture and infrastructure",
+      "cloudMigration": "Cloud Migration — move off legacy or personal accounts",
+      "hubspotCrm": "HubSpot CRM — one shared sales pipeline",
+      "apollo": "Apollo — outbound lead generation",
+      "crmImplementation": "CRM Implementation — pipeline setup and onboarding",
+      "salesAutomation": "Sales Automation — automated follow-up and sequences",
+      "aiAutomation": "AI Automation — workflow and support automation",
+      "businessWorkflowAutomation": "Business Workflow Automation — connect existing tools",
+      "aiAssistants": "AI Assistants — Gemini and Copilot deployment",
+      "dataAndReporting": "Data and Reporting — dashboards that get checked",
+      "teamviewer": "TeamViewer — remote support and device management",
+      "adobe": "Adobe — Creative Cloud and Acrobat licensing",
+      "licensingSupport": "Licensing and Deployment Support — ongoing technical help",
+      "remoteMonitoring": "Remote Monitoring — proactive device oversight across branches"
+    }
+  },
+  "techStrip": {
+    "label": "Technology We Implement and Support"
+  },
+  "businessProblems": {
+    "eyebrow": "Business Problems",
+    "title": "What is slowing your business down?",
+    "subtitle": "Select the situation that sounds most familiar.",
+    "problems": [
+      {
+        "id": "personal-email",
+        "label": "Teams using personal email accounts",
+        "problem": "Staff communicate and store company files through personal Gmail or messaging accounts with no central oversight.",
+        "solution": "Google Workspace or Microsoft 365 implementation",
+        "outcome": "Company email and files that belong to the business, managed from one admin console.",
+        "href": "/solutions/google-workspace"
+      },
+      {
+        "id": "scattered-leads",
+        "label": "Customer leads scattered across spreadsheets",
+        "problem": "Your sales team tracks opportunities in multiple spreadsheets with no shared view of the pipeline.",
+        "solution": "HubSpot CRM implementation",
+        "outcome": "One shared pipeline, clearer follow-up and better reporting.",
+        "href": "/solutions/hubspot-crm"
+      },
+      {
+        "id": "manual-admin",
+        "label": "Repetitive manual administrative work",
+        "problem": "Staff spend hours a week on repetitive tasks like data entry, ticket triage or compiling reports by hand.",
+        "solution": "AI automation for defined, repetitive workflows",
+        "outcome": "Specific tasks automated, with time freed up for higher-value work.",
+        "href": "/solutions/ai-automation"
+      },
+      {
+        "id": "no-pipeline",
+        "label": "No clear sales pipeline",
+        "problem": "There is no consistent way to see which deals are active, which stage they are at, or what to follow up next.",
+        "solution": "CRM implementation and sales-process mapping",
+        "outcome": "A defined pipeline stage for every deal and visibility for the whole team.",
+        "href": "/solutions/hubspot-crm"
+      },
+      {
+        "id": "access-control",
+        "label": "Files and access permissions are difficult to control",
+        "problem": "It's unclear who has access to which files, and revoking access when someone leaves is a manual, error-prone process.",
+        "solution": "Google Workspace or Microsoft 365 administration",
+        "outcome": "Centralized access control, managed from one place rather than per-file.",
+        "href": "/solutions/microsoft-365"
+      },
+      {
+        "id": "disconnected-tools",
+        "label": "Business tools do not connect with each other",
+        "problem": "Your CRM, email, and reporting tools each hold a piece of the picture, with no data flowing between them.",
+        "solution": "Business workflow automation connecting existing tools",
+        "outcome": "Information flows between systems instead of being re-entered by hand.",
+        "href": "/solutions/ai-automation"
+      }
+    ]
+  },
+  "solutionPlatform": {
+    "eyebrow": "Solution Platform",
+    "title": "The systems we implement, connected",
+    "subtitle": "Illustrative interface previews - not vendor screenshots - showing how each product typically looks once configured.",
+    "modules": {
+      "google-workspace": {
+        "name": "Google Workspace",
+        "headline": "Company email and files, properly governed.",
+        "body": "Gmail, Drive, Meet and admin controls under your own domain, migrated from personal accounts on a staged basis.",
+        "benefits": [
+          "Domain-managed email and storage",
+          "Shared drives replacing scattered attachments",
+          "Centralized admin console"
+        ],
+        "cta": "Explore Google Workspace"
+      },
+      "microsoft-365": {
+        "name": "Microsoft 365",
+        "headline": "Outlook, Teams and SharePoint, deployed correctly.",
+        "body": "Tenant provisioning, licensing tier selection and governance so a Microsoft 365 rollout is organized, not just switched on.",
+        "benefits": [
+          "Exchange Online and Teams setup",
+          "SharePoint structured by department",
+          "Conditional access and device policy"
+        ],
+        "cta": "Explore Microsoft 365"
+      },
+      "hubspot-crm": {
+        "name": "HubSpot CRM",
+        "headline": "One pipeline your team will actually use.",
+        "body": "Deal stages matched to your real sales process, with data migration and live team onboarding included.",
+        "benefits": [
+          "Pipeline configured to your sales process",
+          "Contact and company data cleaned on import",
+          "Reporting dashboards leadership checks"
+        ],
+        "cta": "Explore HubSpot CRM"
+      },
+      "apollo": {
+        "name": "Apollo",
+        "headline": "Outbound prospecting, targeted and tracked.",
+        "body": "Ideal-customer filtering, sequence setup and deliverability configuration so outreach lands and gets replies.",
+        "benefits": [
+          "Filtered, targeted contact lists",
+          "Sequences with real personalization",
+          "Replies flow into your CRM as deals"
+        ],
+        "cta": "Explore Apollo"
+      },
+      "ai-automation": {
+        "name": "AI Automation",
+        "headline": "Specific, repetitive workflows automated.",
+        "body": "One or two measurable workflows automated at a time, integrated into tools your team already uses.",
+        "benefits": [
+          "Trigger-based automation with human approval",
+          "Integrated into existing tools, not a new system",
+          "Clear escalation path for edge cases"
+        ],
+        "cta": "Explore AI Automation"
+      },
+      "google-cloud": {
+        "name": "Google Cloud",
+        "headline": "Infrastructure, architected and cost-monitored.",
+        "body": "Architecture design, migration and ongoing cost optimization so cloud spend stays predictable.",
+        "benefits": [
+          "Compute, storage and networking sized to load",
+          "IAM and network security on least-privilege",
+          "Ongoing cost monitoring and optimization"
+        ],
+        "cta": "Explore Google Cloud"
+      }
+    }
+  },
+  "systemsConnect": {
+    "eyebrow": "How The Systems Connect",
+    "title": "One connected business system, not separate licences",
+    "subtitle": "Choose a business objective to see the relevant part of the system.",
+    "objectives": [
+      {
+        "id": "leads",
+        "label": "Generate more leads"
+      },
+      {
+        "id": "sales",
+        "label": "Organize sales"
+      },
+      {
+        "id": "collaboration",
+        "label": "Improve collaboration"
+      },
+      {
+        "id": "automate",
+        "label": "Automate operations"
+      },
+      {
+        "id": "cloud",
+        "label": "Move to cloud"
+      }
+    ],
+    "captions": {
+      "leads": "Apollo builds and runs targeted outbound sequences that generate new leads from your ideal-customer profile.",
+      "sales": "Apollo replies flow into HubSpot CRM as tracked deals, giving sales a single organized pipeline.",
+      "collaboration": "HubSpot activity and customer context stay visible alongside Google Workspace or Microsoft 365, where your team already collaborates.",
+      "automate": "AI automation connects HubSpot, your workspace and reporting so repetitive follow-up and admin work runs without manual effort.",
+      "cloud": "Workspace and infrastructure move onto managed, monitored cloud accounts feeding a single management dashboard."
+    }
+  },
+  "beforeAfter": {
+    "eyebrow": "Before and After",
+    "title": "What changes once the system is connected",
+    "before": "Before MMKK AI",
+    "after": "After MMKK AI",
+    "beforeItems": [
+      "Personal email accounts",
+      "Scattered Excel files",
+      "Missed follow-ups",
+      "Manual reporting",
+      "Disconnected tools",
+      "Unclear permissions"
+    ],
+    "afterItems": [
+      "Managed business accounts",
+      "Shared CRM",
+      "Automated follow-up",
+      "Live dashboards",
+      "Connected systems",
+      "Controlled access"
+    ]
+  },
+  "process": {
+    "eyebrow": "Service Process",
+    "title": "How an implementation runs",
+    "steps": [
+      {
+        "n": "1",
+        "title": "Understand",
+        "body": "Review business goals, current tools and workflows."
+      },
+      {
+        "n": "2",
+        "title": "Design",
+        "body": "Recommend the right system and implementation plan."
+      },
+      {
+        "n": "3",
+        "title": "Implement",
+        "body": "Configure, migrate, integrate and test."
+      },
+      {
+        "n": "4",
+        "title": "Support",
+        "body": "Train users and provide ongoing technical assistance."
+      }
+    ],
+    "disclaimer": "Estimated timelines are confirmed after technical scoping and depend on user count, data volume, integrations and migration complexity."
+  },
+  "industriesHome": {
+    "eyebrow": "Industries",
+    "title": "Built for how your industry actually works",
+    "viewAll": "View all industries"
+  },
+  "regional": {
+    "eyebrow": "Regional Support",
+    "title": "Local implementation in Myanmar and Thailand",
+    "myanmarTitle": "Myanmar",
+    "myanmarItems": [
+      "Business email migration",
+      "Centralized administration",
+      "Remote-team collaboration",
+      "Business continuity",
+      "Support for limited internal IT capacity"
+    ],
+    "thailandTitle": "Thailand",
+    "thailandItems": [
+      "Structured CRM adoption",
+      "Multilingual teams",
+      "Regional operations",
+      "Governance and access control",
+      "PDPA-aware implementation planning"
+    ],
+    "crossBorder": "Operating across both markets? We plan a single implementation that works for teams in both countries."
+  },
+  "proof": {
+    "eyebrow": "Implementation Capabilities",
+    "title": "What we're set up to deliver",
+    "subtitle": "We don't publish fabricated client logos, testimonials, or performance figures. Here is what our implementation process covers.",
+    "capabilities": [
+      "Workspace migration",
+      "CRM configuration",
+      "Sales workflow design",
+      "Cloud deployment",
+      "AI automation",
+      "User onboarding",
+      "Ongoing support"
+    ],
+    "caseStudiesTitle": "Case Studies",
+    "caseStudiesComingSoon": "Case studies coming soon. Verified client examples will be added here once available."
+  },
+  "resourcesHome": {
+    "eyebrow": "Resources",
+    "title": "Guides on the systems we implement",
+    "viewAll": "View all resources",
+    "readTime": "min read"
+  },
+  "finalCta": {
+    "title": "Build a Better Business System",
+    "subtitle": "Tell us how your team works today. We'll help identify the cloud, CRM and automation setup that fits your business.",
+    "primaryCta": "Book a Consultation",
+    "secondaryCta": "Contact MMKK AI"
+  },
+  "partnersPage": {
+    "title": "Partners, Platforms & Certifications",
+    "subtitle": "A transparent look at exactly how MMKK AI relates to every platform mentioned on this site — what we implement, what we supply, and what has (and hasn't) been independently verified as an official partnership.",
+    "verifiedTitle": "Verified Partnerships",
+    "verifiedSubtitle": "Relationships with an independently verifiable partner-program status, evidenced by a link to the vendor's own public partner directory.",
+    "verifiedEmpty": "No vendor partnership currently meets this bar. MMKK AI implements and supports the platforms listed below, but does not hold an independently verified official partner, certified, or authorized reseller status with any vendor at this time. This section will be updated the moment that changes, with a link to the vendor's own directory listing as evidence.",
+    "platformsTitle": "Platforms We Implement",
+    "platformsSubtitle": "Software MMKK AI configures, deploys, and supports for clients. Using a platform professionally is not the same as an official partnership — see Verified Partnerships above for that distinction.",
+    "productsTitle": "Products We Supply",
+    "productsSubtitle": "Licenses and products MMKK AI supplies directly to clients.",
+    "certificationsTitle": "Certifications",
+    "certificationsSubtitle": "Individual or company-level certifications with a verifiable certificate reference.",
+    "certificationsEmpty": "No vendor certification is currently documented with a verifiable certificate reference. This section will be updated once one is confirmed.",
+    "membershipsTitle": "Memberships",
+    "methodologyNote": "Every entry on this page is checked against this same standard: a claim is only shown as verified when there is a link to public evidence behind it. If you have a question about any relationship shown here, or evidence we should review,",
+    "methodologyLinkText": "contact us",
+    "ecosystemCaption": "Technology categories MMKK AI works across - not an indication of official partnership status."
+  },
+  "caseStudiesPage": {
+    "title": "Case Studies & Client Results",
+    "subtitle": "Verified examples of the work MMKK AI has delivered, published only once a client agrees to be named or described. Nothing on this page is invented.",
+    "caseStudiesTitle": "Case Studies",
+    "caseStudiesEmptyHeadline": "Documented case studies are being prepared.",
+    "caseStudiesEmptyBody": "MMKK AI is compiling verified, client-approved case studies from completed implementation work. Rather than publish a placeholder or an unverifiable example, this section stays empty until a specific project has been reviewed and the client has agreed to have it described publicly.",
+    "problemLabel": "Business problem",
+    "outcomeLabel": "Verified outcome",
+    "testimonialsTitle": "Client Testimonials",
+    "testimonialsEmptyHeadline": "No client testimonials are published yet.",
+    "testimonialsEmptyBody": "MMKK AI only publishes a testimonial once the client has given explicit permission to be quoted by name. None have been collected and approved for publication at this time.",
+    "methodologyNote": "For a breakdown of exactly which technology relationships are independently verified versus which platforms MMKK AI simply implements,",
+    "methodologyLinkText": "see our Partners page"
   }
 }
-
