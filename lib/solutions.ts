@@ -666,6 +666,158 @@ export const solutions: Solution[] = [
 ],
     countries: [],
   },
+  {
+    slug: 'sales-workflow-design',
+    name: 'Sales Workflow Design',
+    shortName: 'Sales Workflow Design',
+    pillar: 'crm',
+    tagline: 'Design how a lead moves from first contact to closed deal, end to end.',
+    meta: {
+      en: {
+        title: 'Sales Workflow Design | Apollo to CRM to Close | MMKK AI',
+        description: 'MMKK AI designs the sales workflow connecting prospecting, CRM, and follow-up automation, so leads flow through a defined process instead of getting lost between tools.',
+      },
+      th: {
+        title: 'ออกแบบขั้นตอนการขาย | จาก Apollo สู่ CRM จนถึงปิดการขาย | MMKK AI',
+        description: 'MMKK AI ออกแบบขั้นตอนการขายที่เชื่อมโยงการหาลูกค้าใหม่ CRM และระบบติดตามผลอัตโนมัติ เพื่อให้ลีดไม่หลุดหายระหว่างเครื่องมือต่าง ๆ',
+      },
+      mm: {
+        title: 'Sales Workflow ဒီဇိုင်း | Apollo မှ CRM အထိ | MMKK AI',
+        description: 'MMKK AI သည် lead ရှာဖွေခြင်း၊ CRM နှင့် စောင့်ကြည့်အလိုအလျောက် စနစ်များကို ချိတ်ဆက်သော sales workflow ကို ဒီဇိုင်းရေးဆွဲပေးသည်။',
+      },
+    },
+    whatItDoes:
+      'Sales workflow design is the work of defining exactly how a lead moves from first contact through to a closed deal - which tool owns each stage, what triggers a handoff between prospecting and follow-up, and what data has to travel with the lead at each step. Most businesses we work with already own the individual pieces - Apollo for outbound, HubSpot for the pipeline, an inbox for follow-up - but nobody has actually designed how those pieces connect, so leads stall in the gaps between tools rather than because any one tool failed.',
+    suitableFor:
+      'Suitable for businesses that have already implemented Apollo, HubSpot, or a similar CRM individually but still rely on someone manually checking each system and re-entering data between them, and for founder-led sales teams scaling to a multi-person team where an informal, undocumented process no longer holds up once more than one person is running it.',
+    outcomes: [
+      'A documented, repeatable path from first contact to closed deal instead of an informal process that lives in one person\'s head',
+      'Defined handoff rules between prospecting, qualification, and account management so leads don\'t stall waiting for someone to notice them',
+      'Automated data flow between Apollo, the CRM, and follow-up sequencing instead of manual re-entry at each stage',
+      'Pipeline stages and reporting fields that reflect how your team actually sells, not a generic CRM default',
+    ],
+    implementationScope:
+      'A typical engagement starts by mapping the current path a lead actually takes today, stage by stage, including every manual step nobody has written down. From there we define the target workflow: pipeline stages, the specific criteria that move a lead from one stage to the next, which fields are required at each stage for reporting to be trustworthy, and which handoffs between prospecting and account management should be automatic versus manually reviewed. The output is both a configured system (CRM pipeline, automation rules, integration between prospecting and CRM tools) and a written reference your team can actually follow.',
+    migrationConsiderations:
+      'Businesses moving from an ad hoc process - a shared spreadsheet, personal notes, or a CRM that was set up once and never revisited - typically need existing deal and contact data cleaned before it\'s mapped onto the new stage structure, since carrying over inconsistent stage labels or duplicate records undermines the reporting the new workflow is meant to produce. We usually recommend running the new workflow in parallel with the old process for a short period rather than switching over all at once, so the team can validate the new stage definitions against real deals before the old process is retired.',
+    security:
+      'Pipeline visibility and edit permissions are scoped by role, so a rep sees the deals relevant to them while managers retain full pipeline visibility for reporting - configured deliberately rather than left at a CRM\'s default all-or-nothing access model. Where prospecting and CRM tools are integrated, the integration is scoped to sync only the fields the workflow actually requires, rather than a blanket data sync between systems.',
+    integrations: [
+      'Apollo or another prospecting tool for lead source and initial contact data',
+      'HubSpot or another CRM as the system of record for pipeline stages',
+      'Email and calendar tools for follow-up sequencing and meeting scheduling',
+      'Automation tooling for stage-triggered handoffs and notifications',
+    ],
+    limitations:
+      'Sales workflow design assumes the underlying tools (a CRM, a prospecting platform) are already implemented or being implemented alongside it - see our HubSpot CRM and Apollo Lead Generation pages for that implementation work specifically. This service is the design and configuration of how those tools work together, not a replacement for implementing any one of them individually.',
+    features: [
+      'Current-state mapping of how leads actually move today',
+      'Pipeline stage and handoff-rule definition',
+      'Automation configuration between prospecting and CRM tools',
+      'Reporting fields aligned to how your team sells',
+      'A written workflow reference your team can follow without re-explaining it verbally',
+    ],
+    faq: [
+      {
+        question: 'What is sales workflow design, exactly?',
+        answer: 'It\'s the work of defining and configuring how a lead moves from first contact to a closed deal - which tool owns each stage, what triggers a handoff, and what data travels with the lead - rather than leaving that process undocumented and dependent on one person remembering how it works.',
+      },
+      {
+        question: 'Do we need Apollo and HubSpot already set up before this?',
+        answer: 'Not necessarily before the design phase, but the workflow itself is built around whichever prospecting and CRM tools you use - we can scope this alongside a HubSpot or Apollo implementation rather than requiring it to happen first.',
+      },
+      {
+        question: 'How is this different from just implementing a CRM?',
+        answer: 'CRM implementation sets up the tool itself - pipeline structure, user accounts, data migration. Sales workflow design is the layer above that: defining the rules for how leads move between prospecting, the CRM, and follow-up, and automating the handoffs so the process runs consistently regardless of who\'s working a given deal.',
+      },
+      {
+        question: 'Can this work for a single-founder sales process, not just a team?',
+        answer: 'Yes - a founder-led process benefits from the same documentation and automation, and it makes handing off pieces of the process to a first sales hire much smoother than trying to explain an undocumented process verbally.',
+      },
+      {
+        question: 'What does the final deliverable look like?',
+        answer: 'A configured pipeline and automation setup in your CRM plus a written reference document describing each stage, its entry and exit criteria, and who owns what - so the workflow doesn\'t depend on institutional memory.',
+      },
+    ],
+    countries: [],
+  },
+  {
+    slug: 'remote-monitoring-management',
+    name: 'Remote Monitoring and Management',
+    shortName: 'Remote Monitoring (RMM)',
+    pillar: 'support',
+    tagline: 'Proactive device oversight and remote troubleshooting across every location.',
+    meta: {
+      en: {
+        title: 'Remote Monitoring and Management (RMM) | MMKK AI',
+        description: 'MMKK AI configures remote monitoring and management using TeamViewer - device oversight, alerting, and remote troubleshooting across every branch, without an on-site technician.',
+      },
+      th: {
+        title: 'การตรวจสอบและจัดการอุปกรณ์ระยะไกล (RMM) | MMKK AI',
+        description: 'MMKK AI ตั้งค่าระบบตรวจสอบและจัดการอุปกรณ์ระยะไกลด้วย TeamViewer สำหรับทุกสาขาโดยไม่ต้องมีช่างเทคนิคประจำที่',
+      },
+      mm: {
+        title: 'အဝေးမှ စောင့်ကြည့်စီမံခြင်း (RMM) | MMKK AI',
+        description: 'MMKK AI သည် TeamViewer ကို အသုံးပြု၍ ရုံးခွဲတိုင်းအတွက် device စောင့်ကြည့်ခြင်းနှင့် အဝေးမှ ပြင်ဆင်ပေးမှု ဆက်တင်ပြုလုပ်ပေးသည်။',
+      },
+    },
+    whatItDoes:
+      'Remote monitoring and management is the ongoing, proactive counterpart to one-off remote access: instead of a technician connecting to a device only after someone reports a problem, RMM continuously tracks device health, security status, and update compliance across every enrolled machine, and surfaces issues before they become a support ticket. MMKK AI configures this using TeamViewer as the underlying platform, so it functions as a managed monitoring practice rather than remote-access software installed on a handful of machines and otherwise ignored.',
+    suitableFor:
+      'Suitable for businesses operating across multiple branches or office locations - a pattern we see often among real estate firms, schools, and retail operations - where no single location has a full-time, on-site IT presence, and management currently has no consolidated view of device health across sites.',
+    outcomes: [
+      'Device and security issues identified before they cause a work stoppage, rather than discovered when a user calls in',
+      'One consolidated view of device health across every branch, instead of each location being a blackbox until something breaks',
+      'IT issues resolved remotely in most cases, without dispatching someone to a physical location',
+      'A documented device inventory across the business, which is often missing entirely once devices have accumulated informally over time',
+    ],
+    implementationScope:
+      'A typical setup starts with a device inventory audit across every location, since businesses without existing RMM in place frequently don\'t have an accurate current list of what devices exist, let alone their patch status. From there we configure monitoring thresholds and alerting rules (what counts as urgent versus something that can wait for a weekly review), enroll devices with the appropriate remote-access and monitoring permissions, and integrate alerts into your existing support workflow so a flagged device becomes a tracked ticket rather than an email nobody actions.',
+    migrationConsiderations:
+      'Businesses currently relying on an ad hoc mix of remote-access tools, or no monitoring at all beyond waiting for a user to report a problem, typically need the device inventory review above before enrollment, so the new setup consolidates and replaces informal tooling rather than adding another layer on top of it. This is also the point where multi-location businesses usually discover devices nobody remembers deploying, which the inventory step surfaces and resolves before monitoring begins.',
+    security:
+      'Device enrollment includes access-permission and session-logging configuration scoped to who legitimately needs remote access to which devices, rather than a blanket administrator-level setup across every machine. Session logs record who accessed a device and when, which matters for businesses that need to account for remote access to machines handling customer or financial data at branch locations with limited on-site oversight.',
+    integrations: [
+      'Existing helpdesk or ticketing systems, so a monitoring alert becomes a tracked support request',
+      'Device security policy baselines (patch status, endpoint protection) already in place elsewhere in your IT setup',
+    ],
+    limitations:
+      'Remote monitoring and management covers device oversight, alerting, and remote troubleshooting - it is not a full managed-IT department replacement for a business that needs broader coverage such as on-site hardware repair or network infrastructure work, which we scope separately when it applies. It also depends on a device having the monitoring client installed; devices outside the enrolled inventory are not covered until they\'re added.',
+    features: [
+      'Device inventory audit across all locations',
+      'Monitoring threshold and alerting configuration',
+      'Remote troubleshooting without an on-site visit in most cases',
+      'Session logging for access accountability',
+      'Helpdesk workflow integration for tracked, actioned alerts',
+    ],
+    faq: [
+      {
+        question: 'How is remote monitoring and management different from just having TeamViewer installed?',
+        answer: 'TeamViewer installed on a device without configured monitoring is remote-access software waiting for someone to use it reactively. RMM configuration adds proactive monitoring, alerting thresholds, and a defined process for what happens when something is flagged, so issues surface before a user has to report them.',
+      },
+      {
+        question: 'Do you need to visit our office to set this up?',
+        answer: 'Initial device enrollment can typically be scripted and rolled out remotely across many machines at once; a site visit is occasionally useful for the inventory audit step if device records are especially incomplete, but is not required in most cases.',
+      },
+      {
+        question: 'Can this cover multiple countries or branch locations under one setup?',
+        answer: 'Yes - this is one of the most common configurations we build, with a single consolidated monitoring view across every enrolled location regardless of country.',
+      },
+      {
+        question: 'What happens when a device is flagged?',
+        answer: 'The alert is routed into your existing helpdesk or ticketing process (or a simple one we help set up if none exists), so it becomes a tracked, actioned item rather than a notification that sits unread.',
+      },
+      {
+        question: 'Is this suitable for a school managing devices across multiple classrooms and offices?',
+        answer: 'Yes - this is a common setup for international schools with a small central IT team responsible for devices across many classrooms and administrative offices, where centralized monitoring reduces how often someone needs to be physically present at each device.',
+      },
+      {
+        question: 'Does this replace our existing IT support arrangement?',
+        answer: 'Not necessarily - RMM covers device monitoring and remote troubleshooting specifically; if you need broader IT coverage such as hardware repair or network work, we scope that as a separate, complementary arrangement rather than assuming RMM replaces it.',
+      },
+    ],
+    countries: [],
+  },
 ]
 
 export function getSolution(slug: string): Solution | undefined {

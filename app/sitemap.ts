@@ -16,7 +16,7 @@ const CONTENT_LAST_MODIFIED = '2026-07-13'
 // Static marketing pages with no per-item content-freshness field of their
 // own. Dated to the same fixed remediation date above rather than computed
 // at build time.
-const staticPaths = ['', 'solutions', 'industries', 'resources', 'about', 'contact', 'privacy-policy', 'terms-of-service']
+const staticPaths = ['', 'solutions', 'industries', 'resources', 'partners', 'case-studies', 'about', 'contact', 'privacy-policy', 'terms-of-service']
 
 // Note: legacy /products and /services routes are intentionally excluded -
 // they are 301 redirects into /solutions, not indexable content, and

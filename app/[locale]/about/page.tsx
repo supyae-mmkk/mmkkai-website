@@ -1,10 +1,11 @@
+import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import CTASection from '@/components/CTASection'
 import JsonLd from '@/components/JsonLd'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import { Check } from 'lucide-react'
+import { Check, ShieldCheck } from 'lucide-react'
 import { solutions } from '@/lib/solutions'
 import { countries } from '@/lib/countries'
 import { breadcrumbSchema, organizationSchema } from '@/lib/schema'
@@ -76,6 +77,17 @@ export default async function AboutPage({ params }: Props) {
               </li>
             ))}
           </ul>
+
+          <div className="rounded-xl2 border border-border bg-surface p-6 md:p-8 mb-12">
+            <h2 className="text-xl font-bold text-primary mb-3 flex items-center gap-2">
+              <ShieldCheck size={20} /> {t('trustTitle')}
+            </h2>
+            <p className="text-sm text-gray-300 leading-relaxed mb-4">{t('trustBody')}</p>
+            <div className="flex flex-wrap gap-3 text-sm">
+              <Link href="/partners" className="text-primary hover:underline font-medium">{t('trustPartnersLink')}</Link>
+              <Link href="/case-studies" className="text-primary hover:underline font-medium">{t('trustCaseStudiesLink')}</Link>
+            </div>
+          </div>
 
           <h2 className="text-xl font-bold text-primary mb-6">{t('officesTitle')}</h2>
           <div className="grid sm:grid-cols-2 gap-4">

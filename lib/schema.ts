@@ -10,7 +10,7 @@
 // - Article schema carries per-article dates, author, publisher, image, and
 //   mainEntityOfPage instead of one shared fake date.
 
-import { verifiedSameAs, companyInfo } from './companyConfig'
+import { verifiedSameAs, companyInfo, legalEntity } from './companyConfig'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://mmkkai.com'
 
@@ -32,6 +32,10 @@ export function organizationSchema() {
     description:
       'MMKK AI provides cloud, CRM, and AI automation deployment and support for businesses in Myanmar and Thailand, covering Google Workspace, Microsoft 365, HubSpot CRM, Apollo, Google Cloud, and applied AI automation.',
     email: companyInfo.email,
+    // Only rendered once lib/companyConfig.ts's legalEntity.legalName is
+    // confirmed and set — see that file for why this is null by default.
+    ...(legalEntity.legalName ? { legalName: legalEntity.legalName } : {}),
+    ...(legalEntity.alternateNames.length > 0 ? { alternateName: legalEntity.alternateNames } : {}),
     // Only ever populated from lib/companyConfig.ts — see that file before
     // adding anything here.
     ...(verifiedSameAs.length > 0 ? { sameAs: verifiedSameAs } : {}),
@@ -108,6 +112,17 @@ export function faqPageSchema(items: Array<{ question: string; answer: string }>
       name: item.question,
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
+  }
+}
+
+export function contactPageSchema(opts: { url: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': `${opts.url}#contactpage`,
+    url: opts.url,
+    name: 'Contact MMKK AI',
+    about: { '@id': ORG_ID },
   }
 }
 

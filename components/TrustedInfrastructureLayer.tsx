@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
-import { credentials, NEUTRAL_PHRASES } from '@/lib/companyConfig'
+import { partnerRegistry, NEUTRAL_PHRASES } from '@/lib/companyConfig'
 
 const PRODUCTS = ['Google Workspace', 'Microsoft 365', 'HubSpot', 'Google Cloud', 'Apollo', 'TeamViewer', 'Adobe']
 
@@ -14,7 +14,7 @@ const PRODUCTS = ['Google Workspace', 'Microsoft 365', 'HubSpot', 'Google Cloud'
 // endorsement.
 export default function TrustedInfrastructureLayer() {
   const t = useTranslations('techStrip')
-  const verifiedOnes = credentials.filter((c) => c.verified)
+  const verifiedOnes = partnerRegistry.filter((c) => c.status === 'verified' && c.publicVisibility)
 
   return (
     <section className="py-10 px-4 sm:px-6 lg:px-8 relative border-y border-white/[0.06] bg-surface/40">
@@ -26,7 +26,7 @@ export default function TrustedInfrastructureLayer() {
           transition={{ duration: 0.5 }}
           className="text-center text-[11px] font-semibold uppercase tracking-wider text-gray-500 mb-5"
         >
-          {verifiedOnes.length > 0 ? verifiedOnes.map((c) => c.label).join('  ·  ') : t('label')}
+          {verifiedOnes.length > 0 ? verifiedOnes.map((c) => c.name).join('  ·  ') : t('label')}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 8 }}

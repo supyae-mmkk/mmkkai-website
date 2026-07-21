@@ -322,6 +322,214 @@ export const guides: Guide[] = [
     solutionSlug: 'google-workspace',
     landingPageLinks: [{ country: 'myanmar', slug: 'google-workspace-migration' }],
   },
+  {
+    slug: 'what-is-ai-visibility',
+    title: 'What Is AI Visibility?',
+    meta: {
+      en: {
+        title: 'What Is AI Visibility? | MMKK AI',
+        description: 'A plain-language explanation of AI visibility - what it means for a business to be found and cited correctly by ChatGPT, Gemini, Perplexity, and other AI systems, and why it differs from traditional search ranking.',
+      },
+      th: {
+        title: 'AI Visibility คืออะไร | MMKK AI',
+        description: 'คำอธิบายง่าย ๆ ว่า AI visibility คืออะไร เหตุใดธุรกิจจึงควรให้ความสำคัญกับการถูกอ้างอิงอย่างถูกต้องโดยระบบ AI เช่น ChatGPT และ Gemini',
+      },
+      mm: {
+        title: 'AI Visibility ဆိုသည်မှာ အဘယ်နည်း | MMKK AI',
+        description: 'AI visibility ဆိုသည်မှာ အဘယ်နည်းဆိုသည်ကို ရိုးရှင်းစွာ ရှင်းပြချက် — ChatGPT, Gemini စသည့် AI စနစ်များမှ လုပ်ငန်းကို မှန်ကန်စွာ ကိုးကားခံရရန် အရေးကြီးသည့်အကြောင်းရင်း။',
+      },
+    },
+    datePublished: '2026-07-21',
+    dateModified: '2026-07-21',
+    intro:
+      'Search behavior is changing: a growing share of people ask ChatGPT, Gemini, Perplexity, or Google\'s AI Overviews a question instead of typing a keyword into a search box and scrolling through ten blue links. AI visibility is the general term for whether, and how accurately, a business gets surfaced when someone asks one of these systems a question relevant to that business - not a specific paid product or audit tool, but a description of an outcome any business with a website should understand.',
+    sections: [
+      {
+        heading: 'How this differs from traditional search ranking',
+        body: 'Traditional SEO is measured largely through rankings - where a page lands in a list of ten results for a given keyword. AI visibility is measured differently: whether the AI\'s answer mentions the business at all, whether it describes the business accurately, and whether it cites the business\'s own site as the source rather than a directory listing, a review site, or a competitor. A business can rank on page one of Google for its own name and still never get mentioned in an AI-generated answer to a relevant question, because the two systems draw on different signals and different portions of the underlying content.',
+      },
+      {
+        heading: 'What actually determines whether an AI system cites a business',
+        body: 'AI systems generally favor content that is clear, factual, and unambiguous over content written primarily to rank for a keyword. Consistent, accurate structured data (schema.org markup describing an organization, its services, and its FAQ content) helps because it gives the AI system an explicit, machine-readable description to draw from rather than requiring it to interpret marketing copy. Consistent naming and contact information across a business\'s own site and any third-party profiles matters too, since inconsistency - a different phone number on a directory listing than on the website - makes a business harder for an AI system to confidently describe as a single, coherent entity. Direct, self-contained answers to specific questions tend to get lifted into AI answers more often than long marketing paragraphs that never actually state the fact plainly.',
+      },
+      {
+        heading: 'Why this matters for a growing business, not just a technology company',
+        body: 'Any business whose customers might ask an AI assistant something like "who provides X service in my city" or "what is the difference between X and Y" has a stake in this, regardless of industry. A business that has never reviewed its own structured data, has inconsistent contact information across the web, or writes only broad marketing copy without direct factual answers to real customer questions is simply harder for these systems to cite accurately - not because of a technical penalty, but because there is less clear, extractable information for the system to work with in the first place.',
+      },
+    ],
+    citations: [
+      { label: 'Google Search Central - Understanding how Google uses structured data', url: 'https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data' },
+      { label: 'Schema.org - Organization schema documentation', url: 'https://schema.org/Organization' },
+    ],
+    solutionSlug: 'ai-automation',
+    landingPageLinks: [],
+  },
+  {
+    slug: 'ai-seo-vs-traditional-seo',
+    title: 'AI SEO vs. Traditional SEO: What\'s Actually Different',
+    meta: {
+      en: {
+        title: 'AI SEO vs Traditional SEO: What\'s Different | MMKK AI',
+        description: 'A practical comparison of traditional search engine optimization and the emerging practice of optimizing for AI-generated answers - what carries over, what doesn\'t, and what to prioritize.',
+      },
+      th: {
+        title: 'AI SEO เทียบกับ SEO แบบดั้งเดิม | MMKK AI',
+        description: 'เปรียบเทียบการทำ SEO แบบดั้งเดิมกับแนวทางใหม่สำหรับการเพิ่มการมองเห็นในคำตอบของ AI - อะไรที่ยังใช้ได้ อะไรที่เปลี่ยนไป',
+      },
+      mm: {
+        title: 'AI SEO နှင့် ရိုးရာ SEO ကွာခြားချက် | MMKK AI',
+        description: 'ရိုးရာ SEO နှင့် AI ဖြေကြားချက်များအတွက် ပိုမိုကောင်းမွန်အောင်ပြုလုပ်ခြင်း၏ ကွာခြားချက်ကို လက်တွေ့ကျကျ နှိုင်းယှဉ်ချက်။',
+      },
+    },
+    datePublished: '2026-07-21',
+    dateModified: '2026-07-21',
+    intro:
+      '"AI SEO" is not a formally standardized discipline the way traditional SEO is, and treating it as a simple drop-in replacement for existing SEO practice overstates how much has actually changed. Some fundamentals carry over directly; others need real adjustment. This guide separates the two rather than treating "AI SEO" as a totally new field invented to sell something.',
+    sections: [
+      {
+        heading: 'What carries over from traditional SEO',
+        body: 'Fast, mobile-friendly pages, clear heading structure, accurate metadata, and a real sitemap all still matter, because AI crawlers and the search indexes many AI systems draw on still need to find, load, and parse a page successfully before anything else is possible. A site that is slow, broken, or blocked from crawling doesn\'t get a second chance at AI visibility any more than it does at traditional ranking - the basic technical foundation is shared between both goals, not separate.',
+      },
+      {
+        heading: 'What\'s genuinely different',
+        body: 'Traditional SEO optimizes for a ranking algorithm evaluating a page against a specific keyword query, often rewarding comprehensive, long-form content that covers many related keywords. AI-answer optimization instead rewards direct, self-contained, factually precise answers to specific questions, plus structured data an AI system can parse without ambiguity - a well-written FAQ section answering exact questions in plain language tends to perform better for AI citation than a long unstructured article covering the same ground indirectly. Citation and consistency also matter more: an AI system weighing whether to trust and cite a business benefits from that business\'s name, contact details, and factual claims being consistent everywhere they appear, not just accurate on the business\'s own site.',
+      },
+      {
+        heading: 'A practical priority order',
+        body: 'For most growing businesses without a dedicated SEO function, the practical order is: first, make sure the technical basics (page speed, crawlability, accurate metadata) are solid, since neither traditional SEO nor AI visibility works without them. Second, add clear, accurate structured data describing the business, its services, and genuine FAQ content. Third, write direct answers to the specific questions real customers ask, in plain language, rather than only broad marketing copy. Chasing AI-specific tactics before the technical foundation is solid tends to produce little measurable benefit.',
+      },
+    ],
+    citations: [
+      { label: 'Google Search Central - SEO Starter Guide', url: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide' },
+      { label: 'Google Search Central - AI features and your website', url: 'https://developers.google.com/search/docs/appearance/ai-features' },
+    ],
+    solutionSlug: 'ai-automation',
+    landingPageLinks: [],
+  },
+  {
+    slug: 'improve-ai-answer-visibility',
+    title: 'How Businesses Can Improve Their Visibility in AI Answers',
+    meta: {
+      en: {
+        title: 'How to Improve Your Business\'s Visibility in AI Answers | MMKK AI',
+        description: 'Concrete, non-technical steps a growing business can take to be described accurately and cited more often by ChatGPT, Gemini, Perplexity, and Google AI Overviews.',
+      },
+      th: {
+        title: 'วิธีเพิ่มการมองเห็นธุรกิจในคำตอบของ AI | MMKK AI',
+        description: 'ขั้นตอนที่เป็นรูปธรรมสำหรับธุรกิจที่กำลังเติบโตเพื่อให้ถูกอธิบายอย่างถูกต้องและถูกอ้างอิงบ่อยขึ้นโดย AI',
+      },
+      mm: {
+        title: 'AI ဖြေကြားချက်များတွင် လုပ်ငန်း မြင်နိုင်စွမ်းတိုးမြှင့်နည်း | MMKK AI',
+        description: 'ကြီးထွားနေသော လုပ်ငန်းများအတွက် AI မှ မှန်ကန်စွာ ဖော်ပြပြီး ပိုမိုကိုးကားခံရရန် လက်တွေ့ကျသော အဆင့်များ။',
+      },
+    },
+    datePublished: '2026-07-21',
+    dateModified: '2026-07-21',
+    intro:
+      'Improving AI visibility is less about a single technical trick and more about a handful of foundational fixes most businesses simply haven\'t gotten around to. None of the steps below require specialized AI expertise - they\'re closer to good housekeeping than a new discipline.',
+    sections: [
+      {
+        heading: 'Fix inconsistent business information first',
+        body: 'Before anything else, confirm that the business name, address, phone number, and service description are identical across the website, any directory listings, and social profiles. AI systems, like traditional search engines, treat inconsistency as a signal of uncertainty about which version is correct, which makes a business less likely to be confidently cited. This is usually the highest-value, lowest-effort fix available, and something a business can audit itself in an afternoon.',
+      },
+      {
+        heading: 'Add accurate structured data',
+        body: 'Organization, Service, and FAQPage structured data (schema.org markup, typically added as JSON-LD in a page\'s HTML) gives AI systems an explicit, unambiguous description of a business and its services to draw from, rather than requiring them to infer that information from marketing copy. This only helps if the data is accurate and genuinely matches what\'s visible on the page - structured data that overstates or misrepresents the business is a data-quality problem, not a visibility improvement, and can actively damage trust once discovered.',
+      },
+      {
+        heading: 'Write direct answers to real customer questions',
+        body: 'A short, direct, self-contained answer to a specific question a real customer would ask - "Does this service work for a small team?", "How long does setup typically take?" - is more likely to be lifted into an AI-generated answer than the same information buried inside a longer marketing paragraph. This is also simply better for human visitors: the goal is genuinely useful content that happens to also work well for AI systems, not content written only for a crawler.',
+      },
+    ],
+    citations: [
+      { label: 'Google Search Central - Structured data guidelines', url: 'https://developers.google.com/search/docs/appearance/structured-data/sd-policies' },
+      { label: 'Google Business Profile Help - Keep your business information accurate', url: 'https://support.google.com/business/answer/3038177' },
+    ],
+    solutionSlug: 'ai-automation',
+    landingPageLinks: [],
+  },
+  {
+    slug: 'sales-workflow-design-lead-management',
+    title: 'How Sales Workflow Design Improves Lead Management',
+    meta: {
+      en: {
+        title: 'How Sales Workflow Design Improves Lead Management | MMKK AI',
+        description: 'Why leads stall between prospecting and CRM tools, and how designing a defined sales workflow fixes it - a practical guide for growing sales teams.',
+      },
+      th: {
+        title: 'การออกแบบขั้นตอนการขายช่วยพัฒนาการจัดการลีดอย่างไร | MMKK AI',
+        description: 'เหตุใดลีดจึงหยุดชะงักระหว่างเครื่องมือหาลูกค้าใหม่และ CRM และการออกแบบขั้นตอนการขายที่ชัดเจนช่วยแก้ปัญหานี้ได้อย่างไร',
+      },
+      mm: {
+        title: 'Sales Workflow ဒီဇိုင်းသည် Lead စီမံခန့်ခွဲမှုကို မည်သို့တိုးတက်စေသနည်း | MMKK AI',
+        description: 'Lead များသည် prospecting tool နှင့် CRM အကြား အဘယ်ကြောင့် ရပ်တန့်နေသနည်း၊ ရှင်းလင်းသော sales workflow ဒီဇိုင်းသည် ၎င်းကို မည်သို့ဖြေရှင်းပေးသနည်း။',
+      },
+    },
+    datePublished: '2026-07-21',
+    dateModified: '2026-07-21',
+    intro:
+      'Most sales teams struggling with lead follow-through already own the right tools - a prospecting platform, a CRM, an inbox. The actual problem is usually that nobody has designed how those tools connect, so leads fall into the gaps between them rather than being lost due to any single tool failing.',
+    sections: [
+      {
+        heading: 'Where leads actually get lost',
+        body: 'In an undocumented sales process, a lead typically gets lost at a handoff point: a rep finds a promising contact in a prospecting tool but doesn\'t log it in the CRM before getting pulled into other work, or a lead replies to an outbound sequence but the reply sits in a personal inbox instead of becoming a tracked deal. None of these failures happen because the CRM or the prospecting tool is bad - they happen because no one defined what should happen at the exact moment a lead moves from one system to another.',
+      },
+      {
+        heading: 'What a designed workflow actually changes',
+        body: 'A properly designed sales workflow defines, in writing, exactly which stage a lead is in, what has to be true for it to move to the next stage, and which handoffs should happen automatically versus be reviewed by a person. Once that\'s defined, it can usually be automated - a qualified reply in a prospecting tool creates a tracked deal in the CRM automatically, rather than depending on a rep remembering to enter it manually. This is less about adding technology and more about removing the manual steps that depended on someone\'s memory or diligence.',
+      },
+      {
+        heading: 'Why this matters more as a sales team grows',
+        body: 'An informal process can work when one person is running the entire sales motion and holds the whole process in their head. It breaks down almost immediately once a second or third person joins, because now the informal process has to be explained verbally to every new hire, and it inevitably gets interpreted differently by each person. A documented, partly-automated workflow removes that dependency on institutional memory, which is exactly the point at which most growing sales teams first notice leads are falling through cracks that didn\'t seem to exist when the team was smaller.',
+      },
+    ],
+    citations: [
+      { label: 'HubSpot - What is a sales pipeline?', url: 'https://www.hubspot.com/sales/sales-pipeline' },
+    ],
+    solutionSlug: 'sales-workflow-design',
+    landingPageLinks: [],
+  },
+  {
+    slug: 'remote-monitoring-management-benefits',
+    title: 'How Remote Monitoring and Management Helps Businesses',
+    meta: {
+      en: {
+        title: 'How Remote Monitoring and Management Helps Businesses | MMKK AI',
+        description: 'Why proactive device monitoring catches problems before they become support tickets, and what it changes for businesses running multiple branch locations.',
+      },
+      th: {
+        title: 'การตรวจสอบและจัดการอุปกรณ์ระยะไกลช่วยธุรกิจอย่างไร | MMKK AI',
+        description: 'เหตุใดการตรวจสอบอุปกรณ์เชิงรุกจึงช่วยพบปัญหาก่อนที่จะกลายเป็นเคสสนับสนุน และเปลี่ยนแปลงอะไรสำหรับธุรกิจที่มีหลายสาขา',
+      },
+      mm: {
+        title: 'Remote Monitoring and Management သည် လုပ်ငန်းများကို မည်သို့ကူညီသနည်း | MMKK AI',
+        description: 'ကြိုတင်ကာကွယ် device စောင့်ကြည့်ခြင်းသည် ပြဿနာများကို support ticket မဖြစ်မီ အဘယ်ကြောင့် ဖော်ထုတ်နိုင်သနည်း၊ ရုံးခွဲများစွာရှိသည့် လုပ်ငန်းများအတွက် ဘာကို ပြောင်းလဲပေးသနည်း။',
+      },
+    },
+    datePublished: '2026-07-21',
+    dateModified: '2026-07-21',
+    intro:
+      'Most small IT setups are entirely reactive: a device breaks or a security issue emerges, someone notices, and only then does anyone act. Remote monitoring and management (RMM) exists specifically to close that gap by tracking device health continuously so problems are caught before they interrupt work.',
+    sections: [
+      {
+        heading: 'The difference between reactive support and proactive monitoring',
+        body: 'Reactive IT support fixes a problem after a user notices and reports it - by which point the business has already lost the productive time between when the problem started and when it was reported. Proactive monitoring tracks device health, security patch status, and basic performance indicators continuously, so a business can be alerted to an issue - a device falling behind on security updates, a machine showing signs of failing hardware - before it becomes visible to the end user as a work stoppage.',
+      },
+      {
+        heading: 'Why this matters more for multi-location businesses',
+        body: 'A business with a single office can often get by on someone noticing a problem and walking over to fix it. A business with several branch locations - common among retail chains, schools with multiple campuses, and real estate firms with several offices - doesn\'t have that option at every site, and dispatching a technician to a branch for every issue is slow and expensive. Centralized monitoring gives management one consolidated view of device health across every location, so most issues can be diagnosed and often resolved remotely, and a technician is only dispatched on-site for the smaller number of problems that genuinely require physical hands-on work.',
+      },
+      {
+        heading: 'What it takes to actually get value from it',
+        body: 'RMM tooling only helps if someone is actually watching the alerts and has a defined process for acting on them - installing monitoring software and never reviewing its output produces no benefit over having no monitoring at all. The practical setup work is less about the software itself and more about deciding what counts as urgent versus something that can wait for a weekly review, and making sure a flagged issue becomes a tracked, assigned task rather than a notification nobody actions.',
+      },
+    ],
+    citations: [
+      { label: 'CISA - Guide to Securing Remote Access Software', url: 'https://www.cisa.gov/resources-tools/resources/guide-securing-remote-access-software' },
+    ],
+    solutionSlug: 'remote-monitoring-management',
+    landingPageLinks: [],
+  },
 ]
 
 export function getGuide(slug: string) {

@@ -1,9 +1,12 @@
 # MMKK AI
 
-> MMKK AI is a business technology partner deploying Google Workspace, Microsoft 365,
-> HubSpot CRM, Apollo, Google Cloud, and AI Automation for growing businesses across
-> Myanmar and Thailand. MMKK AI is an official Google Cloud Co-Sell Partner and a
-> Microsoft Azure Deployment Partner.
+> MMKK AI implements and supports Google Workspace, Microsoft 365, HubSpot CRM, Apollo,
+> Google Cloud, AI Automation, TeamViewer, and Adobe Business for growing businesses
+> across Myanmar and Thailand. MMKK AI provides implementation, deployment, and ongoing
+> support services for these platforms. MMKK AI does not currently hold an independently
+> verified official partner, certified, or authorized reseller status with any of these
+> vendors - see /partners for the exact, evidence-based status of every technology
+> relationship on this site.
 
 MMKK AI serves SMEs, mid-market companies, enterprises, international schools, real
 estate companies, technology companies, and professional services firms. Support and
@@ -16,7 +19,9 @@ billing are handled locally in Myanmar and Thailand, alongside a US office.
 - [Apollo Lead Generation](https://mmkkai.com/en/solutions/apollo-lead-generation): outbound prospecting setup
 - [Google Cloud](https://mmkkai.com/en/solutions/google-cloud): architecture, migration, and cost optimization
 - [AI Automation](https://mmkkai.com/en/solutions/ai-automation): applied AI workflows
+- [Sales Workflow Design](https://mmkkai.com/en/solutions/sales-workflow-design): designing how leads move from prospecting to closed deal
 - [TeamViewer](https://mmkkai.com/en/solutions/teamviewer): remote support and device management
+- [Remote Monitoring and Management](https://mmkkai.com/en/solutions/remote-monitoring-management): proactive device monitoring across branch locations
 - [Adobe Business](https://mmkkai.com/en/solutions/adobe-business): Creative Cloud and Acrobat licensing
 
 ## Myanmar
@@ -34,10 +39,24 @@ billing are handled locally in Myanmar and Thailand, alongside a US office.
 - [Google Cloud Thailand](https://mmkkai.com/en/thailand/google-cloud)
 
 ## Resources
+- [What Is AI Visibility?](https://mmkkai.com/en/resources/what-is-ai-visibility)
+- [AI SEO vs Traditional SEO](https://mmkkai.com/en/resources/ai-seo-vs-traditional-seo)
+- [How Businesses Can Improve Their Visibility in AI Answers](https://mmkkai.com/en/resources/improve-ai-answer-visibility)
 - [Google Workspace vs Microsoft 365](https://mmkkai.com/en/resources/google-workspace-vs-microsoft-365)
 - [What Is Apollo?](https://mmkkai.com/en/resources/what-is-apollo)
 - [HubSpot CRM Guide](https://mmkkai.com/en/resources/hubspot-crm-guide)
 - [Google Workspace Migration Guide](https://mmkkai.com/en/resources/google-workspace-migration-guide)
+- [How Sales Workflow Design Improves Lead Management](https://mmkkai.com/en/resources/sales-workflow-design-lead-management)
+- [How Remote Monitoring and Management Helps Businesses](https://mmkkai.com/en/resources/remote-monitoring-management-benefits)
+
+## Company
+- [About](https://mmkkai.com/en/about)
+- [Industries We Serve](https://mmkkai.com/en/industries)
+- [Partners, Platforms & Certifications](https://mmkkai.com/en/partners): evidence-based breakdown of every technology relationship - verified partnerships (currently none), platforms implemented, and certifications (currently none)
+- [Case Studies & Client Testimonials](https://mmkkai.com/en/case-studies): published only once a client approves publication
+- [Contact](https://mmkkai.com/en/contact)
+- [Privacy Policy](https://mmkkai.com/en/privacy-policy)
+- [Terms of Service](https://mmkkai.com/en/terms-of-service)
 
 ## Contact
 - Email: sales@mmkkai.com

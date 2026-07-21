@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown, Calendar } from 'lucide-react'
 import {
   LayoutGrid, Cloud, ArrowRightLeft, Users2, Bot, Workflow, Sparkles, BarChart3,
-  MonitorSmartphone, PenTool, LifeBuoy, Layers, Search,
+  MonitorSmartphone, PenTool, LifeBuoy, Layers, Search, Activity,
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
@@ -38,7 +38,7 @@ const MEGA_MENU_CATEGORIES = [
       { icon: Layers, href: '/solutions/hubspot-crm', nameKey: 'hubspotCrm' },
       { icon: Search, href: '/solutions/apollo-lead-generation', nameKey: 'apollo' },
       { icon: Users2, href: '/solutions/hubspot-crm', nameKey: 'crmImplementation' },
-      { icon: Workflow, href: '/solutions/hubspot-crm', nameKey: 'salesAutomation' },
+      { icon: Workflow, href: '/solutions/sales-workflow-design', nameKey: 'salesAutomation' },
     ],
   },
   {
@@ -56,6 +56,7 @@ const MEGA_MENU_CATEGORIES = [
     icon: LifeBuoy,
     items: [
       { icon: MonitorSmartphone, href: '/solutions/teamviewer', nameKey: 'teamviewer' },
+      { icon: Activity, href: '/solutions/remote-monitoring-management', nameKey: 'remoteMonitoring' },
       { icon: PenTool, href: '/solutions/adobe-business', nameKey: 'adobe' },
       { icon: LifeBuoy, href: '/solutions', nameKey: 'licensingSupport' },
     ],

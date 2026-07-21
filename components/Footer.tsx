@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { Mail, Phone } from 'lucide-react'
+import { Mail, Phone, Facebook, Linkedin, MessageCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { solutions } from '@/lib/solutions'
+import { socialProfiles } from '@/lib/companyConfig'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -48,6 +49,30 @@ export default function Footer() {
                 </div>
               </div>
             </div>
+
+            {/* Social profile links - only ever populated in
+                lib/companyConfig.ts once a real, live URL is confirmed. See
+                that file for why this list is empty by default rather than
+                filled with invented handles. */}
+            {socialProfiles.length > 0 && (
+              <div className="flex items-center gap-3 mt-6">
+                {socialProfiles.map((s) => {
+                  const Icon = s.platform === 'facebook' ? Facebook : s.platform === 'linkedin' ? Linkedin : MessageCircle
+                  return (
+                    <a
+                      key={s.platform}
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={s.label}
+                      className="p-2 rounded-lg border border-border text-gray-400 hover:text-primary hover:border-primary/40 transition-colors"
+                    >
+                      <Icon className="w-4 h-4" />
+                    </a>
+                  )
+                })}
+              </div>
+            )}
           </div>
 
           {/* Solutions */}
@@ -81,6 +106,16 @@ export default function Footer() {
               <li>
                 <Link href="/resources" className="text-gray-400 hover:text-primary transition-colors">
                   {t('resources')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/partners" className="text-gray-400 hover:text-primary transition-colors">
+                  {t('partners')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/case-studies" className="text-gray-400 hover:text-primary transition-colors">
+                  {t('caseStudies')}
                 </Link>
               </li>
               <li>

@@ -4,9 +4,13 @@ import { useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-import { Mail, Phone, CheckCircle, AlertCircle, MapPin } from 'lucide-react'
+import { Mail, Phone, CheckCircle, AlertCircle, MapPin, Facebook, Linkedin, MessageCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { submitLead } from '@/lib/submitLead'
+import { socialProfiles } from '@/lib/companyConfig'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import JsonLd from '@/components/JsonLd'
+import { breadcrumbSchema, contactPageSchema } from '@/lib/schema'
 
 export const dynamic = 'force-static'
 
@@ -58,11 +62,24 @@ export default function ContactPage() {
     })
   }
 
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://mmkkai.com'
+  const contactUrl = `${BASE_URL}/${locale}/contact`
+
   return (
     <main className="min-h-screen">
+      <JsonLd
+        data={[
+          contactPageSchema({ url: contactUrl }),
+          breadcrumbSchema([
+            { name: 'Home', url: `${BASE_URL}/${locale}` },
+            { name: 'Contact', url: contactUrl },
+          ]),
+        ]}
+      />
       <Navbar />
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
+          <Breadcrumbs items={[{ name: 'Home', href: `/${locale}` }, { name: 'Contact', href: '' }]} />
           <div className="mb-14 max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold font-display mb-4">
               {t('title')}
@@ -137,6 +154,34 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
+
+                {socialProfiles.length > 0 && (
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <MessageCircle className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-400 mb-2">{t('socialProfiles')}</p>
+                      <div className="flex items-center gap-3">
+                        {socialProfiles.map((s) => {
+                          const Icon = s.platform === 'facebook' ? Facebook : s.platform === 'linkedin' ? Linkedin : MessageCircle
+                          return (
+                            <a
+                              key={s.platform}
+                              href={s.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={s.label}
+                              className="p-2 rounded-lg border border-primary/20 text-gray-300 hover:text-primary hover:border-primary/40 transition-colors"
+                            >
+                              <Icon className="w-5 h-5" />
+                            </a>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

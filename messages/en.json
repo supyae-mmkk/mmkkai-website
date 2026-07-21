@@ -96,7 +96,9 @@
     "copyright": "© {year} MMKK AI. All rights reserved.",
     "us": "US",
     "thailand": "Thailand",
-    "myanmar": "Myanmar"
+    "myanmar": "Myanmar",
+    "partners": "Partners",
+    "caseStudies": "Case Studies"
   },
   "contact": {
     "title": "Contact MMKK AI",
@@ -132,7 +134,8 @@
       "Myanmar",
       "Thailand",
       "Businesses operating across both markets"
-    ]
+    ],
+    "socialProfiles": "Social Profiles"
   },
   "products": {
     "title": "Our Solutions",
@@ -170,7 +173,11 @@
       "Recommend the platform that fits your team, not the one we prefer to sell",
       "No unverified claims — partner and certification status shown only once independently confirmed",
       "Plain-language scoping before any implementation begins"
-    ]
+    ],
+    "trustTitle": "Why Clients Trust This Work",
+    "trustBody": "We don't publish partner badges or client logos we can't back up. Every technology relationship on this site is described exactly as it stands today - implementation service or verified partnership - and every case study or testimonial is published only with the client's permission.",
+    "trustPartnersLink": "See our verified partner and platform status →",
+    "trustCaseStudiesLink": "See case studies and client testimonials →"
   },
   "landingPage": {
     "faqTitle": "Frequently Asked Questions",
@@ -206,7 +213,8 @@
       "dataAndReporting": "Data and Reporting — dashboards that get checked",
       "teamviewer": "TeamViewer — remote support and device management",
       "adobe": "Adobe — Creative Cloud and Acrobat licensing",
-      "licensingSupport": "Licensing and Deployment Support — ongoing technical help"
+      "licensingSupport": "Licensing and Deployment Support — ongoing technical help",
+      "remoteMonitoring": "Remote Monitoring — proactive device oversight across branches"
     }
   },
   "techStrip": {
@@ -476,5 +484,36 @@
     "subtitle": "Tell us how your team works today. We'll help identify the cloud, CRM and automation setup that fits your business.",
     "primaryCta": "Book a Consultation",
     "secondaryCta": "Contact MMKK AI"
+  },
+  "partnersPage": {
+    "title": "Partners, Platforms & Certifications",
+    "subtitle": "A transparent look at exactly how MMKK AI relates to every platform mentioned on this site — what we implement, what we supply, and what has (and hasn't) been independently verified as an official partnership.",
+    "verifiedTitle": "Verified Partnerships",
+    "verifiedSubtitle": "Relationships with an independently verifiable partner-program status, evidenced by a link to the vendor's own public partner directory.",
+    "verifiedEmpty": "No vendor partnership currently meets this bar. MMKK AI implements and supports the platforms listed below, but does not hold an independently verified official partner, certified, or authorized reseller status with any vendor at this time. This section will be updated the moment that changes, with a link to the vendor's own directory listing as evidence.",
+    "platformsTitle": "Platforms We Implement",
+    "platformsSubtitle": "Software MMKK AI configures, deploys, and supports for clients. Using a platform professionally is not the same as an official partnership — see Verified Partnerships above for that distinction.",
+    "productsTitle": "Products We Supply",
+    "productsSubtitle": "Licenses and products MMKK AI supplies directly to clients.",
+    "certificationsTitle": "Certifications",
+    "certificationsSubtitle": "Individual or company-level certifications with a verifiable certificate reference.",
+    "certificationsEmpty": "No vendor certification is currently documented with a verifiable certificate reference. This section will be updated once one is confirmed.",
+    "membershipsTitle": "Memberships",
+    "methodologyNote": "Every entry on this page is checked against this same standard: a claim is only shown as verified when there is a link to public evidence behind it. If you have a question about any relationship shown here, or evidence we should review,",
+    "methodologyLinkText": "contact us"
+  },
+  "caseStudiesPage": {
+    "title": "Case Studies & Client Results",
+    "subtitle": "Verified examples of the work MMKK AI has delivered, published only once a client agrees to be named or described. Nothing on this page is invented.",
+    "caseStudiesTitle": "Case Studies",
+    "caseStudiesEmptyHeadline": "Documented case studies are being prepared.",
+    "caseStudiesEmptyBody": "MMKK AI is compiling verified, client-approved case studies from completed implementation work. Rather than publish a placeholder or an unverifiable example, this section stays empty until a specific project has been reviewed and the client has agreed to have it described publicly.",
+    "problemLabel": "Business problem",
+    "outcomeLabel": "Verified outcome",
+    "testimonialsTitle": "Client Testimonials",
+    "testimonialsEmptyHeadline": "No client testimonials are published yet.",
+    "testimonialsEmptyBody": "MMKK AI only publishes a testimonial once the client has given explicit permission to be quoted by name. None have been collected and approved for publication at this time.",
+    "methodologyNote": "For a breakdown of exactly which technology relationships are independently verified versus which platforms MMKK AI simply implements,",
+    "methodologyLinkText": "see our Partners page"
   }
 }
